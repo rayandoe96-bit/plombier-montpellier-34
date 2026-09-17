@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Plombier Montpellier 34 — Site V2
 
-## Getting Started
+Site vitrine V2, original et mobile-first, pour une activité de plomberie / dépannage
+sanitaire à Montpellier et alentours. Conçu pour la clarté, la confiance et la
+conversion (appel, devis).
 
-First, run the development server:
+> « Plombier Montpellier 34 » est un titre de travail en attendant la raison sociale
+> définitive (voir [Informations à confirmer](#informations-à-confirmer)).
+
+## Règles du projet
+
+Ce projet suit les règles définies dans [`CLAUDE.md`](./CLAUDE.md) et le brief
+[`briefs/plombiermontpellier34-v2-brief.md`](./briefs/plombiermontpellier34-v2-brief.md) :
+
+- Contenu et interface entièrement originaux (aucune reprise du site source analysé).
+- Aucune donnée métier inventée (tarifs, délais, certifications, garanties,
+  disponibilités, avis, coordonnées, zones) : tout ce qui n'est pas confirmé est
+  affiché littéralement « À confirmer ».
+- Conception mobile-first, adaptée ensuite aux écrans larges.
+
+## Stack technique
+
+- [Next.js 16](https://nextjs.org) (App Router, TypeScript)
+- [Tailwind CSS v4](https://tailwindcss.com)
+- [ESLint](https://eslint.org) (config Next.js)
+
+## Démarrer en local
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Le site est disponible sur [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Autres commandes utiles :
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build   # build de production
+npm run lint    # vérification ESLint
+```
 
-## Learn More
+## Arborescence du site
 
-To learn more about Next.js, take a look at the following resources:
+```
+/                        Accueil
+/urgences                Urgence plomberie
+/depannage                Vue d'ensemble des services de dépannage
+/depannage/[slug]         Débouchage, hydrocurage, inspection caméra, recherche de fuite
+/installation              Installation (robinetterie, sanitaires, chauffe-eau)
+/entretien                 Entretien préventif
+/zone-intervention          Détail par commune desservie
+/conseils                  Index des conseils pratiques
+/conseils/[slug]            Articles de conseils (SEO local)
+/devis                     Formulaire de demande de devis
+/contact                   Coordonnées et zone d'intervention
+/mentions-legales          Mentions légales
+/confidentialite            RGPD / confidentialité
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Organisation du code
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `src/lib/content/` — modèle de données et contenu (business, zones, services, FAQ,
+  conseils, navigation). Source unique de vérité pour le téléphone, les tarifs, les
+  délais et les zones.
+- `src/components/layout/` — Header, Footer, navigation mobile, barre d'appel fixe.
+- `src/components/marketing/` — composants métier réutilisables (fiches service,
+  déroulé d'intervention, facteurs de prix, FAQ en accordéon, zones, avis, etc.).
+- `src/components/ui/` — primitives d'interface (CTA, titres de section, valeurs à
+  confirmer).
+- `src/components/seo/` — balisage schema.org (`LocalBusiness`).
 
-## Deploy on Vercel
+## Informations à confirmer
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Ces données métier ne sont pas encore confirmées et s'affichent comme telles sur le
+site (composant `ConfirmableValue`) :
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Certifications / qualifications
+- Garanties (nature, durée, conditions)
+- Coordonnées complètes (raison sociale, SIRET, adresse, e-mail)
+- Assurance (couverture RC pro / décennale réellement souscrite)
+- Horaires et disponibilité (24/7, jours fériés)
+- Politique de devis (gratuit ou payant, conditions)
+- Mentions RGPD (consentement, durée de conservation)
+- Source d'avis clients à connecter (le composant `ReviewsSection` reste désactivé
+  tant qu'aucune source n'est branchée)
+
+Sont en revanche confirmés : le téléphone, le tarif de départ (100 €, commun aux
+services de dépannage), les délais (urgence ≤ 2h, standard ≤ 3 jours) et les zones
+d'intervention (Montpellier, Carnon, Palavas-les-Flots, La Grande-Motte).
+
+Le nom de domaine réel doit aussi remplacer le placeholder `https://example.com`
+utilisé dans `src/app/sitemap.ts` et `src/app/robots.ts`.
