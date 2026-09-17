@@ -7,7 +7,8 @@ import { zones } from "@/lib/content/business";
 
 export const metadata: Metadata = {
   title: "Zone d'intervention",
-  description: "Nos zones d'intervention : Montpellier, Carnon, Palavas-les-Flots, La Grande-Motte.",
+  description:
+    "Nos zones d'intervention : Montpellier, Lattes, Carnon, Palavas-les-Flots, La Grande-Motte.",
 };
 
 export default function ZoneInterventionPage() {

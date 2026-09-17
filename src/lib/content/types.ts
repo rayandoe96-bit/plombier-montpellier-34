@@ -3,7 +3,12 @@ export const TO_CONFIRM = "À confirmer" as const;
 export type ToConfirm = typeof TO_CONFIRM;
 export type Confirmable<T> = T | ToConfirm;
 
-export type ZoneName = "Montpellier" | "Carnon" | "Palavas-les-Flots" | "La Grande-Motte";
+export type ZoneName =
+  | "Montpellier"
+  | "Lattes"
+  | "Carnon"
+  | "Palavas-les-Flots"
+  | "La Grande-Motte";
 
 export interface Zone {
   name: ZoneName;

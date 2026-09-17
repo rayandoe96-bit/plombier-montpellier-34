@@ -85,7 +85,7 @@ site (composant `ConfirmableValue`) :
 
 Sont confirmés : le téléphone, le tarif de départ (100 €, commun aux services de
 dépannage), les délais (urgence ≤ 2h, standard ≤ 3 jours) et les zones d'intervention
-(Montpellier, Carnon, Palavas-les-Flots, La Grande-Motte).
+(Montpellier, Lattes, Carnon, Palavas-les-Flots, La Grande-Motte).
 
 Sont également confirmés, via la fiche d'établissement publique (Google Maps) et le
 registre public des entreprises (SIRENE) — croisés sur plusieurs sources
@@ -93,8 +93,7 @@ indépendantes : le nom commercial (« Devarenne Plomberie Chauffage »), l'expl
 (Emilien Devarenne), la forme juridique (entreprise individuelle), le SIRET
 (538 207 523 00035) et l'adresse du siège (6 Rue des Consuls, 34970 Lattes).
 
-**Point à vérifier avec le client :** le siège est à Lattes, commune qui ne figure pas
-dans la liste des zones desservies actuelle. Les annuaires publics affichent aussi des
+**Point à vérifier avec le client :** les annuaires publics affichent des
 numéros de téléphone différents du numéro déjà confirmé dans le projet (dont un numéro
 explicitement identifié comme une ligne de mise en relation tierce, pas la ligne
 directe) — le numéro du projet n'a pas été modifié tant que ce n'est pas tranché.

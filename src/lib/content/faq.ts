@@ -4,7 +4,7 @@ export const generalFaq: FaqItem[] = [
   {
     question: "Dans quelles communes intervenez-vous ?",
     answer:
-      "Nous intervenons à Montpellier, Carnon, Palavas-les-Flots et La Grande-Motte. Consultez la page Zone d'intervention pour le détail par commune.",
+      "Nous intervenons à Montpellier, Lattes, Carnon, Palavas-les-Flots et La Grande-Motte. Consultez la page Zone d'intervention pour le détail par commune.",
   },
   {
     question: "Quel est votre délai d'intervention ?",

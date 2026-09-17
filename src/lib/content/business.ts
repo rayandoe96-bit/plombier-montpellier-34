@@ -29,6 +29,11 @@ export const zones: Zone[] = [
     travelFee: TO_CONFIRM,
   },
   {
+    name: "Lattes",
+    description: "Commune où se situe le siège de l'entreprise.",
+    travelFee: TO_CONFIRM,
+  },
+  {
     name: "Carnon",
     description: TO_CONFIRM,
     travelFee: TO_CONFIRM,

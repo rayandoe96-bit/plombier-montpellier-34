@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: `%s — ${businessInfo.tradeName}`,
   },
   description:
-    "Dépannage plomberie à Montpellier, Carnon, Palavas-les-Flots et La Grande-Motte : débouchage, hydrocurage, recherche de fuite.",
+    "Dépannage plomberie à Montpellier, Lattes, Carnon, Palavas-les-Flots et La Grande-Motte : débouchage, hydrocurage, recherche de fuite.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
