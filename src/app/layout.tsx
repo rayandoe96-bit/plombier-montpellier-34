@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StickyCallBar } from "@/components/layout/StickyCallBar";
 import { LocalBusinessJsonLd } from "@/components/seo/LocalBusinessJsonLd";
+import { businessInfo } from "@/lib/content/business";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,8 +19,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Plombier Montpellier 34 — Dépannage plomberie",
-    template: "%s — Plombier Montpellier 34",
+    default: `${businessInfo.tradeName} — Dépannage plomberie`,
+    template: `%s — ${businessInfo.tradeName}`,
   },
   description:
     "Dépannage plomberie à Montpellier, Carnon, Palavas-les-Flots et La Grande-Motte : débouchage, hydrocurage, recherche de fuite.",

@@ -3,14 +3,17 @@ import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ConfirmableValue } from "@/components/ui/ConfirmableValue";
 import { businessInfo } from "@/lib/content/business";
+import type { Confirmable } from "@/lib/content/types";
 
 export const metadata: Metadata = {
   title: "Mentions légales",
 };
 
-const fields: { label: string; value: typeof businessInfo.name }[] = [
-  { label: "Nom / raison sociale", value: businessInfo.name },
+const fields: { label: string; value: Confirmable<string> }[] = [
+  { label: "Nom commercial", value: businessInfo.tradeName },
+  { label: "Exploitant", value: businessInfo.legalName },
   { label: "Forme juridique", value: businessInfo.legalForm },
+  { label: "SIRET", value: businessInfo.siret },
   { label: "Adresse du siège", value: businessInfo.address },
   { label: "E-mail", value: businessInfo.email },
   { label: "Assurance professionnelle", value: businessInfo.insuranceCoverage },
@@ -37,8 +40,9 @@ export default function MentionsLegalesPage() {
       </dl>
 
       <p className="mt-8 max-w-xl text-sm text-foreground/60">
-        Directeur de la publication, hébergeur et numéro SIRET à compléter dès réception des
-        informations légales de l&apos;entreprise.
+        Directeur de la publication et hébergeur à compléter. Les informations
+        d&apos;identification ci-dessus proviennent du registre public des entreprises et
+        restent à valider par l&apos;exploitant avant publication définitive.
       </p>
     </Container>
   );

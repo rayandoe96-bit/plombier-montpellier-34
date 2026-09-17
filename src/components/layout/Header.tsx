@@ -3,13 +3,14 @@ import { Container } from "./Container";
 import { MobileNav } from "./MobileNav";
 import { PhoneLink } from "@/components/ui/PhoneLink";
 import { primaryNav } from "@/lib/content/navigation";
+import { businessInfo } from "@/lib/content/business";
 
 export function Header() {
   return (
     <header className="sticky top-0 z-30 h-16 border-b border-black/5 bg-white/95 backdrop-blur">
       <Container className="flex h-16 items-center justify-between">
         <Link href="/" className="text-lg font-bold tracking-tight text-brand-700">
-          Plombier Montpellier 34
+          {businessInfo.tradeName}
         </Link>
 
         <nav aria-label="Navigation principale" className="hidden md:block">
