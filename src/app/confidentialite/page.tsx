@@ -3,6 +3,7 @@ import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ConfirmableValue } from "@/components/ui/ConfirmableValue";
 import { businessInfo } from "@/lib/content/business";
+import { isVisible } from "@/lib/content/confirm";
 
 export const metadata: Metadata = {
   title: "Confidentialité",
@@ -24,19 +25,23 @@ export default function ConfidentialitePage() {
           </p>
         </div>
 
-        <div>
-          <h2 className="text-base font-semibold text-foreground">Consentement</h2>
-          <p className="mt-2">
-            <ConfirmableValue value={businessInfo.consentNotice} />
-          </p>
-        </div>
+        {isVisible(businessInfo.consentNotice) ? (
+          <div>
+            <h2 className="text-base font-semibold text-foreground">Consentement</h2>
+            <p className="mt-2">
+              <ConfirmableValue value={businessInfo.consentNotice} />
+            </p>
+          </div>
+        ) : null}
 
-        <div>
-          <h2 className="text-base font-semibold text-foreground">Durée de conservation</h2>
-          <p className="mt-2">
-            <ConfirmableValue value={businessInfo.retentionPeriod} />
-          </p>
-        </div>
+        {isVisible(businessInfo.retentionPeriod) ? (
+          <div>
+            <h2 className="text-base font-semibold text-foreground">Durée de conservation</h2>
+            <p className="mt-2">
+              <ConfirmableValue value={businessInfo.retentionPeriod} />
+            </p>
+          </div>
+        ) : null}
       </div>
     </Container>
   );

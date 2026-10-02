@@ -1,13 +1,15 @@
 import { businessInfo } from "@/lib/content/business";
 import { ConfirmableValue } from "@/components/ui/ConfirmableValue";
+import { isVisible } from "@/lib/content/confirm";
 
 const items: { label: string; value: typeof businessInfo.insuranceCoverage }[] = [
   { label: "Assurance (RC pro / décennale)", value: businessInfo.insuranceCoverage },
   { label: "Certifications / qualifications", value: businessInfo.certifications },
-  { label: "Horaires et disponibilité", value: businessInfo.hours },
-];
+].filter((item) => isVisible(item.value));
 
 export function TrustNotice() {
+  if (items.length === 0) return null;
+
   return (
     <div className="rounded-xl border border-amber-200 bg-amber-50/60 p-5">
       <p className="text-sm font-semibold text-foreground">Informations de confiance</p>

@@ -1,6 +1,8 @@
-import type { FaqItem } from "./types";
+import { TO_CONFIRM, type FaqItem } from "./types";
+import { businessInfo } from "./business";
+import { isConfirmed, isVisible } from "./confirm";
 
-export const generalFaq: FaqItem[] = [
+const allGeneralFaq: FaqItem[] = [
   {
     question: "Dans quelles communes intervenez-vous ?",
     answer:
@@ -9,22 +11,32 @@ export const generalFaq: FaqItem[] = [
   {
     question: "Quel est votre délai d'intervention ?",
     answer:
-      "En urgence, nous intervenons sous 2h maximum. Pour une demande non urgente, l'intervention a lieu sous 3 jours maximum.",
+      isConfirmed(businessInfo.emergencyResponseTime) && isConfirmed(businessInfo.standardResponseTime)
+        ? `En urgence, nous intervenons ${businessInfo.emergencyResponseTime}. Pour une demande non urgente, l'intervention a lieu ${businessInfo.standardResponseTime}.`
+        : TO_CONFIRM,
   },
   {
     question: "Combien coûte une intervention ?",
-    answer:
-      "Nos interventions démarrent à partir de 100 €. Le tarif exact dépend du service concerné et de la situation constatée sur place ; les facteurs qui influencent le prix sont détaillés sur chaque page service.",
+    answer: isConfirmed(businessInfo.priceFrom)
+      ? `Nos interventions démarrent à partir de ${businessInfo.priceFrom} €. Le tarif exact dépend du service concerné et de la situation constatée sur place ; les facteurs qui influencent le prix sont détaillés sur chaque page service.`
+      : TO_CONFIRM,
+  },
+  {
+    question: "Quels sont vos horaires ?",
+    answer: businessInfo.hours,
   },
   {
     question: "Le devis est-il gratuit ?",
-    answer: "À confirmer.",
+    answer: TO_CONFIRM,
   },
   {
     question: "Êtes-vous assuré pour vos interventions ?",
-    answer: "À confirmer.",
+    answer: businessInfo.insuranceCoverage,
   },
 ];
+
+// Server-only: questions without a confirmed answer are hidden in production.
+export const generalFaq = allGeneralFaq.filter((item) => isVisible(item.answer));
 
 export const quotePreparationFaq: FaqItem[] = [
   {

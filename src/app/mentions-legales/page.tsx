@@ -3,7 +3,8 @@ import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ConfirmableValue } from "@/components/ui/ConfirmableValue";
 import { businessInfo } from "@/lib/content/business";
-import type { Confirmable } from "@/lib/content/types";
+import { TO_CONFIRM, type Confirmable } from "@/lib/content/types";
+import { isVisible, showToConfirm } from "@/lib/content/confirm";
 
 export const metadata: Metadata = {
   title: "Mentions légales",
@@ -17,7 +18,9 @@ const fields: { label: string; value: Confirmable<string> }[] = [
   { label: "Adresse du siège", value: businessInfo.address },
   { label: "E-mail", value: businessInfo.email },
   { label: "Assurance professionnelle", value: businessInfo.insuranceCoverage },
-];
+  { label: "Directeur de la publication", value: TO_CONFIRM },
+  { label: "Hébergeur", value: "Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis" },
+].filter((field) => isVisible(field.value));
 
 export default function MentionsLegalesPage() {
   return (
@@ -39,11 +42,12 @@ export default function MentionsLegalesPage() {
         </div>
       </dl>
 
-      <p className="mt-8 max-w-xl text-sm text-foreground/60">
-        Directeur de la publication et hébergeur à compléter. Les informations
-        d&apos;identification ci-dessus proviennent du registre public des entreprises et
-        restent à valider par l&apos;exploitant avant publication définitive.
-      </p>
+      {showToConfirm ? (
+        <p className="mt-8 max-w-xl text-sm text-foreground/60">
+          Les informations d&apos;identification ci-dessus proviennent du registre public des
+          entreprises et restent à valider par l&apos;exploitant avant publication définitive.
+        </p>
+      ) : null}
     </Container>
   );
 }

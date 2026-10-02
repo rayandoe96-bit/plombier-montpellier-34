@@ -4,6 +4,7 @@ import { Hero } from "@/components/marketing/Hero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CtaGroup } from "@/components/ui/CtaGroup";
 import { businessInfo, zones } from "@/lib/content/business";
+import { isConfirmed } from "@/lib/content/confirm";
 
 export const metadata: Metadata = {
   title: "Urgence plomberie",
@@ -23,8 +24,12 @@ export default function UrgencesPage() {
       <Hero
         tone="urgent"
         eyebrow="Urgence plomberie"
-        title={`Intervention d'urgence ${businessInfo.emergencyResponseTime}`}
-        description="En cas de fuite active ou de panne bloquante, contactez-nous directement par téléphone : c'est le moyen le plus rapide d'être pris en charge."
+        title={
+          isConfirmed(businessInfo.emergencyResponseTime)
+            ? `Intervention d'urgence ${businessInfo.emergencyResponseTime}`
+            : "Une urgence plomberie ? Appelez directement"
+        }
+        description={`En cas de fuite active ou de panne bloquante, appelez le ${businessInfo.phone} : c'est le moyen le plus rapide d'être pris en charge. Du lundi au samedi, de 9h à 20h.`}
       />
 
       <Container className="py-10 sm:py-14">

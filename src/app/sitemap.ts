@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
 import { services } from "@/lib/content/services";
 import { adviceArticles } from "@/lib/content/advice";
+import { siteUrl } from "@/lib/site";
 
-const baseUrl = "https://example.com";
+const baseUrl = siteUrl;
 
 const staticRoutes = [
   "",
