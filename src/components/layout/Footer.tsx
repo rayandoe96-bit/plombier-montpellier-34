@@ -11,19 +11,21 @@ export function Footer() {
         <div>
           <p className="text-lg font-bold">{businessInfo.tradeName}</p>
           <p className="mt-2 text-sm text-white/80">
-            Plomberie et dépannage sanitaire à Montpellier et alentours.
+            {businessInfo.ownerName}, plombier chauffagiste à {businessInfo.city} depuis{" "}
+            {businessInfo.foundingYear}.
           </p>
-          <PhoneLink className="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-brand-700" />
+          <p className="mt-2 text-sm text-white/80">{businessInfo.address}</p>
+          <PhoneLink className="mt-4 inline-flex min-h-11 items-center gap-2 whitespace-nowrap rounded-full bg-white px-4 text-sm font-semibold text-brand-700" />
         </div>
 
         <div>
           <p className="text-sm font-semibold uppercase tracking-wide text-white/60">
             Navigation
           </p>
-          <ul className="mt-3 space-y-2">
+          <ul className="mt-2">
             {primaryNav.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="text-sm text-white/85 hover:text-white">
+                <Link href={item.href} className="inline-flex min-h-10 items-center text-sm text-white/85 hover:text-white">
                   {item.label}
                 </Link>
               </li>
@@ -50,7 +52,7 @@ export function Footer() {
         <ul className="flex gap-4">
           {footerLegalNav.map((item) => (
             <li key={item.href}>
-              <Link href={item.href} className="hover:text-white">
+              <Link href={item.href} className="inline-flex min-h-10 items-center hover:text-white">
                 {item.label}
               </Link>
             </li>

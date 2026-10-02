@@ -1,10 +1,13 @@
 import { businessInfo } from "@/lib/content/business";
+import { isConfirmed } from "@/lib/content/confirm";
 
 export function PriceFactors({ factors }: { factors: string[] }) {
   return (
     <div className="rounded-xl border border-black/10 bg-white p-5">
       <p className="text-sm font-semibold text-foreground">
-        Intervention à partir de {businessInfo.priceFrom} €
+        {isConfirmed(businessInfo.priceFrom)
+          ? `Intervention à partir de ${businessInfo.priceFrom} €`
+          : "Un prix annoncé avant d'intervenir"}
       </p>
       <p className="mt-1 text-sm text-foreground/70">
         Le tarif final dépend de la situation constatée sur place. Facteurs pris en compte :

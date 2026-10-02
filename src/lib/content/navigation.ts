@@ -15,6 +15,15 @@ export const primaryNav: NavItem[] = [
   { href: "/contact", label: "Contact" },
 ];
 
+// Desktop header keeps the short list; the full list lives in the mobile menu and the footer.
+export const headerNav: NavItem[] = [
+  { href: "/urgences", label: "Urgences" },
+  { href: "/depannage", label: "Dépannage" },
+  { href: "/installation", label: "Installation" },
+  { href: "/zone-intervention", label: "Zone" },
+  { href: "/contact", label: "Contact" },
+];
+
 export const footerLegalNav: NavItem[] = [
   { href: "/mentions-legales", label: "Mentions légales" },
   { href: "/confidentialite", label: "Confidentialité" },

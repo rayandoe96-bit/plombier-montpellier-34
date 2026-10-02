@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { StickyCallBar } from "@/components/layout/StickyCallBar";
 import { LocalBusinessJsonLd } from "@/components/seo/LocalBusinessJsonLd";
 import { businessInfo } from "@/lib/content/business";
+import { siteUrl } from "@/lib/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,12 +19,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: `${businessInfo.tradeName} — Dépannage plomberie`,
+    default: `${businessInfo.tradeName} — Plombier chauffagiste à ${businessInfo.city}`,
     template: `%s — ${businessInfo.tradeName}`,
   },
-  description:
-    "Dépannage plomberie à Montpellier, Lattes, Carnon, Palavas-les-Flots et La Grande-Motte : débouchage, hydrocurage, recherche de fuite.",
+  description: `${businessInfo.ownerName}, plombier chauffagiste à ${businessInfo.city} depuis ${businessInfo.foundingYear} : dépannage, recherche de fuite, chauffe-eau et sanitaires à Lattes, Montpellier, Carnon, Palavas-les-Flots et La Grande-Motte.`,
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    siteName: businessInfo.tradeName,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

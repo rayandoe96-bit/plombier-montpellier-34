@@ -5,6 +5,7 @@ import { ConfirmableValue } from "@/components/ui/ConfirmableValue";
 import { PhoneLink } from "@/components/ui/PhoneLink";
 import { CtaGroup } from "@/components/ui/CtaGroup";
 import { businessInfo, zones } from "@/lib/content/business";
+import { isVisible } from "@/lib/content/confirm";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -21,14 +22,18 @@ export default function ContactPage() {
           <p className="text-sm font-semibold text-foreground">Téléphone</p>
           <PhoneLink className="mt-1 block text-lg font-bold text-brand-600" />
 
-          <p className="mt-4 text-sm font-semibold text-foreground">E-mail</p>
-          <p className="mt-1 text-sm text-foreground/70">
-            <ConfirmableValue value={businessInfo.email} />
-          </p>
+          {isVisible(businessInfo.email) ? (
+            <>
+              <p className="mt-4 text-sm font-semibold text-foreground">E-mail</p>
+              <p className="mt-1 text-sm text-foreground/70">
+                <ConfirmableValue value={businessInfo.email} />
+              </p>
+            </>
+          ) : null}
 
           <p className="mt-4 text-sm font-semibold text-foreground">Adresse</p>
           <p className="mt-1 text-sm text-foreground/70">
-            <ConfirmableValue value={businessInfo.address} />
+            {businessInfo.address}
           </p>
 
           <p className="mt-4 text-sm font-semibold text-foreground">Horaires</p>
