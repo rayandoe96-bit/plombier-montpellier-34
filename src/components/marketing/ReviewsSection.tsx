@@ -11,7 +11,7 @@ export const reviewsSource: ReviewsSource = {
 export function ReviewsSection() {
   if (!reviewsSource.connected) {
     return (
-      <div className="rounded-xl border border-dashed border-black/15 p-5 text-sm text-foreground/60">
+      <div className="rounded-xl border border-dashed border-line p-5 text-sm text-muted">
         Avis clients : intégration à connecter (aucun avis fictif affiché en attendant).
       </div>
     );

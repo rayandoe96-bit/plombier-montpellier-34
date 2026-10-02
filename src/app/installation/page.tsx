@@ -24,12 +24,12 @@ export default function InstallationPage() {
         <SectionHeading eyebrow="Ce que nous installons" title="Nos prestations d'installation" />
         <ul className="mt-6 grid gap-3 sm:grid-cols-3">
           {installationHighlights.map((item) => (
-            <li key={item} className="rounded-xl border border-black/10 p-4 text-sm text-foreground/80">
+            <li key={item} className="rounded-xl border border-line p-4 text-sm text-muted">
               {item}
             </li>
           ))}
         </ul>
-        <p className="mt-4 text-sm text-foreground/60">
+        <p className="mt-4 text-sm text-muted">
           Le détail précis de chaque prestation (marques, références, délais de fourniture) est
           confirmé lors de l&apos;étude de votre demande.
         </p>
@@ -49,7 +49,7 @@ export default function InstallationPage() {
       </Container>
 
       <Container className="pb-16 pt-4 sm:pb-20">
-        <div className="rounded-2xl border border-black/10 bg-brand-50/50 px-6 py-8 text-center sm:px-10">
+        <div className="rounded-2xl border border-line bg-brand-50/50 px-6 py-8 text-center sm:px-10">
           <h2 className="text-xl font-bold text-foreground">Un projet d&apos;installation ?</h2>
           <CtaGroup className="mt-5 justify-center" />
         </div>

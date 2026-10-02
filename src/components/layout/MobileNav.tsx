@@ -16,7 +16,7 @@ export function MobileNav() {
         aria-expanded={open}
         aria-controls="mobile-nav-panel"
         onClick={() => setOpen((v) => !v)}
-        className="flex h-10 w-10 items-center justify-center rounded-md border border-black/10 text-foreground"
+        className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/15 text-on-deep"
       >
         <span className="sr-only">Menu</span>
         {open ? (
@@ -33,10 +33,10 @@ export function MobileNav() {
       {open ? (
         <div
           id="mobile-nav-panel"
-          className="fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto bg-white px-4 pb-24 pt-2"
+          className="fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto bg-surface px-4 pb-24 pt-2 text-foreground"
         >
           <nav aria-label="Navigation principale">
-            <ul className="flex flex-col divide-y divide-black/5">
+            <ul className="flex flex-col divide-y divide-line">
               {primaryNav.map((item) => {
                 const active = pathname === item.href;
                 return (

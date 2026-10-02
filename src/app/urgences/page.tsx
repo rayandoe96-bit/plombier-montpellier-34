@@ -36,7 +36,7 @@ export default function UrgencesPage() {
         <SectionHeading eyebrow="Quand nous appeler" title="Situations considérées comme urgentes" />
         <ul className="mt-6 grid gap-3 sm:grid-cols-3">
           {urgentSituations.map((situation) => (
-            <li key={situation} className="rounded-xl border border-black/10 p-4 text-sm text-foreground/80">
+            <li key={situation} className="rounded-xl border border-line p-4 text-sm text-muted">
               {situation}
             </li>
           ))}
@@ -55,7 +55,7 @@ export default function UrgencesPage() {
         <SectionHeading eyebrow="Zone couverte" title="Intervention d'urgence sur ces communes" />
         <div className="mt-4 flex flex-wrap gap-2">
           {zones.map((zone) => (
-            <span key={zone.name} className="rounded-full border border-black/10 px-3 py-1 text-sm text-foreground/80">
+            <span key={zone.name} className="rounded-full border border-line px-3 py-1 text-sm text-muted">
               {zone.name}
             </span>
           ))}

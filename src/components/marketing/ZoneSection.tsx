@@ -4,15 +4,15 @@ import { isVisible } from "@/lib/content/confirm";
 
 export function ZoneSection({ zone }: { zone: Zone }) {
   return (
-    <div id={zone.name} className="rounded-xl border border-black/10 p-5">
+    <div id={zone.name} className="rounded-xl border border-line p-5">
       <h3 className="text-lg font-semibold text-foreground">{zone.name}</h3>
       {isVisible(zone.description) ? (
-        <p className="mt-2 text-sm text-foreground/80">
+        <p className="mt-2 text-sm text-muted">
           <ConfirmableValue value={zone.description} />
         </p>
       ) : null}
       {isVisible(zone.travelFee) ? (
-        <p className="mt-3 text-xs text-foreground/60">
+        <p className="mt-3 text-xs text-muted">
           Frais de déplacement : <ConfirmableValue value={zone.travelFee} />
         </p>
       ) : null}

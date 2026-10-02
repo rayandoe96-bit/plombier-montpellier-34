@@ -44,11 +44,11 @@ export default async function AdviceArticlePage({ params }: PageProps<"/conseils
         <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
           {article.title}
         </h1>
-        <p className="mt-3 text-base text-foreground/70">{article.summary}</p>
+        <p className="mt-3 text-base text-muted">{article.summary}</p>
 
         <div className="mt-8 space-y-4">
           {article.body.map((paragraph, index) => (
-            <p key={index} className="text-sm leading-relaxed text-foreground/80">
+            <p key={index} className="text-sm leading-relaxed text-muted">
               {paragraph}
             </p>
           ))}
@@ -57,7 +57,7 @@ export default async function AdviceArticlePage({ params }: PageProps<"/conseils
         {relatedService ? (
           <Link
             href={`/depannage/${relatedService.slug}`}
-            className="mt-8 block rounded-xl border border-black/10 p-5 hover:border-brand-500"
+            className="mt-8 block rounded-xl border border-line p-5 hover:border-brand-500"
           >
             <p className="text-xs font-semibold uppercase tracking-wide text-brand-600">
               Service associé
@@ -66,7 +66,7 @@ export default async function AdviceArticlePage({ params }: PageProps<"/conseils
           </Link>
         ) : null}
 
-        <div className="mt-10 rounded-2xl border border-black/10 bg-brand-50/50 px-6 py-8 text-center">
+        <div className="mt-10 rounded-2xl border border-line bg-brand-50/50 px-6 py-8 text-center">
           <h2 className="text-lg font-bold text-foreground">Un besoin similaire ?</h2>
           <CtaGroup className="mt-4 justify-center" />
         </div>

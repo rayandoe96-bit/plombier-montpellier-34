@@ -26,10 +26,10 @@ export default function ConseilsPage() {
             <Link
               key={article.slug}
               href={`/conseils/${article.slug}`}
-              className="flex flex-col gap-2 rounded-xl border border-black/10 p-5 hover:border-brand-500"
+              className="flex flex-col gap-2 rounded-xl border border-line p-5 hover:border-brand-500"
             >
               <h2 className="text-base font-semibold text-foreground">{article.title}</h2>
-              <p className="text-sm text-foreground/70">{article.summary}</p>
+              <p className="text-sm text-muted">{article.summary}</p>
             </Link>
           ))}
         </div>
