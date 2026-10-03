@@ -7,10 +7,10 @@ export function PriceFactors({ factors }: { factors: string[] }) {
       <p className="text-sm font-semibold text-foreground">
         {isConfirmed(businessInfo.priceFrom)
           ? `Intervention à partir de ${businessInfo.priceFrom} €`
-          : "Un prix annoncé avant d'intervenir"}
+          : "Chaque situation est différente"}
       </p>
       <p className="mt-1 text-sm text-muted">
-        Le tarif final dépend de la situation constatée sur place. Facteurs pris en compte :
+        Le tarif dépend surtout de :
       </p>
       <ul className="mt-3 space-y-2">
         {factors.map((factor) => (

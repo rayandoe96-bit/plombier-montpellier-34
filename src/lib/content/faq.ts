@@ -6,7 +6,7 @@ const allGeneralFaq: FaqItem[] = [
   {
     question: "Dans quelles communes intervenez-vous ?",
     answer:
-      "Nous intervenons à Montpellier, Lattes, Carnon, Palavas-les-Flots et La Grande-Motte. Consultez la page Zone d'intervention pour le détail par commune.",
+      `À ${businessInfo.city} et ses alentours : Montpellier, Pérols, Carnon, Palavas-les-Flots et La Grande-Motte. Votre commune n'est pas dans la liste ? Appelez, on vous dit tout de suite si c'est possible.`,
   },
   {
     question: "Quel est votre délai d'intervention ?",
@@ -27,11 +27,16 @@ const allGeneralFaq: FaqItem[] = [
   },
   {
     question: "Où êtes-vous installé ?",
-    answer: `L'entreprise est installée au ${businessInfo.address}, depuis ${businessInfo.foundingYear}.`,
+    answer: `Au ${businessInfo.address}, depuis ${businessInfo.foundingYear}. Une entreprise artisanale locale : c'est l'artisan lui-même qui se déplace.`,
   },
   {
     question: "Quel est le moyen le plus rapide de vous joindre ?",
-    answer: `Le téléphone : ${businessInfo.phone}. Vous parlez directement à ${businessInfo.ownerName}. Pour une demande non urgente, vous pouvez aussi passer par la page Devis.`,
+    answer: `Le téléphone : ${businessInfo.phone}. Vous parlez directement à ${businessInfo.ownerName}, pas à un standard. Pour un projet qui n'est pas urgent, la page Devis suffit.`,
+  },
+  {
+    question: "Faites-vous la création de salle de bains ?",
+    answer:
+      "Oui : création ou rénovation complète, des arrivées d'eau et des évacuations jusqu'à la pose de la douche, de la baignoire, du lavabo et des WC. Décrivez votre projet sur la page Devis pour en parler.",
   },
   {
     question: "Le devis est-il gratuit ?",
@@ -50,11 +55,11 @@ export const quotePreparationFaq: FaqItem[] = [
   {
     question: "Quelles informations préparer avant de demander un devis ?",
     answer:
-      "Le type de besoin (débouchage, fuite, installation...), la pièce concernée, depuis quand le problème est constaté, et votre commune d'intervention.",
+      "Quatre choses suffisent : le type de besoin (débouchage, fuite, salle de bains, chauffe-eau...), la pièce concernée, depuis quand le problème dure, et votre commune.",
   },
   {
     question: "Des photos ou vidéos sont-elles utiles ?",
     answer:
-      "Oui, une photo du point concerné (évacuation, tache d'humidité, robinetterie) aide à mieux cerner la demande avant l'intervention.",
+      "Oui. Une photo de l'évacuation, de la tache d'humidité ou de la pièce à refaire aide à comprendre votre demande plus vite et à venir avec le bon matériel.",
   },
 ];

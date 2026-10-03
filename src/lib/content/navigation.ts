@@ -8,6 +8,7 @@ export const primaryNav: NavItem[] = [
   { href: "/urgences", label: "Urgences" },
   { href: "/depannage", label: "Dépannage" },
   { href: "/installation", label: "Installation" },
+  { href: "/salle-de-bains", label: "Salle de bains" },
   { href: "/entretien", label: "Entretien" },
   { href: "/zone-intervention", label: "Zone d'intervention" },
   { href: "/conseils", label: "Conseils" },
@@ -20,6 +21,7 @@ export const headerNav: NavItem[] = [
   { href: "/urgences", label: "Urgences" },
   { href: "/depannage", label: "Dépannage" },
   { href: "/installation", label: "Installation" },
+  { href: "/salle-de-bains", label: "Salle de bains" },
   { href: "/zone-intervention", label: "Zone" },
   { href: "/contact", label: "Contact" },
 ];

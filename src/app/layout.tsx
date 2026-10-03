@@ -28,10 +28,10 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${businessInfo.tradeName} — Plombier chauffagiste à ${businessInfo.city}`,
+    default: `Plombier chauffagiste à ${businessInfo.city} et alentours — ${businessInfo.tradeName}`,
     template: `%s — ${businessInfo.tradeName}`,
   },
-  description: `${businessInfo.ownerName}, plombier chauffagiste à ${businessInfo.city} depuis ${businessInfo.foundingYear} : dépannage, recherche de fuite, chauffe-eau et sanitaires à Lattes, Montpellier, Carnon, Palavas-les-Flots et La Grande-Motte.`,
+  description: `Plombier chauffagiste à ${businessInfo.city} depuis ${businessInfo.foundingYear} : fuite, débouchage, chauffe-eau, chauffage et création de salle de bains à Lattes, Montpellier, Pérols, Carnon, Palavas-les-Flots et La Grande-Motte. Appelez ${businessInfo.ownerName} au ${businessInfo.phone}.`,
   openGraph: {
     type: "website",
     locale: "fr_FR",

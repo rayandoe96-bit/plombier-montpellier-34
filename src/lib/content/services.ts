@@ -6,7 +6,7 @@ export const services: Service[] = [
     navLabel: "Débouchage de canalisation",
     title: "Débouchage rapide de vos canalisations (WC, évier, douche)",
     level: "Standard",
-    need: "Un évier, une douche ou des toilettes qui s'évacuent mal, voire plus du tout : le débouchage traite l'obstruction à la source, sans endommager vos canalisations.",
+    need: "L'eau stagne dans l'évier, la douche se vide au ralenti, les WC débordent ? On trouve le bouchon, on le retire à la source et on vérifie que tout s'écoule normalement, sans abîmer vos canalisations.",
     process: [
       "Écoute du problème et des premiers signes observés (odeurs, remontées, lenteur d'écoulement).",
       "Localisation du bouchon et choix de la méthode adaptée (furet, ventouse professionnelle, etc.).",
@@ -25,7 +25,7 @@ export const services: Service[] = [
     navLabel: "Haute Pression / Hydrocurage",
     title: "Élimination des bouchons tenaces par hydrocurage haute pression",
     level: "Haute Pression",
-    need: "Quand un débouchage classique ne suffit pas, l'hydrocurage haute pression projette de l'eau à forte pression pour décoller les dépôts et bouchons tenaces sur toute la longueur de la canalisation.",
+    need: "Le bouchon revient malgré les débouchages ? L'hydrocurage envoie de l'eau à très forte pression dans la canalisation pour décoller graisses, tartre et dépôts sur toute sa longueur, pas seulement au point bouché.",
     process: [
       "Diagnostic du réseau et identification du ou des points de blocage.",
       "Mise en place du matériel haute pression adapté au diamètre de la canalisation.",
@@ -44,7 +44,7 @@ export const services: Service[] = [
     navLabel: "Curage & Inspection Caméra",
     title: "Diagnostic précis de vos canalisations par inspection caméra",
     level: "Caméra",
-    need: "Une inspection caméra permet de visualiser l'intérieur de la canalisation pour identifier précisément la cause d'un désordre récurrent (fissure, racine, affaissement, bouchon persistant) avant toute intervention lourde.",
+    need: "Toujours le même problème ? Une caméra passée dans la canalisation montre ce qui se passe vraiment à l'intérieur (fissure, racine, affaissement, dépôt) pour réparer la bonne chose, au bon endroit, avant d'engager de gros travaux.",
     process: [
       "Curage préalable de la canalisation si nécessaire.",
       "Introduction d'une caméra d'inspection dans le réseau.",
@@ -63,7 +63,7 @@ export const services: Service[] = [
     navLabel: "Recherche de fuite",
     title: "Détection de fuite d'eau, visible ou invisible, sans casse inutile",
     level: "Diagnostic",
-    need: "Facture d'eau anormalement élevée, humidité persistante, tache suspecte : la recherche de fuite localise précisément l'origine du problème, y compris lorsque la fuite n'est pas visible à l'œil nu.",
+    need: "Facture d'eau qui grimpe, mur humide, tache au plafond ? On localise l'origine exacte de la fuite, même invisible, avant d'ouvrir quoi que ce soit : on ne casse que là où il faut.",
     process: [
       "Analyse des symptômes constatés (humidité, compteur, factures).",
       "Recherche de la fuite avec les méthodes adaptées à la situation.",
@@ -80,9 +80,19 @@ export const services: Service[] = [
 ];
 
 export const installationHighlights: string[] = [
-  "Remplacement et pose de robinetterie",
-  "Installation de sanitaires (WC, lavabo, douche)",
   "Pose ou remplacement de chauffe-eau",
+  "Installation et remplacement de chauffage",
+  "Installation de sanitaires : WC, lavabo, douche",
+  "Remplacement et pose de robinetterie",
+];
+
+export const bathroomHighlights: string[] = [
+  "Création d'une salle de bains dans une pièce neuve ou réaménagée",
+  "Rénovation complète d'une salle de bains existante",
+  "Remplacement d'une baignoire par une douche",
+  "Pose de douche, baignoire, lavabo, meuble vasque et WC",
+  "Arrivées d'eau et évacuations adaptées au nouveau plan",
+  "Robinetterie, mitigeurs et colonne de douche",
 ];
 
 export const entretienHighlights: string[] = [

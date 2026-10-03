@@ -9,7 +9,8 @@ import { businessInfo } from "@/lib/content/business";
 
 export const metadata: Metadata = {
   title: "Demande de devis",
-  description: "Demandez un devis pour votre intervention de plomberie à Montpellier et alentours.",
+  description:
+    "Salle de bains, chauffe-eau, chauffage, sanitaires : décrivez votre projet de plomberie à Lattes, Montpellier ou alentours, on vous rappelle.",
 };
 
 export default function DevisPage() {
@@ -18,8 +19,8 @@ export default function DevisPage() {
       <SectionHeading
         as="h1"
         eyebrow="Devis"
-        title="Demander un devis"
-        description={`Pour une réponse immédiate, vous pouvez aussi nous appeler directement au ${businessInfo.phone}.`}
+        title="Parlez-nous de votre projet"
+        description={`Quelques lignes suffisent, on vous rappelle pour en parler. Pressé ? Appelez directement le ${businessInfo.phone}.`}
       />
 
       <div className="mt-8 grid gap-10 sm:grid-cols-[1.2fr_1fr]">

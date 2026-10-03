@@ -85,7 +85,7 @@ site (composant `ConfirmableValue`) :
 
 Sont confirmés : le téléphone, le tarif de départ (100 €, commun aux services de
 dépannage), les délais (urgence ≤ 2h, standard ≤ 3 jours) et les zones d'intervention
-(Montpellier, Lattes, Carnon, Palavas-les-Flots, La Grande-Motte).
+(Montpellier, Lattes, Pérols, Carnon, Palavas-les-Flots, La Grande-Motte).
 
 Sont également confirmés, via la fiche d'établissement publique (Google Maps) et le
 registre public des entreprises (SIRENE) — croisés sur plusieurs sources

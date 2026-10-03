@@ -6,6 +6,7 @@ export type Confirmable<T> = T | ToConfirm;
 export type ZoneName =
   | "Montpellier"
   | "Lattes"
+  | "Pérols"
   | "Carnon"
   | "Palavas-les-Flots"
   | "La Grande-Motte";

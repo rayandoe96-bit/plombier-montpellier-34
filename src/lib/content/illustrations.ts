@@ -51,4 +51,61 @@ export const illustrations = {
     alt: "Raccords coudés en cuivre",
     source: "https://www.rawpixel.com/image/5947474/free-public-domain-cc0-photo",
   },
+  dripTap: {
+    src: "/images/robinet-goutte.webp",
+    width: 1024,
+    height: 683,
+    alt: "Goutte d'eau tombant d'un robinet extérieur",
+    source: "https://www.rawpixel.com/image/3297121/free-photo-image-water-pipe-dripping-tap",
+  },
+  sinkDrain: {
+    src: "/images/bonde-evier.webp",
+    width: 1024,
+    height: 768,
+    alt: "Bonde d'évacuation en inox vue de près",
+    source: "https://www.rawpixel.com/image/5955796/free-public-domain-cc0-photo",
+  },
+  waterJet: {
+    src: "/images/jet-eau.webp",
+    width: 1024,
+    height: 768,
+    alt: "Jet d'eau sortant d'un tuyau",
+    source: "https://www.rawpixel.com/image/5961453/free-public-domain-cc0-photo",
+  },
+  pipeCamera: {
+    src: "/images/camera-canalisation.webp",
+    width: 1024,
+    height: 681,
+    alt: "Robot caméra d'inspection de canalisation posé près d'un regard",
+    source: "https://www.rawpixel.com/image/9676442/drainage-pipe-inspection",
+  },
+  pipeLeak: {
+    src: "/images/fuite-tuyau.webp",
+    width: 1024,
+    height: 683,
+    alt: "Eau s'échappant d'un raccord de tuyau",
+    source: "https://www.rawpixel.com/image/5943308/free-public-domain-cc0-photo",
+  },
+  bathroom: {
+    src: "/images/salle-de-bains.webp",
+    width: 1024,
+    height: 681,
+    alt: "Salle de bains moderne avec baignoire îlot et douche vitrée",
+    source: "https://www.rawpixel.com/image/5922230/photo-image-public-domain-minimal-house",
+  },
+  tiledShower: {
+    src: "/images/douche-carrelee.webp",
+    width: 1024,
+    height: 683,
+    alt: "Douche carrelée avec mitigeur et douchette",
+    source: "https://www.rawpixel.com/image/6019082/photo-image-public-domain-house-room",
+  },
 } satisfies Record<string, Illustration>;
+
+/** Illustration shown for each troubleshooting service, keyed by service slug. */
+export const serviceIllustrations: Record<string, Illustration> = {
+  "debouchage-canalisation": illustrations.sinkDrain,
+  "haute-pression-hydrocurage": illustrations.waterJet,
+  "curage-inspection-camera": illustrations.pipeCamera,
+  "recherche-de-fuite": illustrations.pipeLeak,
+};
