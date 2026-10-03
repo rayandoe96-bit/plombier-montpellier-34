@@ -6,9 +6,10 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { adviceArticles } from "@/lib/content/advice";
 
 export const metadata: Metadata = {
-  title: "Conseils plomberie",
+  title: "Conseils plomberie : fuite, bouchon, entretien",
   description:
-    "Conseils de plombier : éviter les bouchons, réagir face à une fuite, entretenir son chauffe-eau, préparer sa demande de devis.",
+    "Éviter les bouchons, réagir à une fuite, entretenir son chauffe-eau, préparer un devis : les conseils d'un plombier de Lattes, sans jargon.",
+  alternates: { canonical: "/conseils" },
 };
 
 export default function ConseilsPage() {

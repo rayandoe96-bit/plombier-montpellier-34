@@ -8,9 +8,10 @@ import { illustrations } from "@/lib/content/illustrations";
 import { services } from "@/lib/content/services";
 
 export const metadata: Metadata = {
-  title: "Dépannage plomberie à Lattes : fuite, débouchage, hydrocurage",
+  title: "Dépannage plomberie à Lattes : fuite, bouchon",
   description:
-    "Fuite d'eau, WC ou évier bouché, bouchon qui revient : débouchage, hydrocurage, inspection caméra et recherche de fuite à Lattes, Montpellier et alentours.",
+    "Fuite d'eau, WC ou évier bouché, bouchon qui revient ? Débouchage, hydrocurage, caméra, recherche de fuite : on règle la cause à Lattes et alentours.",
+  alternates: { canonical: "/depannage" },
 };
 
 export default function DepannagePage() {
@@ -18,7 +19,7 @@ export default function DepannagePage() {
     <>
       <Hero
         eyebrow="Dépannage"
-        title="Fuite et dépannage : on règle le problème à la source"
+        title="Fuite et dépannage à Lattes : on règle le problème à la source"
         description="Un évier bouché ne se traite pas comme une fuite encastrée. Du simple débouchage à l'inspection caméra, on choisit la méthode qui règle vraiment votre problème."
         aside={
           <IllustrationImage

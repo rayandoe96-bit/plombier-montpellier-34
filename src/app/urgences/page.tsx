@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { Hero } from "@/components/marketing/Hero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -7,15 +8,27 @@ import { businessInfo, zones } from "@/lib/content/business";
 import { isConfirmed } from "@/lib/content/confirm";
 
 export const metadata: Metadata = {
-  title: "Urgence plombier à Lattes : fuite d'eau, WC bouché",
-  description:
-    "Fuite d'eau, dégât des eaux, WC ou canalisation bouchés : appelez votre plombier à Lattes au 06 31 93 45 14. Intervention à Lattes, Montpellier et alentours.",
+  title: "Urgence plombier à Lattes : fuite, WC bouché",
+  description: `L'eau coule, les WC débordent ? Appelez le ${businessInfo.phone} : l'artisan vous dit quoi faire tout de suite et quand il peut venir. Lattes et alentours.`,
+  alternates: { canonical: "/urgences" },
 };
 
 const urgentSituations = [
-  "Fuite d'eau active ou dégât des eaux en cours",
-  "Canalisation totalement bouchée (WC, évier, douche)",
-  "Panne empêchant l'usage normal d'un sanitaire",
+  {
+    label: "Fuite d'eau active ou dégât des eaux en cours",
+    href: "/depannage/recherche-de-fuite",
+    linkLabel: "Recherche de fuite",
+  },
+  {
+    label: "Canalisation totalement bouchée : WC, évier, douche",
+    href: "/depannage/debouchage-canalisation",
+    linkLabel: "Débouchage",
+  },
+  {
+    label: "Bouchon qui revient malgré les débouchages",
+    href: "/depannage/haute-pression-hydrocurage",
+    linkLabel: "Hydrocurage",
+  },
 ];
 
 export default function UrgencesPage() {
@@ -27,7 +40,7 @@ export default function UrgencesPage() {
         title={
           isConfirmed(businessInfo.emergencyResponseTime)
             ? `Intervention d'urgence ${businessInfo.emergencyResponseTime}`
-            : "Une urgence plomberie ? Appelez directement"
+            : `Urgence plomberie à ${businessInfo.city} ? Appelez directement`
         }
         description={`L'eau coule, les WC débordent ? Appelez le ${businessInfo.phone} : vous parlez directement à l'artisan, qui vous dit quoi faire tout de suite et quand il peut venir. Du lundi au samedi, de 9h à 20h.`}
       />
@@ -36,8 +49,11 @@ export default function UrgencesPage() {
         <SectionHeading eyebrow="Quand nous appeler" title="Quand appeler sans attendre" />
         <ul className="mt-6 grid gap-3 sm:grid-cols-3">
           {urgentSituations.map((situation) => (
-            <li key={situation} className="rounded-xl border border-line p-4 text-sm text-muted">
-              {situation}
+            <li key={situation.href} className="rounded-xl border border-line p-4 text-sm text-muted">
+              {situation.label}
+              <Link href={situation.href} className="mt-2 block font-semibold text-brand-600 underline">
+                {situation.linkLabel} →
+              </Link>
             </li>
           ))}
         </ul>
@@ -49,6 +65,13 @@ export default function UrgencesPage() {
           title="Les 3 gestes qui limitent les dégâts"
           description="Coupez l'arrivée d'eau générale si la fuite est importante, éloignez les objets sensibles à l'humidité, et coupez l'électricité de la zone si l'eau s'en approche."
         />
+        <p className="mt-4 text-sm text-muted">
+          Le détail, avec la photo à prendre pour votre assurance :{" "}
+          <Link href="/conseils/reagir-fuite-eau-urgence" className="font-semibold text-brand-600 underline">
+            les bons réflexes en cas de fuite d&apos;eau
+          </Link>
+          .
+        </p>
       </Container>
 
       <Container className="py-8 sm:py-12">

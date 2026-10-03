@@ -10,9 +10,10 @@ import { CtaGroup } from "@/components/ui/CtaGroup";
 import { installationHighlights } from "@/lib/content/services";
 
 export const metadata: Metadata = {
-  title: "Installation chauffe-eau, chauffage et sanitaires à Lattes",
+  title: "Chauffe-eau, chauffage, sanitaires à Lattes",
   description:
-    "Pose et remplacement de chauffe-eau, chauffage, WC, lavabo, douche et robinetterie à Lattes, Montpellier et alentours. Demandez votre devis.",
+    "Chauffe-eau à changer, chauffage, WC, lavabo, douche, robinetterie : pose et remplacement à Lattes et alentours, faits proprement. Demandez votre devis.",
+  alternates: { canonical: "/installation" },
 };
 
 export default function InstallationPage() {
@@ -20,7 +21,7 @@ export default function InstallationPage() {
     <>
       <Hero
         eyebrow="Installation"
-        title="Chauffe-eau, chauffage, sanitaires : bien posés dès le départ"
+        title="Chauffe-eau, chauffage, sanitaires à Lattes : bien posés dès le départ"
         description="Un équipement neuf mal posé, c'est une panne qui attend son heure. On choisit avec vous ce qui convient à votre logement, puis on l'installe proprement."
         aside={
           <IllustrationImage

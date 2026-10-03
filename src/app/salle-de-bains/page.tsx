@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { Hero } from "@/components/marketing/Hero";
 import { IllustrationImage } from "@/components/ui/IllustrationImage";
@@ -11,9 +12,10 @@ import { bathroomHighlights } from "@/lib/content/services";
 import { businessInfo } from "@/lib/content/business";
 
 export const metadata: Metadata = {
-  title: "Création et rénovation de salle de bains à Lattes",
+  title: "Création de salle de bains à Lattes",
   description:
-    "Créer ou rénover votre salle de bains à Lattes, Montpellier et alentours : arrivées d'eau, évacuations, douche, baignoire, lavabo, WC et robinetterie. Demandez votre devis.",
+    "Créer ou rénover votre salle de bains à Lattes : arrivées d'eau, évacuations, douche, baignoire, WC, posés par un seul artisan. Parlez-nous de votre projet.",
+  alternates: { canonical: "/salle-de-bains" },
 };
 
 const projectSteps = [
@@ -28,7 +30,7 @@ export default function SalleDeBainsPage() {
     <>
       <Hero
         eyebrow="Création de salle de bains"
-        title="La salle de bains que vous voulez, posée par un seul artisan"
+        title="Création de salle de bains à Lattes, par un seul artisan"
         description={`Créer une salle de bains ou refaire l'ancienne : ${businessInfo.ownerName} s'occupe des arrivées d'eau, des évacuations et de la pose de vos équipements, à ${businessInfo.city} et ses alentours.`}
         aside={
           <IllustrationImage
@@ -54,6 +56,13 @@ export default function SalleDeBainsPage() {
             </li>
           ))}
         </ul>
+        <p className="mt-4 text-sm text-muted">
+          Juste un WC, un lavabo ou un chauffe-eau à changer ? Voir l&apos;
+          <Link href="/installation" className="font-semibold text-brand-600 underline">
+            installation de sanitaires et de chauffe-eau
+          </Link>
+          .
+        </p>
       </Container>
 
       <Container className="grid items-center gap-10 py-8 sm:py-12 lg:grid-cols-2">

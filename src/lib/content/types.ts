@@ -23,6 +23,8 @@ export interface Service {
   slug: string;
   navLabel: string;
   title: string;
+  metaTitle: string;
+  metaDescription: string;
   level: ServiceLevel;
   need: string;
   process: string[];

@@ -14,8 +14,9 @@ export async function generateMetadata({
   const service = services.find((item) => item.slug === slug);
   if (!service) return {};
   return {
-    title: service.title,
-    description: service.need,
+    title: service.metaTitle,
+    description: service.metaDescription,
+    alternates: { canonical: `/depannage/${service.slug}` },
   };
 }
 
