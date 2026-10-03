@@ -32,6 +32,9 @@ export const businessInfo = {
   googleReviewsUrl: TO_CONFIRM as Confirmable<string>,
   // Prix d'appel et délais : non confirmés par le client, ne pas les afficher comme acquis.
   priceFrom: TO_CONFIRM as Confirmable<number>,
+  // Prix d'appel du dépannage (fuite, bouchon...), donné le 3 octobre 2026 pour la page d'accueil.
+  // À faire confirmer par le client : TTC ? déplacement inclus ? Ne vaut pas pour les travaux sur devis.
+  repairPriceFrom: 100 as Confirmable<number>,
   emergencyResponseTime: TO_CONFIRM as Confirmable<string>,
   standardResponseTime: TO_CONFIRM as Confirmable<string>,
   email: TO_CONFIRM as Confirmable<string>,
