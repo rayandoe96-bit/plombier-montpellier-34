@@ -38,7 +38,7 @@ export function ServiceDetail({ service }: { service: Service }) {
         <Container className="py-8 sm:py-12">
           <Link
             href={`/conseils/${relatedArticle.slug}`}
-            className="block rounded-xl border border-black/10 p-5 hover:border-brand-500"
+            className="block rounded-xl border border-line p-5 hover:border-brand-500"
           >
             <p className="text-xs font-semibold uppercase tracking-wide text-brand-600">
               Conseil associé
@@ -49,7 +49,7 @@ export function ServiceDetail({ service }: { service: Service }) {
       ) : null}
 
       <Container className="pb-16 pt-4 sm:pb-20">
-        <div className="rounded-2xl border border-black/10 bg-brand-50/50 px-6 py-8 text-center sm:px-10">
+        <div className="rounded-2xl border border-line bg-brand-50/50 px-6 py-8 text-center sm:px-10">
           <h2 className="text-xl font-bold text-foreground">Besoin de ce service ?</h2>
           <CtaGroup className="mt-5 justify-center" />
         </div>

@@ -17,29 +17,26 @@ export function Hero({
   /** Optional right-hand column (e.g. contact card); switches the hero to two columns on large screens. */
   aside?: ReactNode;
 }) {
-  const toneClasses =
-    tone === "urgent"
-      ? "bg-urgent-500/10 text-urgent-600"
-      : "bg-brand-50 text-brand-600";
+  const eyebrowColor = tone === "urgent" ? "text-copper-hi" : "text-on-deep-muted";
 
   return (
-    <section className={`border-b border-black/5 ${tone === "urgent" ? "bg-urgent-500/5" : "bg-brand-50/40"}`}>
+    <section className="bg-blueprint text-on-deep">
       <div
-        className={`mx-auto w-full max-w-5xl px-4 py-10 sm:px-6 sm:py-14 ${
+        className={`mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-14 ${
           aside ? "grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-center" : ""
         }`}
       >
         <div>
         {eyebrow ? (
-          <p className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${toneClasses}`}>
+          <p className={`pipe-tag ${eyebrowColor}`}>
             {eyebrow}
           </p>
         ) : null}
-        <h1 className="mt-3 max-w-2xl text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+        <h1 className="mt-4 max-w-3xl text-balance font-display text-4xl font-black uppercase leading-[0.95] font-condensed sm:text-6xl">
           {title}
         </h1>
-        <p className="mt-4 max-w-xl text-base text-foreground/75">{description}</p>
-        <CtaGroup className="mt-6" />
+        <p className="mt-4 max-w-xl text-lg text-on-deep-muted">{description}</p>
+        <CtaGroup className="mt-7" variant="dark" />
         {extra}
         </div>
         {aside}

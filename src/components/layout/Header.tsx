@@ -1,28 +1,33 @@
 import Link from "next/link";
 import { Container } from "./Container";
 import { MobileNav } from "./MobileNav";
-import { PhoneLink } from "@/components/ui/PhoneLink";
 import { headerNav } from "@/lib/content/navigation";
 import { businessInfo } from "@/lib/content/business";
+import { LogoMark, PhoneIcon } from "@/components/ui/Icons";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-30 h-16 border-b border-black/5 bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-30 h-16 border-b border-white/10 bg-deep/95 text-on-deep backdrop-blur">
       <Container className="flex h-16 items-center justify-between gap-4">
-        <Link href="/" className="flex flex-col leading-tight" aria-label={`${businessInfo.tradeName}, accueil`}>
-          <span className="text-lg font-bold tracking-tight text-brand-700">Devarenne</span>
-          <span className="text-[11px] font-medium uppercase tracking-wider text-foreground/60">
-            Plomberie · Chauffage · {businessInfo.city}
+        <Link href="/" className="flex items-center gap-3" aria-label={`${businessInfo.tradeName}, accueil`}>
+          <LogoMark />
+          <span className="leading-none">
+            <span className="block font-display text-xl font-black uppercase tracking-wide font-condensed">
+              Devarenne
+            </span>
+            <span className="mt-1 block font-mono text-[10px] uppercase tracking-[0.1em] text-on-deep-muted">
+              Plomberie · Chauffage
+            </span>
           </span>
         </Link>
 
         <nav aria-label="Navigation principale" className="hidden lg:block">
-          <ul className="flex items-center gap-6">
+          <ul className="flex items-center gap-7">
             {headerNav.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="whitespace-nowrap text-sm font-medium text-foreground/80 transition-colors hover:text-brand-600"
+                  className="whitespace-nowrap text-sm font-medium text-on-deep-muted transition-colors hover:text-on-deep"
                 >
                   {item.label}
                 </Link>
@@ -31,8 +36,15 @@ export function Header() {
           </ul>
         </nav>
 
-        <div className="flex items-center gap-3">
-          <PhoneLink className="hidden h-10 items-center gap-2 whitespace-nowrap rounded-full bg-brand-500 px-4 text-sm font-semibold text-white transition-colors hover:bg-brand-600 sm:flex" />
+        <div className="flex items-center gap-2">
+          <a
+            href={businessInfo.phoneHref}
+            className="flex h-10 items-center gap-2 whitespace-nowrap rounded-lg bg-copper px-3 text-sm font-bold text-white shadow-[0_6px_16px_-8px_var(--copper)] transition-colors hover:bg-copper-hi sm:px-4"
+          >
+            <PhoneIcon />
+            <span className="hidden font-mono sm:inline">{businessInfo.phone}</span>
+            <span className="sm:hidden">Appeler</span>
+          </a>
           <MobileNav />
         </div>
       </Container>

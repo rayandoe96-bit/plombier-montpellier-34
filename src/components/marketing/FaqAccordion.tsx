@@ -7,7 +7,7 @@ export function FaqAccordion({ items }: { items: FaqItem[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <div className="divide-y divide-black/10 rounded-xl border border-black/10">
+    <div className="divide-y divide-line rounded-2xl border border-line bg-surface">
       {items.map((item, index) => {
         const open = openIndex === index;
         const panelId = `faq-panel-${index}`;
@@ -21,26 +21,22 @@ export function FaqAccordion({ items }: { items: FaqItem[] }) {
                 aria-expanded={open}
                 aria-controls={panelId}
                 onClick={() => setOpenIndex(open ? null : index)}
-                className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-foreground"
+                className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold text-foreground"
               >
                 {item.question}
-                <svg
-                  viewBox="0 0 24 24"
+                <span
                   aria-hidden
-                  className={`h-4 w-4 shrink-0 text-brand-600 transition-transform ${
-                    open ? "rotate-180" : ""
+                  className={`grid h-7 w-7 shrink-0 place-items-center rounded-full font-mono text-lg leading-none transition-transform ${
+                    open ? "rotate-45 bg-copper text-white" : "bg-brand-50 text-brand-500"
                   }`}
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 9l6 6 6-6" />
-                </svg>
+                  +
+                </span>
               </button>
             </h3>
             {open ? (
               <div id={panelId} role="region" aria-labelledby={buttonId} className="px-5 pb-4">
-                <p className="text-sm text-foreground/75">{item.answer}</p>
+                <p className="text-sm text-muted">{item.answer}</p>
               </div>
             ) : null}
           </div>

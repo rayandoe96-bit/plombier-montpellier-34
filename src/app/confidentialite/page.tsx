@@ -14,7 +14,7 @@ export default function ConfidentialitePage() {
     <Container className="py-10 sm:py-14">
       <SectionHeading as="h1" title="Confidentialité et données personnelles" />
 
-      <div className="mt-8 max-w-xl space-y-6 text-sm text-foreground/80">
+      <div className="mt-8 max-w-xl space-y-6 text-sm text-muted">
         <div>
           <h2 className="text-base font-semibold text-foreground">
             Formulaire de devis et de contact

@@ -18,35 +18,35 @@ export default function ContactPage() {
       <SectionHeading as="h1" eyebrow="Contact" title="Nous contacter" />
 
       <div className="mt-8 grid gap-6 sm:grid-cols-2">
-        <div className="rounded-xl border border-black/10 p-6">
+        <div className="rounded-xl border border-line p-6">
           <p className="text-sm font-semibold text-foreground">Téléphone</p>
           <PhoneLink className="mt-1 block text-lg font-bold text-brand-600" />
 
           {isVisible(businessInfo.email) ? (
             <>
               <p className="mt-4 text-sm font-semibold text-foreground">E-mail</p>
-              <p className="mt-1 text-sm text-foreground/70">
+              <p className="mt-1 text-sm text-muted">
                 <ConfirmableValue value={businessInfo.email} />
               </p>
             </>
           ) : null}
 
           <p className="mt-4 text-sm font-semibold text-foreground">Adresse</p>
-          <p className="mt-1 text-sm text-foreground/70">
+          <p className="mt-1 text-sm text-muted">
             {businessInfo.address}
           </p>
 
           <p className="mt-4 text-sm font-semibold text-foreground">Horaires</p>
-          <p className="mt-1 text-sm text-foreground/70">
+          <p className="mt-1 text-sm text-muted">
             <ConfirmableValue value={businessInfo.hours} />
           </p>
 
           <CtaGroup className="mt-6" />
         </div>
 
-        <div className="rounded-xl border border-black/10 p-6">
+        <div className="rounded-xl border border-line p-6">
           <p className="text-sm font-semibold text-foreground">Zone d&apos;intervention</p>
-          <ul className="mt-3 space-y-1 text-sm text-foreground/70">
+          <ul className="mt-3 space-y-1 text-sm text-muted">
             {zones.map((zone) => (
               <li key={zone.name}>{zone.name}</li>
             ))}

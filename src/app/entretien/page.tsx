@@ -29,7 +29,7 @@ export default function EntretienPage() {
         <SectionHeading eyebrow="Nos prestations" title="Ce que couvre notre entretien" />
         <ul className="mt-6 grid gap-3 sm:grid-cols-3">
           {entretienHighlights.map((item) => (
-            <li key={item} className="rounded-xl border border-black/10 p-4 text-sm text-foreground/80">
+            <li key={item} className="rounded-xl border border-line p-4 text-sm text-muted">
               {item}
             </li>
           ))}
@@ -40,7 +40,7 @@ export default function EntretienPage() {
         <Container className="py-8 sm:py-12">
           <Link
             href={`/conseils/${preventiveArticle.slug}`}
-            className="block rounded-xl border border-black/10 p-5 hover:border-brand-500"
+            className="block rounded-xl border border-line p-5 hover:border-brand-500"
           >
             <p className="text-xs font-semibold uppercase tracking-wide text-brand-600">Conseil</p>
             <p className="mt-1 text-sm font-semibold text-foreground">{preventiveArticle.title}</p>
@@ -49,7 +49,7 @@ export default function EntretienPage() {
       ) : null}
 
       <Container className="pb-16 pt-4 sm:pb-20">
-        <div className="rounded-2xl border border-black/10 bg-brand-50/50 px-6 py-8 text-center sm:px-10">
+        <div className="rounded-2xl border border-line bg-brand-50/50 px-6 py-8 text-center sm:px-10">
           <h2 className="text-xl font-bold text-foreground">Planifier un entretien ?</h2>
           <CtaGroup className="mt-5 justify-center" />
         </div>

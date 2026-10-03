@@ -16,7 +16,7 @@ export function TrustNotice() {
       <dl className="mt-3 space-y-2">
         {items.map((item) => (
           <div key={item.label} className="flex flex-col text-sm sm:flex-row sm:gap-2">
-            <dt className="font-medium text-foreground/80 sm:w-56 sm:shrink-0">{item.label}</dt>
+            <dt className="font-medium text-muted sm:w-56 sm:shrink-0">{item.label}</dt>
             <dd>
               <ConfirmableValue value={item.value} />
             </dd>

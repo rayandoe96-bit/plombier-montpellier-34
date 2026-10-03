@@ -6,26 +6,26 @@ import { zones, businessInfo } from "@/lib/content/business";
 
 export function Footer() {
   return (
-    <footer className="mt-16 border-t border-black/10 bg-brand-700 pb-24 pt-10 text-white sm:pb-10">
+    <footer className="border-t border-white/10 bg-deep pb-24 pt-10 text-on-deep sm:pb-10">
       <Container className="grid gap-8 sm:grid-cols-3">
         <div>
-          <p className="text-lg font-bold">{businessInfo.tradeName}</p>
-          <p className="mt-2 text-sm text-white/80">
+          <p className="font-display text-xl font-extrabold uppercase font-condensed">{businessInfo.tradeName}</p>
+          <p className="mt-2 text-sm text-on-deep-muted">
             {businessInfo.ownerName}, plombier chauffagiste à {businessInfo.city} depuis{" "}
             {businessInfo.foundingYear}.
           </p>
-          <p className="mt-2 text-sm text-white/80">{businessInfo.address}</p>
-          <PhoneLink className="mt-4 inline-flex min-h-11 items-center gap-2 whitespace-nowrap rounded-full bg-white px-4 text-sm font-semibold text-brand-700" />
+          <p className="mt-2 text-sm text-on-deep-muted">{businessInfo.address}</p>
+          <PhoneLink className="mt-4 inline-flex min-h-11 items-center gap-2 whitespace-nowrap rounded-lg bg-copper px-4 font-mono text-sm font-semibold text-white hover:bg-copper-hi" />
         </div>
 
         <div>
-          <p className="text-sm font-semibold uppercase tracking-wide text-white/60">
+          <p className="text-sm font-mono font-medium uppercase tracking-[0.12em] text-on-deep-muted/70">
             Navigation
           </p>
           <ul className="mt-2">
             {primaryNav.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="inline-flex min-h-10 items-center text-sm text-white/85 hover:text-white">
+                <Link href={item.href} className="inline-flex min-h-10 items-center text-sm text-on-deep-muted hover:text-on-deep">
                   {item.label}
                 </Link>
               </li>
@@ -34,12 +34,12 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="text-sm font-semibold uppercase tracking-wide text-white/60">
+          <p className="text-sm font-mono font-medium uppercase tracking-[0.12em] text-on-deep-muted/70">
             Zone d&apos;intervention
           </p>
           <ul className="mt-3 space-y-2">
             {zones.map((zone) => (
-              <li key={zone.name} className="text-sm text-white/85">
+              <li key={zone.name} className="text-sm text-on-deep-muted">
                 {zone.name}
               </li>
             ))}
@@ -47,12 +47,12 @@ export function Footer() {
         </div>
       </Container>
 
-      <Container className="mt-10 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between">
+      <Container className="mt-10 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-on-deep-muted/70 sm:flex-row sm:items-center sm:justify-between">
         <p>© {new Date().getFullYear()} {businessInfo.tradeName}.</p>
         <ul className="flex gap-4">
           {footerLegalNav.map((item) => (
             <li key={item.href}>
-              <Link href={item.href} className="inline-flex min-h-10 items-center hover:text-white">
+              <Link href={item.href} className="inline-flex min-h-10 items-center hover:text-on-deep">
                 {item.label}
               </Link>
             </li>

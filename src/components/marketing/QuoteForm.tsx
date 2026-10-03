@@ -9,7 +9,7 @@ const endpoint = process.env.NEXT_PUBLIC_QUOTE_FORM_ENDPOINT;
 
 type Status = "idle" | "sending" | "sent" | "error";
 
-const fieldClasses = "mt-1 h-11 w-full rounded-lg border border-black/15 px-3 text-base sm:text-sm";
+const fieldClasses = "mt-1 h-11 w-full rounded-lg border border-line px-3 text-base sm:text-sm";
 
 function CallFallback({ intro }: { intro: string }) {
   return (
@@ -63,7 +63,7 @@ export function QuoteForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <p className="text-sm text-foreground/65">
+      <p className="text-sm text-muted">
         Les champs marqués <span aria-hidden="true">*</span>
         <span className="sr-only">d&apos;un astérisque</span> sont obligatoires.
       </p>
@@ -112,6 +112,7 @@ export function QuoteForm() {
               ))}
             </optgroup>
             <option value="installation">Installation (chauffe-eau, sanitaires…)</option>
+            <option value="installation-chauffage">Installation de chauffage</option>
             <option value="entretien">Entretien</option>
             <option value="autre">Autre</option>
           </select>
@@ -126,7 +127,7 @@ export function QuoteForm() {
           id="message"
           name="message"
           rows={4}
-          className="mt-1 w-full rounded-lg border border-black/15 px-3 py-2 text-base sm:text-sm"
+          className="mt-1 w-full rounded-lg border border-line px-3 py-2 text-base sm:text-sm"
         />
       </div>
 
@@ -139,7 +140,7 @@ export function QuoteForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="h-12 w-full rounded-full bg-brand-500 text-sm font-semibold text-white transition-colors hover:bg-brand-600 disabled:opacity-60 sm:w-auto sm:px-8"
+        className="h-12 w-full rounded-lg bg-brand-500 font-bold text-white transition-colors hover:bg-brand-600 disabled:opacity-60 sm:w-auto sm:px-8"
       >
         {status === "sending" ? "Envoi en cours…" : "Envoyer ma demande"}
       </button>

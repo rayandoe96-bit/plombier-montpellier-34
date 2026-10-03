@@ -30,20 +30,20 @@ export default function MentionsLegalesPage() {
       <dl className="mt-8 max-w-xl space-y-3">
         {fields.map((field) => (
           <div key={field.label} className="flex flex-col text-sm sm:flex-row sm:gap-2">
-            <dt className="font-medium text-foreground/80 sm:w-56 sm:shrink-0">{field.label}</dt>
+            <dt className="font-medium text-muted sm:w-56 sm:shrink-0">{field.label}</dt>
             <dd>
               <ConfirmableValue value={field.value} />
             </dd>
           </div>
         ))}
         <div className="flex flex-col text-sm sm:flex-row sm:gap-2">
-          <dt className="font-medium text-foreground/80 sm:w-56 sm:shrink-0">Téléphone</dt>
+          <dt className="font-medium text-muted sm:w-56 sm:shrink-0">Téléphone</dt>
           <dd>{businessInfo.phone}</dd>
         </div>
       </dl>
 
       {showToConfirm ? (
-        <p className="mt-8 max-w-xl text-sm text-foreground/60">
+        <p className="mt-8 max-w-xl text-sm text-muted">
           Les informations d&apos;identification ci-dessus proviennent du registre public des
           entreprises et restent à valider par l&apos;exploitant avant publication définitive.
         </p>

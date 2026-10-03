@@ -3,10 +3,10 @@ export function ProcessSteps({ steps }: { steps: string[] }) {
     <ol className="space-y-4">
       {steps.map((step, index) => (
         <li key={step} className="flex gap-4">
-          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-500 text-sm font-bold text-white">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-4 border-copper bg-surface font-display text-sm font-black text-foreground">
             {index + 1}
           </span>
-          <p className="pt-1 text-sm text-foreground/80">{step}</p>
+          <p className="pt-1 text-sm text-muted">{step}</p>
         </li>
       ))}
     </ol>

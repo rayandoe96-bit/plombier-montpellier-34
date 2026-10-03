@@ -18,7 +18,18 @@ function formatTime(time: string) {
   return minutes === "00" ? `${Number(hours)}h` : `${Number(hours)}h${minutes}`;
 }
 
-export function OpeningHoursList({ slots, className = "" }: { slots: OpeningSlot[]; className?: string }) {
+export function OpeningHoursList({
+  slots,
+  className = "",
+  tone = "light",
+}: {
+  slots: OpeningSlot[];
+  className?: string;
+  tone?: "light" | "dark";
+}) {
+  const todayClasses = tone === "dark" ? "bg-white/10 font-semibold text-on-deep" : "bg-brand-50 font-semibold text-brand-700";
+  const otherClasses = tone === "dark" ? "text-on-deep-muted" : "text-muted";
+
   // Server render has no "today" (null) so the markup matches before hydration.
   const today = useSyncExternalStore(subscribe, getParisWeekday, () => null);
 
@@ -30,7 +41,7 @@ export function OpeningHoursList({ slots, className = "" }: { slots: OpeningSlot
           <div
             key={slot.day}
             className={`flex justify-between gap-4 rounded px-2 py-0.5 ${
-              isToday ? "bg-brand-50 font-semibold text-brand-700" : "text-foreground/75"
+              isToday ? todayClasses : otherClasses
             }`}
           >
             <dt>

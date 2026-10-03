@@ -26,6 +26,14 @@ const allGeneralFaq: FaqItem[] = [
     answer: businessInfo.hours,
   },
   {
+    question: "Où êtes-vous installé ?",
+    answer: `L'entreprise est installée au ${businessInfo.address}, depuis ${businessInfo.foundingYear}.`,
+  },
+  {
+    question: "Quel est le moyen le plus rapide de vous joindre ?",
+    answer: `Le téléphone : ${businessInfo.phone}. Vous parlez directement à ${businessInfo.ownerName}. Pour une demande non urgente, vous pouvez aussi passer par la page Devis.`,
+  },
+  {
     question: "Le devis est-il gratuit ?",
     answer: TO_CONFIRM,
   },

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { businessInfo } from "@/lib/content/business";
+import { PhoneIcon } from "./Icons";
 
 export function CtaGroup({
   className = "",
@@ -10,28 +11,26 @@ export function CtaGroup({
   className?: string;
   callLabel?: string;
   quoteLabel?: string;
+  /** "dark" when the group sits on a deep-blue band. */
   variant?: "light" | "dark";
 }) {
-  const callClasses =
-    variant === "dark"
-      ? "bg-white text-brand-700 hover:bg-white/90"
-      : "bg-brand-500 text-white hover:bg-brand-600";
   const quoteClasses =
     variant === "dark"
-      ? "border border-white text-white hover:bg-white/10"
-      : "border border-brand-500 text-brand-600 hover:bg-brand-50";
+      ? "border-white/30 text-on-deep hover:border-white"
+      : "border-line bg-surface text-foreground hover:border-foreground";
 
   return (
     <div className={`flex flex-col gap-3 sm:flex-row ${className}`}>
       <a
         href={businessInfo.phoneHref}
-        className={`flex h-12 items-center justify-center gap-2 rounded-full px-6 text-base font-semibold transition-colors ${callClasses}`}
+        className="flex min-h-12 items-center justify-center gap-2 rounded-lg bg-copper px-6 text-base font-bold text-white shadow-[0_6px_16px_-8px_var(--copper)] transition-colors hover:bg-copper-hi"
       >
+        <PhoneIcon />
         {callLabel}
       </a>
       <Link
         href="/devis"
-        className={`flex h-12 items-center justify-center gap-2 rounded-full px-6 text-base font-semibold transition-colors ${quoteClasses}`}
+        className={`flex min-h-12 items-center justify-center rounded-lg border-[1.5px] px-6 text-base font-bold transition-colors ${quoteClasses}`}
       >
         {quoteLabel}
       </Link>
