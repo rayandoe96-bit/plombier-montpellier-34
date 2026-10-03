@@ -42,7 +42,7 @@ export default function UrgencesPage() {
             ? `Intervention d'urgence ${businessInfo.emergencyResponseTime}`
             : `Urgence plomberie à ${businessInfo.city} ? Appelez directement`
         }
-        description={`L'eau coule, les WC débordent ? Appelez le ${businessInfo.phone} : vous parlez directement à l'artisan, qui vous dit quoi faire tout de suite et quand il peut venir. Du lundi au samedi, de 9h à 20h.`}
+        description={`L'eau coule, les WC débordent ? Appelez le ${businessInfo.phone} : vous parlez directement à l'artisan, qui vous dit quoi faire tout de suite et quand il peut venir. Du lundi au samedi, de 8h à 20h.`}
       />
 
       <Container className="py-10 sm:py-14">

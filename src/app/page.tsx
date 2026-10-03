@@ -320,7 +320,7 @@ export default function Home() {
             {[
               { value: String(businessInfo.foundingYear), label: `installé à ${businessInfo.city}` },
               { value: `${ratingValue} ★`, label: `${ratingCount} avis Google` },
-              { value: "Lun – sam", label: "dès 9h, fermé le dimanche" },
+              { value: "Lun – sam", label: "dès 8h, fermé le dimanche" },
               { value: `${zones.length} communes`, label: `${businessInfo.city} et ses alentours` },
             ].map((proof, index) => (
               <li
