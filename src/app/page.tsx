@@ -56,6 +56,12 @@ const projects: ProblemCard[] = [
   },
   {
     href: "/installation",
+    icon: icons.radiator,
+    title: "Installation de chauffage",
+    text: "Installation et remplacement de votre système de chauffage.",
+  },
+  {
+    href: "/installation",
     icon: icons.shower,
     title: "Sanitaires et robinetterie",
     text: "WC, lavabo, douche, robinets : pose et remplacement.",
@@ -215,7 +221,7 @@ export default function Home() {
               <div className="grid content-start gap-2 rounded-2xl border border-white/15 bg-white/5 p-5">
                 <span className="font-mono text-xs font-semibold uppercase tracking-[0.1em] text-[#7dbce6]">Projet</span>
                 <h2 className="text-2xl font-extrabold uppercase leading-none font-condensed">
-                  Chauffe-eau, sanitaires, robinetterie
+                  Chauffe-eau, chauffage, sanitaires
                 </h2>
                 <p className="text-sm text-on-deep-muted">Décrivez votre besoin, on vous recontacte pour en parler.</p>
                 <Link
@@ -274,7 +280,7 @@ export default function Home() {
           </div>
           <div className="mt-10">
             <GroupLabel>Installation et entretien</GroupLabel>
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {projects.map((card) => (
                 <ProblemTile key={card.title} card={card} accent={false} />
               ))}

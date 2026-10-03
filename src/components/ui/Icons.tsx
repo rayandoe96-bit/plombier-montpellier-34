@@ -45,6 +45,13 @@ export const icons = {
       <path d="M15 11l5-3v8l-5-3" />
     </Line>
   ),
+  radiator: (
+    <Line>
+      <path d="M5 6v12M9.5 6v12M14 6v12M18.5 6v12" />
+      <path d="M3 9h18M3 15h18" />
+      <path d="M5 18v2M18.5 18v2" />
+    </Line>
+  ),
   heater: (
     <Line>
       <rect x="7" y="2.5" width="10" height="17" rx="3" />

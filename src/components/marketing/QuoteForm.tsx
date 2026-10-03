@@ -112,6 +112,7 @@ export function QuoteForm() {
               ))}
             </optgroup>
             <option value="installation">Installation (chauffe-eau, sanitaires…)</option>
+            <option value="installation-chauffage">Installation de chauffage</option>
             <option value="entretien">Entretien</option>
             <option value="autre">Autre</option>
           </select>
