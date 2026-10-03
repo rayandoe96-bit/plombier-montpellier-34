@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/layout/Container";
 import { Hero } from "@/components/marketing/Hero";
+import { IllustrationImage } from "@/components/ui/IllustrationImage";
+import { illustrations } from "@/lib/content/illustrations";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PriceFactors } from "@/components/marketing/PriceFactors";
 import { CtaGroup } from "@/components/ui/CtaGroup";
@@ -18,6 +20,14 @@ export default function InstallationPage() {
         eyebrow="Installation"
         title="Installation de vos équipements de plomberie"
         description="Robinetterie, sanitaires ou chauffe-eau : une installation posée dans les règles, adaptée à votre logement."
+        aside={
+          <IllustrationImage
+            image={illustrations.copperFittings}
+            className="aspect-[4/3] rounded-2xl border border-white/10"
+            sizes="(min-width: 1024px) 20rem, 100vw"
+            priority
+          />
+        }
       />
 
       <Container className="py-10 sm:py-14">
