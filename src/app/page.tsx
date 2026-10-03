@@ -5,6 +5,8 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FaqAccordion } from "@/components/marketing/FaqAccordion";
 import { OpeningHoursList } from "@/components/ui/OpeningHoursList";
 import { icons, PhoneIcon } from "@/components/ui/Icons";
+import { IllustrationImage } from "@/components/ui/IllustrationImage";
+import { illustrations, type Illustration } from "@/lib/content/illustrations";
 import { businessInfo, openingHours, zones } from "@/lib/content/business";
 import { isConfirmed } from "@/lib/content/confirm";
 import { adviceArticles } from "@/lib/content/advice";
@@ -47,29 +49,33 @@ const repairs: ProblemCard[] = [
   },
 ];
 
-const projects: ProblemCard[] = [
+const projects: (ProblemCard & { image: Illustration })[] = [
   {
     href: "/installation",
     icon: icons.heater,
     title: "Chauffe-eau",
+    image: illustrations.waterSupply,
     text: "Pose ou remplacement de votre chauffe-eau.",
   },
   {
     href: "/installation",
     icon: icons.radiator,
     title: "Installation de chauffage",
+    image: illustrations.radiator,
     text: "Installation et remplacement de votre système de chauffage.",
   },
   {
     href: "/installation",
     icon: icons.shower,
     title: "Sanitaires et robinetterie",
+    image: illustrations.bathMixer,
     text: "WC, lavabo, douche, robinets : pose et remplacement.",
   },
   {
     href: "/entretien",
     icon: icons.wrench,
     title: "Entretien",
+    image: illustrations.workbench,
     text: "Canalisations, installation sanitaire, chauffe-eau : prévenir plutôt que réparer.",
   },
 ];
@@ -125,6 +131,29 @@ function ProblemTile({ card, accent }: { card: ProblemCard; accent: boolean }) {
       <h3 className="text-lg font-bold leading-tight">{card.title}</h3>
       <p className="flex-1 text-sm text-muted">{card.text}</p>
       <span className="mt-1 text-sm font-semibold text-brand-500 group-hover:underline">En savoir plus →</span>
+    </Link>
+  );
+}
+
+function ProjectTile({ card }: { card: ProblemCard & { image: Illustration } }) {
+  return (
+    <Link
+      href={card.href}
+      className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-surface transition hover:-translate-y-0.5 hover:border-transparent hover:shadow-[0_1px_2px_rgba(16,34,48,.06),0_8px_24px_-12px_rgba(16,34,48,.18)]"
+    >
+      <IllustrationImage
+        image={card.image}
+        className="aspect-[3/2]"
+        sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+      />
+      <div className="flex flex-1 flex-col gap-2 p-5">
+        <h3 className="flex items-center gap-2 text-lg font-bold leading-tight">
+          <span className="text-brand-500">{card.icon}</span>
+          {card.title}
+        </h3>
+        <p className="flex-1 text-sm text-muted">{card.text}</p>
+        <span className="mt-1 text-sm font-semibold text-brand-500 group-hover:underline">En savoir plus →</span>
+      </div>
     </Link>
   );
 }
@@ -282,7 +311,7 @@ export default function Home() {
             <GroupLabel>Installation et entretien</GroupLabel>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {projects.map((card) => (
-                <ProblemTile key={card.title} card={card} accent={false} />
+                <ProjectTile key={card.title} card={card} />
               ))}
             </div>
           </div>
@@ -344,10 +373,12 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-2xl bg-blueprint p-8 text-on-deep">
+          <div className="relative">
+            <IllustrationImage image={illustrations.tools} className="aspect-[4/3] rounded-2xl" />
+            <div className="relative -mt-16 ml-4 mr-4 rounded-2xl bg-blueprint p-6 text-on-deep shadow-[0_24px_50px_-24px_rgba(0,0,0,.7)] sm:-mt-24 sm:ml-8 sm:mr-auto sm:max-w-sm">
             <p className="pipe-tag text-copper-hi">Avis Google</p>
             <p className="mt-5 flex items-end gap-4">
-              <span className="font-display text-7xl font-black leading-none font-condensed">{ratingValue}</span>
+              <span className="font-display text-6xl font-black leading-none font-condensed">{ratingValue}</span>
               <span className="pb-2">
                 <Stars />
                 <span className="block text-sm text-on-deep-muted">sur 5, {ratingCount} avis</span>
@@ -363,7 +394,8 @@ export default function Home() {
                 Lire les avis sur Google
               </a>
             ) : null}
-            <div className="mt-8 inline-grid rounded-lg bg-copper px-4 py-3 text-white">
+            </div>
+            <div className="absolute left-4 top-4 inline-grid rounded-lg bg-copper px-4 py-3 text-white shadow-lg">
               <b className="font-display text-2xl font-black leading-none">{businessInfo.foundingYear}</b>
               <span className="text-xs">installé à {businessInfo.city}</span>
             </div>

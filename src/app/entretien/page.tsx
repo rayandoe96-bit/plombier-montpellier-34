@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { Hero } from "@/components/marketing/Hero";
+import { IllustrationImage } from "@/components/ui/IllustrationImage";
+import { illustrations } from "@/lib/content/illustrations";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CtaGroup } from "@/components/ui/CtaGroup";
 import { entretienHighlights } from "@/lib/content/services";
@@ -23,6 +25,14 @@ export default function EntretienPage() {
         eyebrow="Entretien"
         title="Un entretien régulier pour éviter les pannes"
         description="Un contrôle préventif permet d'anticiper l'usure et de limiter les interventions d'urgence."
+        aside={
+          <IllustrationImage
+            image={illustrations.workbench}
+            className="aspect-[4/3] rounded-2xl border border-white/10"
+            sizes="(min-width: 1024px) 20rem, 100vw"
+            priority
+          />
+        }
       />
 
       <Container className="py-10 sm:py-14">
