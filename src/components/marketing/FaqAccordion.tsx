@@ -34,11 +34,10 @@ export function FaqAccordion({ items }: { items: FaqItem[] }) {
                 </span>
               </button>
             </h3>
-            {open ? (
-              <div id={panelId} role="region" aria-labelledby={buttonId} className="px-5 pb-4">
-                <p className="text-sm text-muted">{item.answer}</p>
-              </div>
-            ) : null}
+            {/* Always rendered so answers stay in the HTML for search engines; hidden when closed. */}
+            <div id={panelId} role="region" aria-labelledby={buttonId} hidden={!open} className="px-5 pb-4">
+              <p className="text-sm text-muted">{item.answer}</p>
+            </div>
           </div>
         );
       })}

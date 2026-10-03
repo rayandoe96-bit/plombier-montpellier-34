@@ -8,6 +8,8 @@ import { isVisible, showToConfirm } from "@/lib/content/confirm";
 
 export const metadata: Metadata = {
   title: "Mentions légales",
+  description: "Mentions légales du site Devarenne Plomberie Chauffage, plombier chauffagiste à Lattes.",
+  robots: { index: false, follow: true },
 };
 
 const fields: { label: string; value: Confirmable<string> }[] = [

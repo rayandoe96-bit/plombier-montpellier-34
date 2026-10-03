@@ -5,7 +5,7 @@ export const adviceArticles: AdviceArticle[] = [
     slug: "eviter-bouchons-canalisation",
     title: "5 gestes pour éviter les bouchons de canalisation",
     summary:
-      "Des habitudes simples au quotidien pour limiter les obstructions dans vos éviers, douches et WC.",
+      "Graisses, cheveux, lingettes : 5 gestes simples pour éviter les bouchons dans l'évier, la douche et les WC, et savoir quand appeler un plombier.",
     body: [
       "Les bouchons de canalisation sont souvent la conséquence d'habitudes du quotidien plutôt que d'un défaut de l'installation. Quelques gestes simples permettent de réduire fortement les risques.",
       "1. Évitez de jeter les graisses de cuisson dans l'évier : elles se solidifient en refroidissant et se déposent le long des parois de la canalisation.",
@@ -19,9 +19,9 @@ export const adviceArticles: AdviceArticle[] = [
   },
   {
     slug: "reagir-fuite-eau-urgence",
-    title: "Fuite d'eau : les bons réflexes en attendant l'intervention",
+    title: "Fuite d'eau : les bons réflexes en attendant le plombier",
     summary:
-      "Les gestes à adopter dès la découverte d'une fuite pour limiter les dégâts avant l'arrivée du plombier.",
+      "Une fuite chez vous ? Les 5 réflexes à avoir tout de suite pour limiter les dégâts et préparer votre déclaration d'assurance.",
     body: [
       "Face à une fuite d'eau, les premières minutes comptent pour limiter les dégâts matériels.",
       "Coupez l'arrivée d'eau générale si la fuite est importante ou si son origine n'est pas identifiée.",
@@ -36,7 +36,7 @@ export const adviceArticles: AdviceArticle[] = [
     slug: "preparer-demande-devis",
     title: "Bien préparer sa demande de devis plomberie",
     summary:
-      "Les informations à rassembler pour obtenir une estimation adaptée à votre situation le plus rapidement possible.",
+      "Type de besoin, pièce, ancienneté du problème, commune, photo : ce qu'il faut préparer pour obtenir un devis plomberie juste, plus vite.",
     body: [
       "Un devis précis repose sur une description claire de votre besoin. Voici ce qu'il est utile de rassembler avant de nous contacter.",
       "Le type d'intervention souhaité : débouchage, recherche de fuite, installation, entretien...",
@@ -48,9 +48,9 @@ export const adviceArticles: AdviceArticle[] = [
   },
   {
     slug: "entretien-preventif-canalisations",
-    title: "Entretien préventif : les bons réflexes toute l'année",
+    title: "Entretien plomberie et chauffe-eau : les bons réflexes",
     summary:
-      "Pourquoi et comment entretenir régulièrement vos canalisations et votre chauffe-eau pour éviter les pannes.",
+      "Écoulement qui ralentit, chauffe-eau à contrôler : les bons réflexes d'entretien pour éviter pannes et fuites toute l'année.",
     body: [
       "Un entretien régulier permet d'éviter une grande partie des pannes de plomberie les plus fréquentes.",
       "Surveillez la vitesse d'écoulement de vos éviers et douches : un ralentissement progressif est souvent le premier signe d'un dépôt qui se forme.",

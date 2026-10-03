@@ -28,10 +28,11 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `Plombier chauffagiste à ${businessInfo.city} et alentours — ${businessInfo.tradeName}`,
-    template: `%s — ${businessInfo.tradeName}`,
+    default: `Plombier chauffagiste à ${businessInfo.city} | ${businessInfo.tradeName}`,
+    template: "%s | Devarenne Plomberie",
   },
-  description: `Plombier chauffagiste à ${businessInfo.city} depuis ${businessInfo.foundingYear} : fuite, débouchage, chauffe-eau, chauffage et création de salle de bains à Lattes, Montpellier, Pérols, Carnon, Palavas-les-Flots et La Grande-Motte. Appelez ${businessInfo.ownerName} au ${businessInfo.phone}.`,
+  description: `Fuite, WC bouché, chauffe-eau en panne, salle de bains à créer ? ${businessInfo.ownerName}, plombier chauffagiste à ${businessInfo.city} depuis ${businessInfo.foundingYear}. Appelez le ${businessInfo.phone}.`,
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "fr_FR",
