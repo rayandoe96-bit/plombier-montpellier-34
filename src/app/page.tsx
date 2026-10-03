@@ -50,6 +50,13 @@ const repairs: ProblemCard[] = [
   },
 ];
 
+const leakPoints = [
+  "Fuite visible : joint, raccord, flexible, tuyau percé",
+  "Fuite cachée : mur humide, tache au plafond, compteur qui tourne",
+  "Recherche de fuite, même invisible, avant d'ouvrir",
+  "Réparation une fois l'origine trouvée",
+];
+
 const projects: (ProblemCard & { image: Illustration })[] = [
   {
     href: "/installation",
@@ -116,23 +123,56 @@ function GroupLabel({ children, accent = false }: { children: ReactNode; accent?
   );
 }
 
-function ProblemTile({ card, accent }: { card: ProblemCard; accent: boolean }) {
+function RepairLink({ card }: { card: ProblemCard }) {
   return (
-    <Link
-      href={card.href}
-      className="group flex flex-col gap-2 rounded-2xl border border-line bg-surface p-5 transition hover:-translate-y-0.5 hover:border-transparent hover:shadow-[0_1px_2px_rgba(16,34,48,.06),0_8px_24px_-12px_rgba(16,34,48,.18)]"
-    >
-      <span
-        className={`mb-1 grid h-11 w-11 place-items-center rounded-xl ${
-          accent ? "bg-copper/10 text-copper" : "bg-brand-50 text-brand-500"
-        }`}
-      >
-        {card.icon}
+    <Link href={card.href} className="group flex gap-3 rounded-xl p-2 transition-colors hover:bg-copper/5">
+      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-copper/10 text-copper">{card.icon}</span>
+      <span className="min-w-0">
+        <span className="block font-bold leading-tight group-hover:underline">{card.title}</span>
+        <span className="mt-0.5 block text-sm text-muted">{card.text}</span>
       </span>
-      <h3 className="text-lg font-bold leading-tight">{card.title}</h3>
-      <p className="flex-1 text-sm text-muted">{card.text}</p>
-      <span className="mt-1 text-sm font-semibold text-brand-500 group-hover:underline">En savoir plus →</span>
     </Link>
+  );
+}
+
+function RepairCard() {
+  const hasPrice = isConfirmed(businessInfo.repairPriceFrom);
+  return (
+    <div className="grid gap-6 rounded-2xl border border-line bg-surface p-5 sm:p-7 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:items-center lg:gap-10">
+      <div className="grid gap-3">
+        <h3 className="text-xl font-bold leading-tight">Fuite, bouchon, panne d&apos;eau chaude : un seul numéro</h3>
+        <p className="text-muted">
+          Vous décrivez le problème au téléphone, {firstName} vous dit quand il peut passer et ce que ça va coûter
+          avant de commencer.
+        </p>
+        <ul className="mt-2 grid gap-2 sm:grid-cols-2">
+          {repairs.map((card) => (
+            <li key={card.title}>
+              <RepairLink card={card} />
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="grid justify-items-center gap-3 rounded-xl border border-dashed border-line p-6 text-center">
+        {hasPrice ? (
+          <p className="flex items-baseline gap-2">
+            <span className="text-muted">dès</span>
+            <span className="font-mono text-5xl font-bold leading-none tabular-nums text-copper">
+              {businessInfo.repairPriceFrom}
+              <span className="text-[0.6em]">&nbsp;€</span>
+            </span>
+          </p>
+        ) : null}
+        <a
+          href={businessInfo.phoneHref}
+          className="flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-copper px-5 font-bold text-white shadow-[0_6px_16px_-8px_var(--copper)] transition-colors hover:bg-copper-hi"
+        >
+          <PhoneIcon />
+          Appeler maintenant
+        </a>
+        <p className="text-xs text-muted">Prix exact annoncé avant l&apos;intervention.</p>
+      </div>
+    </div>
   );
 }
 
@@ -280,7 +320,7 @@ export default function Home() {
             {[
               { value: String(businessInfo.foundingYear), label: `installé à ${businessInfo.city}` },
               { value: `${ratingValue} ★`, label: `${ratingCount} avis Google` },
-              { value: "Lun – sam", label: "dès 9h, fermé le dimanche" },
+              { value: "Lun – sam", label: "dès 8h, fermé le dimanche" },
               { value: `${zones.length} communes`, label: `${businessInfo.city} et ses alentours` },
             ].map((proof, index) => (
               <li
@@ -297,6 +337,47 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* Leaks: first section after the hero */}
+      <section className="bg-blueprint py-14 text-on-deep sm:py-20">
+        <Container className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+          <IllustrationImage image={illustrations.pipeLeak} className="aspect-[4/3] rounded-2xl border border-white/10" />
+          <div className="grid gap-6">
+            <SectionHeading
+              tone="dark"
+              eyebrow="Fuite d'eau"
+              title="Une fuite ? On trouve d'où elle vient avant de casser"
+              description={`Robinet qui goutte, tuyau qui fuit, tache au plafond ou facture d'eau qui grimpe : ${firstName} localise l'origine exacte de la fuite, même invisible, puis la répare. On ne casse que là où il faut.`}
+            />
+            <ul className="grid gap-2.5 sm:grid-cols-2">
+              {leakPoints.map((item) => (
+                <li key={item} className="flex gap-2.5 text-sm text-on-deep">
+                  <span aria-hidden="true" className="mt-0.5 font-bold text-copper-hi">✓</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p className="border-l-[3px] border-copper pl-3 text-sm text-on-deep-muted">
+              En attendant : coupez l&apos;arrivée d&apos;eau générale si la fuite est importante.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href={businessInfo.phoneHref}
+                className="flex min-h-12 items-center justify-center gap-2 rounded-lg bg-copper px-6 font-bold text-white shadow-[0_6px_16px_-8px_var(--copper)] transition-colors hover:bg-copper-hi"
+              >
+                <PhoneIcon />
+                Appeler maintenant
+              </a>
+              <Link
+                href="/depannage/recherche-de-fuite"
+                className="flex min-h-12 items-center justify-center rounded-lg border border-white/25 px-6 font-bold text-on-deep transition-colors hover:bg-white/10"
+              >
+                Tout savoir sur la recherche de fuite
+              </Link>
+            </div>
+          </div>
+        </Container>
+      </section>
+
       {/* Problems */}
       <section className="py-14 sm:py-20">
         <Container>
@@ -307,11 +388,7 @@ export default function Home() {
           />
           <div className="mt-8">
             <GroupLabel accent>Dépannage</GroupLabel>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {repairs.map((card) => (
-                <ProblemTile key={card.title} card={card} accent />
-              ))}
-            </div>
+            <RepairCard />
           </div>
           <div className="mt-10">
             <GroupLabel>Installation et entretien</GroupLabel>

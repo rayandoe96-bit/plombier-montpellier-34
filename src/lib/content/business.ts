@@ -25,13 +25,17 @@ export const businessInfo = {
   phone: "06 31 93 45 14",
   phoneHref: "tel:+33631934514",
   phoneE164: "+33631934514",
-  // Horaires et note : fiche Google et annuaires publics, relevés le 2 octobre 2026.
+  // Horaires : 8h-20h, donnés le 3 octobre 2026 (jours repris de la fiche Google : lundi-samedi).
+  // Note : fiche Google et annuaires publics, relevés le 2 octobre 2026.
   // À revalider avec le client et à mettre à jour si la fiche change.
-  hours: "Du lundi au samedi, de 9h à 20h (20h30 le mercredi). Fermé le dimanche." as Confirmable<string>,
+  hours: "Du lundi au samedi, de 8h à 20h. Fermé le dimanche." as Confirmable<string>,
   googleRating: { value: "4,6", count: 61 },
   googleReviewsUrl: TO_CONFIRM as Confirmable<string>,
   // Prix d'appel et délais : non confirmés par le client, ne pas les afficher comme acquis.
   priceFrom: TO_CONFIRM as Confirmable<number>,
+  // Prix d'appel du dépannage (fuite, bouchon...), donné le 3 octobre 2026 pour la page d'accueil.
+  // À faire confirmer par le client : TTC ? déplacement inclus ? Ne vaut pas pour les travaux sur devis.
+  repairPriceFrom: 100 as Confirmable<number>,
   emergencyResponseTime: TO_CONFIRM as Confirmable<string>,
   standardResponseTime: TO_CONFIRM as Confirmable<string>,
   email: TO_CONFIRM as Confirmable<string>,
@@ -43,12 +47,12 @@ export const businessInfo = {
 };
 
 export const openingHours: OpeningSlot[] = [
-  { day: 1, label: "Lundi", opens: "09:00", closes: "20:00" },
-  { day: 2, label: "Mardi", opens: "09:00", closes: "20:00" },
-  { day: 3, label: "Mercredi", opens: "09:00", closes: "20:30" },
-  { day: 4, label: "Jeudi", opens: "09:00", closes: "20:00" },
-  { day: 5, label: "Vendredi", opens: "09:00", closes: "20:00" },
-  { day: 6, label: "Samedi", opens: "09:00", closes: "20:00" },
+  { day: 1, label: "Lundi", opens: "08:00", closes: "20:00" },
+  { day: 2, label: "Mardi", opens: "08:00", closes: "20:00" },
+  { day: 3, label: "Mercredi", opens: "08:00", closes: "20:00" },
+  { day: 4, label: "Jeudi", opens: "08:00", closes: "20:00" },
+  { day: 5, label: "Vendredi", opens: "08:00", closes: "20:00" },
+  { day: 6, label: "Samedi", opens: "08:00", closes: "20:00" },
   { day: 0, label: "Dimanche", opens: null, closes: null },
 ];
 
