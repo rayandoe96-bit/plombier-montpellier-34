@@ -8,7 +8,7 @@ import { zones } from "@/lib/content/business";
 export const metadata: Metadata = {
   title: "Zone d'intervention : Lattes, Montpellier et le littoral",
   description:
-    "Plombier chauffagiste basé à Lattes, intervenant à Montpellier, Carnon, Palavas-les-Flots et La Grande-Motte. Vérifiez votre commune.",
+    "Plombier chauffagiste basé à Lattes, intervenant à Montpellier, Pérols, Carnon, Palavas-les-Flots et La Grande-Motte. Vérifiez votre commune.",
 };
 
 export default function ZoneInterventionPage() {

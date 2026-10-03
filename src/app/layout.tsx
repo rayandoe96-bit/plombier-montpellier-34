@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     default: `Plombier chauffagiste à ${businessInfo.city} et alentours — ${businessInfo.tradeName}`,
     template: `%s — ${businessInfo.tradeName}`,
   },
-  description: `Plombier chauffagiste à ${businessInfo.city} depuis ${businessInfo.foundingYear} : fuite, débouchage, chauffe-eau, chauffage et création de salle de bains à Lattes, Montpellier, Carnon, Palavas-les-Flots et La Grande-Motte. Appelez ${businessInfo.ownerName} au ${businessInfo.phone}.`,
+  description: `Plombier chauffagiste à ${businessInfo.city} depuis ${businessInfo.foundingYear} : fuite, débouchage, chauffe-eau, chauffage et création de salle de bains à Lattes, Montpellier, Pérols, Carnon, Palavas-les-Flots et La Grande-Motte. Appelez ${businessInfo.ownerName} au ${businessInfo.phone}.`,
   openGraph: {
     type: "website",
     locale: "fr_FR",
