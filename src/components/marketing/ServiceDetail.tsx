@@ -7,15 +7,32 @@ import { PriceFactors } from "@/components/marketing/PriceFactors";
 import { CtaGroup } from "@/components/ui/CtaGroup";
 import type { Service } from "@/lib/content/types";
 import { adviceArticles } from "@/lib/content/advice";
+import { serviceIllustrations } from "@/lib/content/illustrations";
+import { IllustrationImage } from "@/components/ui/IllustrationImage";
 
 export function ServiceDetail({ service }: { service: Service }) {
   const relatedArticle = adviceArticles.find(
     (article) => article.relatedServiceSlug === service.slug
   );
+  const image = serviceIllustrations[service.slug];
 
   return (
     <>
-      <Hero eyebrow={service.level} title={service.title} description={service.need} />
+      <Hero
+        eyebrow={service.level}
+        title={service.title}
+        description={service.need}
+        aside={
+          image ? (
+            <IllustrationImage
+              image={image}
+              className="aspect-[4/3] rounded-2xl border border-white/10"
+              sizes="(min-width: 1024px) 20rem, 100vw"
+              priority
+            />
+          ) : undefined
+        }
+      />
 
       <Container className="py-10 sm:py-14">
         <div className="grid gap-10 sm:grid-cols-2">
