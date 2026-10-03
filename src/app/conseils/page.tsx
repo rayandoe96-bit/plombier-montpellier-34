@@ -7,7 +7,8 @@ import { adviceArticles } from "@/lib/content/advice";
 
 export const metadata: Metadata = {
   title: "Conseils plomberie",
-  description: "Conseils pratiques pour prévenir les pannes et bien préparer vos demandes d'intervention.",
+  description:
+    "Conseils de plombier : éviter les bouchons, réagir face à une fuite, entretenir son chauffe-eau, préparer sa demande de devis.",
 };
 
 export default function ConseilsPage() {
@@ -15,8 +16,8 @@ export default function ConseilsPage() {
     <>
       <Hero
         eyebrow="Conseils"
-        title="Conseils pratiques de plomberie"
-        description="Des repères simples pour prévenir les pannes courantes et savoir réagir en cas de problème."
+        title="Conseils de plombier, sans jargon"
+        description="Les gestes simples qui évitent la plupart des pannes, et les bons réflexes quand le problème est déjà là."
       />
 
       <Container className="py-10 sm:py-14">

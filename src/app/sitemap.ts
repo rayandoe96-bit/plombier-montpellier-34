@@ -10,6 +10,7 @@ const staticRoutes = [
   "/urgences",
   "/depannage",
   "/installation",
+  "/salle-de-bains",
   "/entretien",
   "/zone-intervention",
   "/conseils",

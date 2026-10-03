@@ -37,13 +37,13 @@ export function ServiceDetail({ service }: { service: Service }) {
       <Container className="py-10 sm:py-14">
         <div className="grid gap-10 sm:grid-cols-2">
           <div>
-            <SectionHeading eyebrow="Déroulé" title="Comment se déroule l'intervention" />
+            <SectionHeading eyebrow="Déroulé" title="Comment ça se passe, étape par étape" />
             <div className="mt-6">
               <ProcessSteps steps={service.process} />
             </div>
           </div>
           <div>
-            <SectionHeading eyebrow="Tarif" title="Ce qui influence le prix" />
+            <SectionHeading eyebrow="Tarif" title="Ce qui fait varier le prix" />
             <div className="mt-6">
               <PriceFactors factors={service.priceFactors} />
             </div>
@@ -67,7 +67,10 @@ export function ServiceDetail({ service }: { service: Service }) {
 
       <Container className="pb-16 pt-4 sm:pb-20">
         <div className="rounded-2xl border border-line bg-brand-50/50 px-6 py-8 text-center sm:px-10">
-          <h2 className="text-xl font-bold text-foreground">Besoin de ce service ?</h2>
+          <h2 className="text-xl font-bold text-foreground">Le problème est chez vous en ce moment ?</h2>
+          <p className="mt-2 text-sm text-muted">
+            Appelez : vous décrivez la situation, on vous dit quoi faire et quand on peut passer.
+          </p>
           <CtaGroup className="mt-5 justify-center" />
         </div>
       </Container>

@@ -86,6 +86,20 @@ export const illustrations = {
     alt: "Eau s'échappant d'un raccord de tuyau",
     source: "https://www.rawpixel.com/image/5943308/free-public-domain-cc0-photo",
   },
+  bathroom: {
+    src: "/images/salle-de-bains.webp",
+    width: 1024,
+    height: 681,
+    alt: "Salle de bains moderne avec baignoire îlot et douche vitrée",
+    source: "https://www.rawpixel.com/image/5922230/photo-image-public-domain-minimal-house",
+  },
+  tiledShower: {
+    src: "/images/douche-carrelee.webp",
+    width: 1024,
+    height: 683,
+    alt: "Douche carrelée avec mitigeur et douchette",
+    source: "https://www.rawpixel.com/image/6019082/photo-image-public-domain-house-room",
+  },
 } satisfies Record<string, Illustration>;
 
 /** Illustration shown for each troubleshooting service, keyed by service slug. */

@@ -9,13 +9,14 @@ import { isVisible } from "@/lib/content/confirm";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contactez-nous par téléphone ou par devis pour votre intervention de plomberie.",
+  description:
+    "Contactez Émilien Devarenne, plombier chauffagiste à Lattes : 06 31 93 45 14, du lundi au samedi. 6 rue des Consuls, 34970 Lattes.",
 };
 
 export default function ContactPage() {
   return (
     <Container className="py-10 sm:py-14">
-      <SectionHeading as="h1" eyebrow="Contact" title="Nous contacter" />
+      <SectionHeading as="h1" eyebrow="Contact" title="Un appel, et c'est l'artisan qui répond" />
 
       <div className="mt-8 grid gap-6 sm:grid-cols-2">
         <div className="rounded-xl border border-line p-6">

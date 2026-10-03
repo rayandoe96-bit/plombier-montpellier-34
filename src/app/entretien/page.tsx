@@ -10,8 +10,9 @@ import { entretienHighlights } from "@/lib/content/services";
 import { adviceArticles } from "@/lib/content/advice";
 
 export const metadata: Metadata = {
-  title: "Entretien plomberie",
-  description: "Entretien préventif de vos canalisations et de votre chauffe-eau à Montpellier.",
+  title: "Entretien plomberie et chauffe-eau à Lattes",
+  description:
+    "Entretien préventif des canalisations, des sanitaires et du chauffe-eau à Lattes, Montpellier et alentours, pour éviter les pannes et les dégâts des eaux.",
 };
 
 const preventiveArticle = adviceArticles.find(
@@ -23,8 +24,8 @@ export default function EntretienPage() {
     <>
       <Hero
         eyebrow="Entretien"
-        title="Un entretien régulier pour éviter les pannes"
-        description="Un contrôle préventif permet d'anticiper l'usure et de limiter les interventions d'urgence."
+        title="Faites vérifier avant que ça lâche"
+        description="Une fuite ou un chauffe-eau en panne arrive rarement sans prévenir. Un contrôle régulier repère l'usure à temps, avant le dégât des eaux ou la douche froide."
         aside={
           <IllustrationImage
             image={illustrations.workbench}
@@ -36,7 +37,7 @@ export default function EntretienPage() {
       />
 
       <Container className="py-10 sm:py-14">
-        <SectionHeading eyebrow="Nos prestations" title="Ce que couvre notre entretien" />
+        <SectionHeading eyebrow="Nos prestations" title="Ce qu'on vérifie" />
         <ul className="mt-6 grid gap-3 sm:grid-cols-3">
           {entretienHighlights.map((item) => (
             <li key={item} className="rounded-xl border border-line p-4 text-sm text-muted">
@@ -60,7 +61,7 @@ export default function EntretienPage() {
 
       <Container className="pb-16 pt-4 sm:pb-20">
         <div className="rounded-2xl border border-line bg-brand-50/50 px-6 py-8 text-center sm:px-10">
-          <h2 className="text-xl font-bold text-foreground">Planifier un entretien ?</h2>
+          <h2 className="text-xl font-bold text-foreground">On planifie un contrôle ?</h2>
           <CtaGroup className="mt-5 justify-center" />
         </div>
       </Container>

@@ -11,6 +11,7 @@ import { businessInfo, openingHours, zones } from "@/lib/content/business";
 import { isConfirmed } from "@/lib/content/confirm";
 import { adviceArticles } from "@/lib/content/advice";
 import { generalFaq } from "@/lib/content/faq";
+import { bathroomHighlights } from "@/lib/content/services";
 
 const firstName = businessInfo.ownerName.split(" ")[0];
 const { value: ratingValue, count: ratingCount } = businessInfo.googleRating;
@@ -27,25 +28,25 @@ const repairs: ProblemCard[] = [
     href: "/depannage/recherche-de-fuite",
     icon: icons.drop,
     title: "Fuite d'eau",
-    text: "Visible ou cachée : on localise l'origine avant de casser quoi que ce soit.",
+    text: "Visible ou cachée : on trouve d'où elle vient avant de casser quoi que ce soit.",
   },
   {
     href: "/depannage/debouchage-canalisation",
     icon: icons.toilet,
     title: "WC ou évier bouché",
-    text: "Débouchage de WC, évier, douche ou lavabo.",
+    text: "WC, évier, douche ou lavabo qui ne s'écoule plus : on débouche à la source.",
   },
   {
     href: "/depannage/haute-pression-hydrocurage",
     icon: icons.pressure,
     title: "Bouchon tenace",
-    text: "Hydrocurage haute pression quand le débouchage classique ne suffit pas.",
+    text: "Il revient sans cesse ? L'hydrocurage haute pression nettoie toute la canalisation.",
   },
   {
     href: "/depannage/curage-inspection-camera",
     icon: icons.camera,
     title: "Problème qui revient",
-    text: "Inspection caméra pour voir l'état réel de la canalisation.",
+    text: "Une caméra montre l'état réel de la canalisation : on répare la vraie cause.",
   },
 ];
 
@@ -55,14 +56,14 @@ const projects: (ProblemCard & { image: Illustration })[] = [
     icon: icons.heater,
     title: "Chauffe-eau",
     image: illustrations.waterSupply,
-    text: "Pose ou remplacement de votre chauffe-eau.",
+    text: "Plus d'eau chaude ou ballon en fin de vie : pose et remplacement de chauffe-eau.",
   },
   {
     href: "/installation",
     icon: icons.radiator,
     title: "Installation de chauffage",
     image: illustrations.radiator,
-    text: "Installation et remplacement de votre système de chauffage.",
+    text: "Installation et remplacement de votre système de chauffage, adapté à votre logement.",
   },
   {
     href: "/installation",
@@ -76,22 +77,22 @@ const projects: (ProblemCard & { image: Illustration })[] = [
     icon: icons.wrench,
     title: "Entretien",
     image: illustrations.workbench,
-    text: "Canalisations, installation sanitaire, chauffe-eau : prévenir plutôt que réparer.",
+    text: "Canalisations, sanitaires, chauffe-eau : faire vérifier avant que ça lâche.",
   },
 ];
 
 const steps = [
   {
     title: "Vous appelez",
-    text: `Vous décrivez le problème à ${firstName}, qui vous dit quand il peut passer.`,
+    text: `Vous expliquez le problème à ${firstName}. Il vous dit quand il peut passer.`,
   },
   {
     title: "Diagnostic sur place",
-    text: "Il identifie la cause et vous explique ce qu'il propose de faire.",
+    text: "Il trouve la cause et vous explique ce qu'il propose, avant de commencer.",
   },
   {
     title: "Intervention",
-    text: "Réparation ou installation, puis explication de ce qui a été fait.",
+    text: "Il répare ou installe, puis vous montre ce qui a été fait.",
   },
 ];
 
@@ -224,21 +225,24 @@ export default function Home() {
               {businessInfo.city} · Montpellier et littoral
             </p>
             <h1 className="mt-4 font-display text-[2.7rem] font-black uppercase leading-[0.92] font-condensed sm:text-7xl">
-              Votre plombier chauffagiste à <span className="text-copper-hi">{businessInfo.city}</span>
+              Votre plombier chauffagiste à <span className="text-copper-hi">{businessInfo.city}</span> et ses alentours
             </h1>
             <p className="mt-5 max-w-xl text-lg text-on-deep-muted">
-              <strong className="font-semibold text-on-deep">{businessInfo.ownerName}</strong> dépanne et
-              installe depuis {businessInfo.foundingYear}. Vous parlez directement à l&apos;artisan qui
-              intervient chez vous.
+              Fuite, WC bouché, chauffe-eau en panne ou salle de bains à refaire :{" "}
+              <strong className="font-semibold text-on-deep">{businessInfo.ownerName}</strong> s&apos;en occupe
+              depuis {businessInfo.foundingYear}. Un seul numéro, et c&apos;est l&apos;artisan qui répond, puis qui
+              vient chez vous.
             </p>
 
             <div className="mt-7 grid gap-3 sm:grid-cols-2">
               <div className="grid content-start gap-2 rounded-2xl bg-surface p-5 text-foreground shadow-[0_18px_40px_-20px_rgba(0,0,0,.6)]">
                 <span className="font-mono text-xs font-semibold uppercase tracking-[0.1em] text-copper">Urgence</span>
                 <h2 className="text-2xl font-extrabold uppercase leading-none font-condensed">
-                  Fuite, WC bouché, plus d&apos;eau chaude
+                  Fuite et dépannage
                 </h2>
-                <p className="text-sm text-muted">Le plus rapide : appeler et décrire le problème.</p>
+                <p className="text-sm text-muted">
+                  Fuite, WC bouché, plus d&apos;eau chaude : appelez et décrivez le problème, c&apos;est le plus rapide.
+                </p>
                 <a
                   href={businessInfo.phoneHref}
                   className="mt-2 flex min-h-12 items-center justify-center gap-2 rounded-lg bg-copper px-5 font-bold text-white shadow-[0_6px_16px_-8px_var(--copper)] transition-colors hover:bg-copper-hi"
@@ -250,9 +254,11 @@ export default function Home() {
               <div className="grid content-start gap-2 rounded-2xl border border-white/15 bg-white/5 p-5">
                 <span className="font-mono text-xs font-semibold uppercase tracking-[0.1em] text-[#7dbce6]">Projet</span>
                 <h2 className="text-2xl font-extrabold uppercase leading-none font-condensed">
-                  Chauffe-eau, chauffage, sanitaires
+                  Salle de bains, chauffe-eau, chauffage
                 </h2>
-                <p className="text-sm text-on-deep-muted">Décrivez votre besoin, on vous recontacte pour en parler.</p>
+                <p className="text-sm text-on-deep-muted">
+                  Décrivez votre projet en quelques lignes, on vous rappelle pour en parler.
+                </p>
                 <Link
                   href="/devis"
                   className="mt-2 flex min-h-12 items-center justify-center rounded-lg bg-on-deep px-5 font-bold text-deep transition-colors hover:bg-white"
@@ -275,7 +281,7 @@ export default function Home() {
               { value: String(businessInfo.foundingYear), label: `installé à ${businessInfo.city}` },
               { value: `${ratingValue} ★`, label: `${ratingCount} avis Google` },
               { value: "Lun – sam", label: "dès 9h, fermé le dimanche" },
-              { value: `${zones.length} communes`, label: "Lattes, Montpellier, littoral" },
+              { value: `${zones.length} communes`, label: `${businessInfo.city} et ses alentours` },
             ].map((proof, index) => (
               <li
                 key={proof.value}
@@ -296,8 +302,8 @@ export default function Home() {
         <Container>
           <SectionHeading
             eyebrow="Nos interventions"
-            title="Quel est votre problème ?"
-            description="Choisissez votre situation pour voir comment on intervient."
+            title="Dépannage, installation, salle de bains : que se passe-t-il chez vous ?"
+            description="Choisissez votre situation : vous verrez comment on s'y prend et ce qui fait varier le prix."
           />
           <div className="mt-8">
             <GroupLabel accent>Dépannage</GroupLabel>
@@ -318,10 +324,47 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* Bathroom creation */}
+      <section className="bg-blueprint py-14 text-on-deep sm:py-20">
+        <Container className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+          <IllustrationImage image={illustrations.bathroom} className="aspect-[4/3] rounded-2xl border border-white/10" />
+          <div className="grid gap-6">
+            <SectionHeading
+              tone="dark"
+              eyebrow="Création de salle de bains"
+              title="Votre nouvelle salle de bains, des tuyaux à la robinetterie"
+              description={`Créer une salle de bains ou refaire l'ancienne : ${firstName} s'occupe des arrivées d'eau, des évacuations et de la pose des équipements. Un seul artisan pour toute la plomberie du projet.`}
+            />
+            <ul className="grid gap-2.5 sm:grid-cols-2">
+              {bathroomHighlights.slice(0, 4).map((item) => (
+                <li key={item} className="flex gap-2.5 text-sm text-on-deep">
+                  <span aria-hidden="true" className="mt-0.5 font-bold text-copper-hi">✓</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/devis"
+                className="flex min-h-12 items-center justify-center rounded-lg bg-copper px-6 font-bold text-white shadow-[0_6px_16px_-8px_var(--copper)] transition-colors hover:bg-copper-hi"
+              >
+                Parler de mon projet
+              </Link>
+              <Link
+                href="/salle-de-bains"
+                className="flex min-h-12 items-center justify-center rounded-lg border border-white/25 px-6 font-bold text-on-deep transition-colors hover:bg-white/10"
+              >
+                Tout savoir sur la création
+              </Link>
+            </div>
+          </div>
+        </Container>
+      </section>
+
       {/* How it works */}
       <section className="border-y border-line bg-surface py-14 sm:py-20">
         <Container>
-          <SectionHeading eyebrow="Étape par étape" title="Comment ça se passe" />
+          <SectionHeading eyebrow="Étape par étape" title="Comment ça se passe, en 3 étapes" />
           <ol className="relative mt-10 grid gap-6 md:grid-cols-3 md:gap-8">
             <span
               aria-hidden="true"
@@ -347,10 +390,10 @@ export default function Home() {
             <SectionHeading
               eyebrow="L'artisan"
               title="Un seul interlocuteur, du devis à la facture"
-              description={`${businessInfo.tradeName} est l'entreprise d'${businessInfo.ownerName}, installée à ${businessInfo.city} depuis ${businessInfo.foundingYear}. C'est lui que vous avez au téléphone, et lui qui intervient.`}
+              description={`${businessInfo.tradeName}, c'est ${businessInfo.ownerName}, artisan installé à ${businessInfo.city} depuis ${businessInfo.foundingYear}. Celui qui décroche le téléphone est celui qui vient chez vous : pas d'intermédiaire, pas de sous-traitant.`}
             />
             <div>
-              <h3 className="text-base font-bold">On intervient à</h3>
+              <h3 className="text-base font-bold">On intervient à {businessInfo.city} et ses alentours</h3>
               <ul className="mt-3 flex flex-wrap gap-2">
                 {[...zones]
                   .sort((a, b) => Number(b.name === businessInfo.city) - Number(a.name === businessInfo.city))
@@ -407,7 +450,7 @@ export default function Home() {
       <section className="border-t border-line bg-surface py-14 sm:py-20">
         <Container className="grid gap-8 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)] lg:gap-14">
           <div>
-            <SectionHeading eyebrow="Questions fréquentes" title="Avant d'appeler" />
+            <SectionHeading eyebrow="Questions fréquentes" title="Vos questions avant d'appeler" />
             <p className="mt-4 text-muted">
               Une autre question ? Appelez au{" "}
               <a href={businessInfo.phoneHref} className="whitespace-nowrap font-mono font-semibold text-copper">
@@ -423,7 +466,7 @@ export default function Home() {
       {/* Advice */}
       <section className="py-14 sm:py-20">
         <Container>
-          <SectionHeading eyebrow="Conseils" title="Avant que le plombier arrive" />
+          <SectionHeading eyebrow="Conseils" title="Les bons gestes, avant et en attendant le plombier" />
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {adviceArticles.slice(0, 3).map((article) => (
               <Link
@@ -459,7 +502,8 @@ export default function Home() {
           <div className="grid gap-3 rounded-2xl bg-surface p-6 text-foreground shadow-[0_30px_60px_-30px_rgba(0,0,0,.6)] sm:p-8">
             <h3 className="text-2xl font-extrabold uppercase font-condensed">Un projet, pas une urgence ?</h3>
             <p className="text-muted">
-              Chauffe-eau, sanitaires, robinetterie : décrivez votre besoin en quelques mots, on vous recontacte.
+              Salle de bains, chauffe-eau, chauffage, sanitaires : décrivez votre projet en quelques lignes, on
+              vous rappelle.
             </p>
             <Link
               href="/devis"

@@ -6,9 +6,9 @@ import { ZoneSection } from "@/components/marketing/ZoneSection";
 import { zones } from "@/lib/content/business";
 
 export const metadata: Metadata = {
-  title: "Zone d'intervention",
+  title: "Zone d'intervention : Lattes, Montpellier et le littoral",
   description:
-    "Nos zones d'intervention : Montpellier, Lattes, Carnon, Palavas-les-Flots, La Grande-Motte.",
+    "Plombier chauffagiste basé à Lattes, intervenant à Montpellier, Carnon, Palavas-les-Flots et La Grande-Motte. Vérifiez votre commune.",
 };
 
 export default function ZoneInterventionPage() {
@@ -16,12 +16,12 @@ export default function ZoneInterventionPage() {
     <>
       <Hero
         eyebrow="Zone d'intervention"
-        title="Où intervenons-nous ?"
-        description="Nous intervenons sur Montpellier et les communes proches du littoral. Le détail par commune est précisé ci-dessous."
+        title="Lattes et ses alentours"
+        description="Basé à Lattes, on intervient à Montpellier et sur le littoral proche. Votre commune n'est pas listée ? Appelez, on vous répond tout de suite."
       />
 
       <Container className="py-10 sm:py-14">
-        <SectionHeading title="Nos communes d'intervention" />
+        <SectionHeading title="Les communes où on intervient" />
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           {zones.map((zone) => (
             <ZoneSection key={zone.name} zone={zone} />
