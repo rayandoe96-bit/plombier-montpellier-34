@@ -1,11 +1,14 @@
 import { ImageResponse } from "next/og";
 import { businessInfo } from "@/lib/content/business";
+import { getGooglePlace } from "@/lib/google/place";
 
 export const alt = `${businessInfo.tradeName}, plombier chauffagiste à ${businessInfo.city}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function Image() {
+export default async function Image() {
+  const place = await getGooglePlace();
+
   return new ImageResponse(
     (
       <div
@@ -35,7 +38,7 @@ export default function Image() {
             {businessInfo.phone}
           </div>
           <div style={{ display: "flex", fontSize: 30, color: "#d7e6f6" }}>
-            {`${businessInfo.googleRating.value}/5 · ${businessInfo.googleRating.count} avis Google`}
+            {`${place.ratingLabel}/5 · ${place.ratingCount} avis Google`}
           </div>
         </div>
       </div>
