@@ -33,7 +33,8 @@ export const businessInfo = {
   googleRating: { value: "4,6", count: 61 },
   // Place ID of the Google Business Profile (ChIJ...). Find it with `node scripts/find-place-id.mjs`.
   // GOOGLE_PLACE_ID in the environment overrides it.
-  googlePlaceId: TO_CONFIRM as Confirmable<string>,
+  // Devarenne plomberie chauffage, 6 Rue des Consuls, Lattes (Place ID Finder, 2026-10-04).
+  googlePlaceId: "ChIJ1_AV6cFb5kcRkaHINeObt-U" as Confirmable<string>,
   // Prix d'appel et délais : non confirmés par le client, ne pas les afficher comme acquis.
   priceFrom: TO_CONFIRM as Confirmable<number>,
   // Prix d'appel du dépannage (fuite, bouchon...), donné le 3 octobre 2026 pour la page d'accueil.
