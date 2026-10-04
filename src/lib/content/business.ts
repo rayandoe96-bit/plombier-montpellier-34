@@ -29,8 +29,12 @@ export const businessInfo = {
   // Note : fiche Google et annuaires publics, relevés le 2 octobre 2026.
   // À revalider avec le client et à mettre à jour si la fiche change.
   hours: "Du lundi au samedi, de 8h à 20h. Fermé le dimanche." as Confirmable<string>,
-  googleRating: { value: "4,6", count: 61 },
-  googleReviewsUrl: TO_CONFIRM as Confirmable<string>,
+  // Fallback only: once GOOGLE_PLACES_API_KEY is set, src/lib/google/place.ts reads the live rating.
+  googleRating: { value: "4,7", count: 76 },
+  // Place ID of the Google Business Profile (ChIJ...). Find it with `node scripts/find-place-id.mjs`.
+  // GOOGLE_PLACE_ID in the environment overrides it.
+  // Devarenne plomberie chauffage, 6 Rue des Consuls, Lattes (Place ID Finder, 2026-10-04).
+  googlePlaceId: "ChIJ1_AV6cFb5kcRkaHINeObt-U" as Confirmable<string>,
   // Prix d'appel et délais : non confirmés par le client, ne pas les afficher comme acquis.
   priceFrom: TO_CONFIRM as Confirmable<number>,
   // Prix d'appel du dépannage (fuite, bouchon...), donné le 3 octobre 2026 pour la page d'accueil.

@@ -12,9 +12,10 @@ import { isConfirmed } from "@/lib/content/confirm";
 import { adviceArticles } from "@/lib/content/advice";
 import { generalFaq } from "@/lib/content/faq";
 import { bathroomHighlights } from "@/lib/content/services";
+import { getGooglePlace } from "@/lib/google/place";
+import { GoogleReviews } from "@/components/marketing/GoogleReviews";
 
 const firstName = businessInfo.ownerName.split(" ")[0];
-const { value: ratingValue, count: ratingCount } = businessInfo.googleRating;
 
 interface ProblemCard {
   href: string;
@@ -199,7 +200,7 @@ function ProjectTile({ card }: { card: ProblemCard & { image: Illustration } }) 
   );
 }
 
-function ArtisanCard() {
+function ArtisanCard({ ratingValue, ratingCount }: { ratingValue: string; ratingCount: number }) {
   return (
     <aside
       aria-label="Coordonnées"
@@ -234,7 +235,10 @@ function ArtisanCard() {
   );
 }
 
-export default function Home() {
+export default async function Home() {
+  const place = await getGooglePlace();
+  const { ratingLabel: ratingValue, ratingCount } = place;
+
   return (
     <>
       {/* Hero */}
@@ -309,7 +313,7 @@ export default function Home() {
             </div>
           </div>
 
-          <ArtisanCard />
+          <ArtisanCard ratingValue={ratingValue} ratingCount={ratingCount} />
         </Container>
       </section>
 
@@ -504,15 +508,29 @@ export default function Home() {
                 <span className="block text-sm text-on-deep-muted">sur 5, {ratingCount} avis</span>
               </span>
             </p>
-            {isConfirmed(businessInfo.googleReviewsUrl) ? (
-              <a
-                href={businessInfo.googleReviewsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-5 inline-flex min-h-10 items-center font-semibold text-copper-hi underline"
-              >
-                Lire les avis sur Google
-              </a>
+            {place.mapsUrl || place.writeReviewUrl ? (
+              <div className="mt-5 flex flex-wrap gap-x-5 gap-y-1">
+                {place.mapsUrl ? (
+                  <a
+                    href={place.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex min-h-10 items-center font-semibold text-copper-hi underline"
+                  >
+                    Lire les avis sur Google
+                  </a>
+                ) : null}
+                {place.writeReviewUrl ? (
+                  <a
+                    href={place.writeReviewUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex min-h-10 items-center font-semibold text-on-deep underline"
+                  >
+                    Laisser un avis
+                  </a>
+                ) : null}
+              </div>
             ) : null}
             </div>
             <div className="absolute left-4 top-4 inline-grid rounded-lg bg-copper px-4 py-3 text-white shadow-lg">
@@ -522,6 +540,8 @@ export default function Home() {
           </div>
         </Container>
       </section>
+
+      <GoogleReviews reviews={place.reviews} mapsUrl={place.mapsUrl} />
 
       {/* FAQ */}
       <section className="border-t border-line bg-surface py-14 sm:py-20">

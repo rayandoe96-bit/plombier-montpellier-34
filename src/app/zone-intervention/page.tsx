@@ -4,7 +4,9 @@ import { Container } from "@/components/layout/Container";
 import { Hero } from "@/components/marketing/Hero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ZoneSection } from "@/components/marketing/ZoneSection";
-import { zones } from "@/lib/content/business";
+import { GoogleMap } from "@/components/marketing/GoogleMap";
+import { businessInfo, zones } from "@/lib/content/business";
+import { getGooglePlace, getMapEmbedUrl } from "@/lib/google/place";
 
 export const metadata: Metadata = {
   title: "Plombier à Lattes, Pérols, Carnon, Palavas",
@@ -20,7 +22,9 @@ const zoneServices = [
   { href: "/entretien", label: "Entretien", detail: "Contrôle des canalisations, des sanitaires et du chauffe-eau" },
 ];
 
-export default function ZoneInterventionPage() {
+export default async function ZoneInterventionPage() {
+  const { mapsUrl } = await getGooglePlace();
+
   return (
     <>
       <Hero
@@ -35,6 +39,13 @@ export default function ZoneInterventionPage() {
           {zones.map((zone) => (
             <ZoneSection key={zone.name} zone={zone} />
           ))}
+        </div>
+        <div className="mt-8">
+          <GoogleMap
+            embedUrl={getMapEmbedUrl()}
+            mapsUrl={mapsUrl}
+            title={`${businessInfo.tradeName} sur Google Maps`}
+          />
         </div>
       </Container>
 

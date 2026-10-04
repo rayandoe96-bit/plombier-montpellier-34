@@ -1,11 +1,15 @@
 import { businessInfo, openingHours, zones } from "@/lib/content/business";
 import { isConfirmed } from "@/lib/content/confirm";
+import { getGooglePlace } from "@/lib/google/place";
+import { siteUrl } from "@/lib/site";
 
-export function LocalBusinessJsonLd() {
+export async function LocalBusinessJsonLd() {
+  const { mapsUrl } = await getGooglePlace();
   const data = {
     "@context": "https://schema.org",
     "@type": "Plumber",
     name: businessInfo.tradeName,
+    url: siteUrl,
     founder: { "@type": "Person", name: businessInfo.ownerName },
     foundingDate: String(businessInfo.foundingYear),
     address: {
@@ -16,6 +20,9 @@ export function LocalBusinessJsonLd() {
       addressCountry: "FR",
     },
     telephone: businessInfo.phoneE164,
+    // Ties the site to the Google Business Profile. No aggregateRating here: Google ignores
+    // ratings a business publishes about itself and forbids reusing third-party reviews.
+    ...(mapsUrl ? { hasMap: mapsUrl, sameAs: [mapsUrl] } : {}),
     areaServed: zones.map((zone) => zone.name),
     openingHoursSpecification: openingHours
       .filter((slot) => slot.opens && slot.closes)
