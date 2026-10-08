@@ -15,6 +15,8 @@ export interface Zone {
   name: ZoneName;
   description: Confirmable<string>;
   travelFee: ToConfirm;
+  /** false: dépannages et projets seulement, pas d'intervention d'urgence. */
+  emergency: boolean;
 }
 
 export type ServiceLevel = "Standard" | "Haute Pression" | "Caméra" | "Diagnostic";

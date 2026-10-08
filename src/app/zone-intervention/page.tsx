@@ -52,7 +52,7 @@ export default async function ZoneInterventionPage() {
       <Container className="pb-16 pt-4 sm:pb-20">
         <SectionHeading
           title="Ce qu'on fait dans ces communes"
-          description="Où que vous soyez dans la zone, c'est le même artisan qui se déplace, pour les mêmes interventions."
+          description="Où que vous soyez dans la zone, c'est le même artisan qui se déplace. Seule exception : pas d'intervention d'urgence à Montpellier."
         />
         <ul className="mt-6 grid gap-3 sm:grid-cols-2">
           {zoneServices.map((service) => (

@@ -16,6 +16,9 @@ export function ZoneSection({ zone }: { zone: Zone }) {
           Frais de déplacement : <ConfirmableValue value={zone.travelFee} />
         </p>
       ) : null}
+      {zone.emergency ? null : (
+        <p className="mt-3 text-sm text-muted">Dépannages et projets, hors urgences.</p>
+      )}
     </div>
   );
 }

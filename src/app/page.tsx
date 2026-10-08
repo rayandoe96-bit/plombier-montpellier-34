@@ -8,7 +8,9 @@ import { icons, PhoneIcon } from "@/components/ui/Icons";
 import { IllustrationImage } from "@/components/ui/IllustrationImage";
 import { illustrations, type Illustration } from "@/lib/content/illustrations";
 import { businessInfo, openingHours, zones } from "@/lib/content/business";
-import { isConfirmed } from "@/lib/content/confirm";
+import { isConfirmed, isVisible } from "@/lib/content/confirm";
+import { ConfirmableValue } from "@/components/ui/ConfirmableValue";
+import { CtaGroup } from "@/components/ui/CtaGroup";
 import { adviceArticles } from "@/lib/content/advice";
 import { generalFaq } from "@/lib/content/faq";
 import { bathroomHighlights } from "@/lib/content/services";
@@ -88,6 +90,14 @@ const projects: (ProblemCard & { image: Illustration })[] = [
     text: "Canalisations, sanitaires, chauffe-eau : faire vérifier avant que ça lâche.",
   },
 ];
+
+// Engagements propres aux agences et syndics : affichés seulement une fois confirmés.
+const proCommitments = [
+  { label: "Facturation au nom de l'agence ou du syndic", value: businessInfo.proInvoicing },
+  { label: "Compte rendu après intervention", value: businessInfo.proReport },
+  { label: "Rendez-vous pris directement avec l'occupant", value: businessInfo.proOccupantContact },
+  { label: "Attestation d'assurance", value: businessInfo.insuranceCoverage },
+].filter((item) => isVisible(item.value));
 
 const steps = [
   {
@@ -533,6 +543,67 @@ export default async function Home() {
       </section>
 
       <GoogleReviews reviews={place.reviews} mapsUrl={place.mapsUrl} />
+
+      {/* Property managers */}
+      <section id="agences-syndics" className="border-t border-line py-14 sm:py-20">
+        <Container className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-14">
+          <div>
+            <SectionHeading
+              eyebrow="Agences et syndics"
+              title="Un plombier qui décroche, pour les logements que vous gérez"
+              description={`Un locataire signale une fuite, une canalisation est bouchée dans les parties communes : il vous faut un artisan joignable, qui s'en occupe vraiment. Depuis ${businessInfo.foundingYear}, c'est ${firstName} qui répond, et c'est lui qui se déplace.`}
+            />
+            <CtaGroup className="mt-7" callLabel={`Appeler ${firstName}`} />
+          </div>
+
+          <div>
+            <ul className="grid gap-3 sm:grid-cols-2">
+              <li className="rounded-xl border border-line bg-surface p-5">
+                <h3 className="text-base font-bold">Joignable en direct</h3>
+                <p className="mt-2 text-sm text-muted">
+                  Un seul numéro, du lundi au samedi de 8h à 20h. Pas de standard : vous parlez à l&apos;artisan qui
+                  interviendra.
+                </p>
+              </li>
+              <li className="rounded-xl border border-line bg-surface p-5">
+                <h3 className="text-base font-bold">Une entreprise vérifiable</h3>
+                <p className="mt-2 text-sm text-muted">
+                  Installée à {businessInfo.city} depuis {businessInfo.foundingYear}, SIRET {businessInfo.siret}.{" "}
+                  {ratingValue}/5 sur {ratingCount} avis Google.
+                </p>
+              </li>
+              <li className="rounded-xl border border-line bg-surface p-5">
+                <h3 className="text-base font-bold">Logements et parties communes</h3>
+                <p className="mt-2 text-sm text-muted">
+                  <Link href="/depannage/recherche-de-fuite" className="font-semibold text-foreground underline">
+                    Recherche de fuite
+                  </Link>
+                  , débouchage, hydrocurage, inspection caméra, chauffe-eau. Urgences partout dans la zone, sauf à
+                  Montpellier.
+                </p>
+              </li>
+              {isConfirmed(businessInfo.repairPriceFrom) ? (
+                <li className="rounded-xl border border-line bg-surface p-5">
+                  <h3 className="text-base font-bold">Un tarif de départ clair</h3>
+                  <p className="mt-2 text-sm text-muted">
+                    Dépannages à partir de {businessInfo.repairPriceFrom} €, pour chiffrer sans surprise avec le
+                    propriétaire.
+                  </p>
+                </li>
+              ) : null}
+            </ul>
+            {proCommitments.length > 0 ? (
+              <ul className="mt-4 grid gap-1 text-sm text-muted">
+                {proCommitments.map((item) => (
+                  <li key={item.label}>
+                    {item.label} : <ConfirmableValue value={item.value} />
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+          </div>
+        </Container>
+      </section>
 
       {/* FAQ */}
       <section className="border-t border-line bg-surface py-14 sm:py-20">

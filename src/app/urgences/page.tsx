@@ -4,12 +4,12 @@ import { Container } from "@/components/layout/Container";
 import { Hero } from "@/components/marketing/Hero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CtaGroup } from "@/components/ui/CtaGroup";
-import { businessInfo, zones } from "@/lib/content/business";
+import { businessInfo, emergencyZones } from "@/lib/content/business";
 import { isConfirmed } from "@/lib/content/confirm";
 
 export const metadata: Metadata = {
-  title: "Urgence plombier Montpellier : fuite, WC bouché",
-  description: `L'eau coule, les WC débordent ? Appelez le ${businessInfo.phone} : l'artisan vous dit quoi faire tout de suite et quand il peut venir. Montpellier et alentours.`,
+  title: "Urgence plombier Lattes, Pérols, Palavas",
+  description: `L'eau coule, les WC débordent ? Appelez le ${businessInfo.phone} : l'artisan vous dit quoi faire tout de suite et quand il peut venir. Lattes, Pérols, Carnon, Palavas-les-Flots, La Grande-Motte.`,
   alternates: { canonical: "/urgences" },
 };
 
@@ -40,7 +40,7 @@ export default function UrgencesPage() {
         title={
           isConfirmed(businessInfo.emergencyResponseTime)
             ? `Intervention d'urgence ${businessInfo.emergencyResponseTime}`
-            : `Urgence plomberie autour de Montpellier ? Appelez directement`
+            : `Urgence plomberie à Lattes et sur le littoral ? Appelez directement`
         }
         description={`L'eau coule, les WC débordent ? Appelez le ${businessInfo.phone} : vous parlez directement à l'artisan, qui vous dit quoi faire tout de suite et quand il peut venir. Du lundi au samedi, de 8h à 20h.`}
       />
@@ -75,14 +75,21 @@ export default function UrgencesPage() {
       </Container>
 
       <Container className="py-8 sm:py-12">
-        <SectionHeading eyebrow="Zone couverte" title="Urgences de Montpellier à La Grande-Motte" />
+        <SectionHeading eyebrow="Zone couverte" title="Urgences de Lattes à La Grande-Motte" />
         <div className="mt-4 flex flex-wrap gap-2">
-          {zones.map((zone) => (
+          {emergencyZones.map((zone) => (
             <span key={zone.name} className="rounded-full border border-line px-3 py-1 text-sm text-muted">
               {zone.name}
             </span>
           ))}
         </div>
+        <p className="mt-4 text-sm text-muted">
+          À Montpellier, on intervient pour les{" "}
+          <Link href="/depannage" className="font-semibold text-brand-600 underline">
+            dépannages
+          </Link>{" "}
+          et les projets, mais pas en urgence.
+        </p>
       </Container>
 
       <Container className="pb-16 pt-4 sm:pb-20">

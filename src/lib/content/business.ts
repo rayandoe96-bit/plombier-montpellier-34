@@ -46,6 +46,10 @@ export const businessInfo = {
   insuranceCoverage: TO_CONFIRM as Confirmable<string>,
   certifications: TO_CONFIRM as Confirmable<string>,
   quotePolicy: TO_CONFIRM as Confirmable<string>,
+  // Agences et syndics : engagements à valider avec le client avant de les afficher en production.
+  proInvoicing: TO_CONFIRM as Confirmable<string>,
+  proReport: TO_CONFIRM as Confirmable<string>,
+  proOccupantContact: TO_CONFIRM as Confirmable<string>,
   // Textes RGPD : proposition par défaut (8 octobre 2026), validée sur le principe par le client.
   // À relire si le prestataire du formulaire ou la durée de conservation changent.
   consentNotice:
@@ -69,30 +73,39 @@ export const zones: Zone[] = [
     name: "Montpellier",
     description: TO_CONFIRM,
     travelFee: TO_CONFIRM,
+    // Pas d'urgences à Montpellier (demande du client, 8 octobre 2026).
+    emergency: false,
   },
   {
     name: "Lattes",
     description: "Commune où se situe le siège de l'entreprise.",
     travelFee: TO_CONFIRM,
+    emergency: true,
   },
   {
     name: "Pérols",
     description: TO_CONFIRM,
     travelFee: TO_CONFIRM,
+    emergency: true,
   },
   {
     name: "Carnon",
     description: TO_CONFIRM,
     travelFee: TO_CONFIRM,
+    emergency: true,
   },
   {
     name: "Palavas-les-Flots",
     description: TO_CONFIRM,
     travelFee: TO_CONFIRM,
+    emergency: true,
   },
   {
     name: "La Grande-Motte",
     description: TO_CONFIRM,
     travelFee: TO_CONFIRM,
+    emergency: true,
   },
 ];
+
+export const emergencyZones = zones.filter((zone) => zone.emergency);
