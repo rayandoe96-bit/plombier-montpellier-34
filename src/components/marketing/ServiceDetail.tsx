@@ -4,6 +4,7 @@ import { Hero } from "@/components/marketing/Hero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProcessSteps } from "@/components/marketing/ProcessSteps";
 import { PriceFactors } from "@/components/marketing/PriceFactors";
+import { ZoneStrip } from "@/components/marketing/ZoneStrip";
 import { CtaGroup } from "@/components/ui/CtaGroup";
 import type { Service } from "@/lib/content/types";
 import { adviceArticles } from "@/lib/content/advice";
@@ -33,6 +34,7 @@ export function ServiceDetail({ service }: { service: Service }) {
           ) : undefined
         }
       />
+      <ZoneStrip />
 
       <Container className="py-10 sm:py-14">
         <div className="grid gap-10 sm:grid-cols-2">

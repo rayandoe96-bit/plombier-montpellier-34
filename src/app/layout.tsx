@@ -28,10 +28,10 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `Plombier chauffagiste à ${businessInfo.city} | Devarenne Plomberie`,
+    default: "Plombier chauffagiste Montpellier, Lattes | Devarenne",
     template: "%s | Devarenne",
   },
-  description: `Fuite, WC bouché, chauffe-eau en panne, salle de bains à créer ? ${businessInfo.ownerName}, plombier chauffagiste à ${businessInfo.city} depuis ${businessInfo.foundingYear}. Appelez le ${businessInfo.phone}.`,
+  description: `Fuite, WC bouché, chauffe-eau en panne, salle de bains ? ${businessInfo.ownerName}, plombier chauffagiste à Montpellier et alentours depuis ${businessInfo.foundingYear}. Appelez le ${businessInfo.phone}.`,
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",

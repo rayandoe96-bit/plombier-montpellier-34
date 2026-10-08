@@ -8,9 +8,9 @@ import { PhoneLink } from "@/components/ui/PhoneLink";
 import { businessInfo } from "@/lib/content/business";
 
 export const metadata: Metadata = {
-  title: "Devis plombier à Lattes",
+  title: "Devis plombier Montpellier et alentours",
   description:
-    "Salle de bains, chauffe-eau, chauffage, sanitaires : décrivez votre projet en quelques lignes, on vous rappelle. Lattes, Montpellier et alentours.",
+    "Salle de bains, chauffe-eau, chauffage, sanitaires : décrivez votre projet en quelques lignes, on vous rappelle. Montpellier, Lattes et alentours.",
   alternates: { canonical: "/devis" },
 };
 
@@ -20,7 +20,7 @@ export default function DevisPage() {
       <SectionHeading
         as="h1"
         eyebrow="Devis"
-        title="Devis plomberie à Lattes : parlez-nous de votre projet"
+        title="Devis plomberie autour de Montpellier : parlez-nous de votre projet"
         description={`Quelques lignes suffisent, on vous rappelle pour en parler. Pressé ? Appelez directement le ${businessInfo.phone}.`}
       />
 

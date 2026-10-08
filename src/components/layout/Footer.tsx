@@ -11,7 +11,7 @@ export function Footer() {
         <div>
           <p className="font-display text-xl font-extrabold uppercase font-condensed">{businessInfo.tradeName}</p>
           <p className="mt-2 text-sm text-on-deep-muted">
-            {businessInfo.ownerName}, plombier chauffagiste à {businessInfo.city} depuis{" "}
+            {businessInfo.ownerName}, plombier chauffagiste à Montpellier et alentours depuis{" "}
             {businessInfo.foundingYear}.
           </p>
           <p className="mt-2 text-sm text-on-deep-muted">{businessInfo.address}</p>

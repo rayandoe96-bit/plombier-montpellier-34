@@ -8,16 +8,16 @@ import { businessInfo, zones } from "@/lib/content/business";
 import { isVisible } from "@/lib/content/confirm";
 
 export const metadata: Metadata = {
-  title: "Contacter un plombier à Lattes",
+  title: "Contacter un plombier, Montpellier et alentours",
   description:
-    "Émilien Devarenne, plombier chauffagiste à Lattes : 06 31 93 45 14, du lundi au samedi. C'est l'artisan qui répond. 6 rue des Consuls, 34970 Lattes.",
+    "Émilien Devarenne, plombier chauffagiste à Montpellier et alentours : 06 31 93 45 14, du lundi au samedi. C'est l'artisan qui répond. 6 rue des Consuls, 34970 Lattes.",
   alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
   return (
     <Container className="py-10 sm:py-14">
-      <SectionHeading as="h1" eyebrow="Contact" title="Plombier à Lattes : un appel, et c'est l'artisan qui répond" />
+      <SectionHeading as="h1" eyebrow="Contact" title="Plombier autour de Montpellier : un appel, et c'est l'artisan qui répond" />
 
       <div className="mt-8 grid gap-6 sm:grid-cols-2">
         <div className="rounded-xl border border-line p-6">

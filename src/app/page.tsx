@@ -266,10 +266,10 @@ export default async function Home() {
           <div className="min-w-0">
             <p className="flex items-center gap-2.5 font-mono text-xs uppercase tracking-[0.12em] text-on-deep-muted">
               <span className="h-2 w-2 rounded-full bg-ok shadow-[0_0_0_4px_rgba(47,158,98,.25)]" />
-              {businessInfo.city} · Montpellier et littoral
+              Montpellier · Lattes · littoral
             </p>
             <h1 className="mt-4 font-display text-[2.7rem] font-black uppercase leading-[0.92] font-condensed sm:text-7xl">
-              Votre plombier chauffagiste à <span className="text-copper-hi">{businessInfo.city}</span> et ses alentours
+              Votre plombier chauffagiste à <span className="text-copper-hi">Montpellier</span> et alentours
             </h1>
             <p className="mt-5 max-w-xl text-lg text-on-deep-muted">
               Fuite, WC bouché, chauffe-eau en panne ou salle de bains à refaire :{" "}
@@ -325,7 +325,7 @@ export default async function Home() {
               { value: String(businessInfo.foundingYear), label: `installé à ${businessInfo.city}` },
               { value: `${ratingValue} ★`, label: `${ratingCount} avis Google` },
               { value: "Lun – sam", label: "dès 8h, fermé le dimanche" },
-              { value: `${zones.length} communes`, label: `${businessInfo.city} et ses alentours` },
+              { value: `${zones.length} communes`, label: "de Montpellier à La Grande-Motte" },
             ].map((proof, index) => (
               <li
                 key={proof.value}
@@ -474,22 +474,13 @@ export default async function Home() {
               description={`${businessInfo.tradeName}, c'est ${businessInfo.ownerName}, artisan installé à ${businessInfo.city} depuis ${businessInfo.foundingYear}. Celui qui décroche le téléphone est celui qui vient chez vous : pas d'intermédiaire, pas de sous-traitant.`}
             />
             <div>
-              <h3 className="text-base font-bold">On intervient à {businessInfo.city} et ses alentours</h3>
+              <h3 className="text-base font-bold">On intervient de Montpellier à La Grande-Motte</h3>
               <ul className="mt-3 flex flex-wrap gap-2">
-                {[...zones]
-                  .sort((a, b) => Number(b.name === businessInfo.city) - Number(a.name === businessInfo.city))
-                  .map((zone) => (
-                    <li
-                      key={zone.name}
-                      className={`rounded-full border px-3.5 py-1 text-sm ${
-                        zone.name === businessInfo.city
-                          ? "border-foreground bg-foreground font-semibold text-background"
-                          : "border-line bg-surface"
-                      }`}
-                    >
-                      {zone.name}
-                    </li>
-                  ))}
+                {zones.map((zone) => (
+                  <li key={zone.name} className="rounded-full border border-line bg-surface px-3.5 py-1 text-sm">
+                    {zone.name}
+                  </li>
+                ))}
               </ul>
               <Link href="/zone-intervention" className="mt-2 inline-flex min-h-10 items-center text-sm font-semibold text-brand-500">
                 Voir le détail par commune →

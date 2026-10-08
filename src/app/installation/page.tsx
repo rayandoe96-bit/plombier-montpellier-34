@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { Hero } from "@/components/marketing/Hero";
+import { ZoneStrip } from "@/components/marketing/ZoneStrip";
 import { IllustrationImage } from "@/components/ui/IllustrationImage";
 import { illustrations } from "@/lib/content/illustrations";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -10,9 +11,9 @@ import { CtaGroup } from "@/components/ui/CtaGroup";
 import { installationHighlights } from "@/lib/content/services";
 
 export const metadata: Metadata = {
-  title: "Chauffe-eau, chauffage, sanitaires à Lattes",
+  title: "Chauffe-eau, chauffage, sanitaires Montpellier",
   description:
-    "Chauffe-eau à changer, chauffage, WC, lavabo, douche, robinetterie : pose et remplacement à Lattes et alentours, faits proprement. Demandez votre devis.",
+    "Chauffe-eau à changer, chauffage, WC, lavabo, douche, robinetterie : pose et remplacement à Montpellier et alentours, faits proprement. Demandez votre devis.",
   alternates: { canonical: "/installation" },
 };
 
@@ -21,7 +22,7 @@ export default function InstallationPage() {
     <>
       <Hero
         eyebrow="Installation"
-        title="Chauffe-eau, chauffage, sanitaires à Lattes : bien posés dès le départ"
+        title="Chauffe-eau, chauffage, sanitaires : bien posés dès le départ"
         description="Un équipement neuf mal posé, c'est une panne qui attend son heure. On choisit avec vous ce qui convient à votre logement, puis on l'installe proprement."
         aside={
           <IllustrationImage
@@ -32,6 +33,7 @@ export default function InstallationPage() {
           />
         }
       />
+      <ZoneStrip />
 
       <Container className="py-10 sm:py-14">
         <SectionHeading eyebrow="Ce que nous installons" title="Ce qu'on peut installer chez vous" />

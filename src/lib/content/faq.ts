@@ -6,7 +6,7 @@ const allGeneralFaq: FaqItem[] = [
   {
     question: "Dans quelles communes intervenez-vous ?",
     answer:
-      `À ${businessInfo.city} et ses alentours : Montpellier, Pérols, Carnon, Palavas-les-Flots et La Grande-Motte. Votre commune n'est pas dans la liste ? Appelez, on vous dit tout de suite si c'est possible.`,
+      `À Montpellier, Lattes, Pérols, Carnon, Palavas-les-Flots et La Grande-Motte. Votre commune n'est pas dans la liste ? Appelez, on vous dit tout de suite si c'est possible.`,
   },
   {
     question: "Quel est votre délai d'intervention ?",

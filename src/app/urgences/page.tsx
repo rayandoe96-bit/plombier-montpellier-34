@@ -8,8 +8,8 @@ import { businessInfo, zones } from "@/lib/content/business";
 import { isConfirmed } from "@/lib/content/confirm";
 
 export const metadata: Metadata = {
-  title: "Urgence plombier à Lattes : fuite, WC bouché",
-  description: `L'eau coule, les WC débordent ? Appelez le ${businessInfo.phone} : l'artisan vous dit quoi faire tout de suite et quand il peut venir. Lattes et alentours.`,
+  title: "Urgence plombier Montpellier : fuite, WC bouché",
+  description: `L'eau coule, les WC débordent ? Appelez le ${businessInfo.phone} : l'artisan vous dit quoi faire tout de suite et quand il peut venir. Montpellier et alentours.`,
   alternates: { canonical: "/urgences" },
 };
 
@@ -40,7 +40,7 @@ export default function UrgencesPage() {
         title={
           isConfirmed(businessInfo.emergencyResponseTime)
             ? `Intervention d'urgence ${businessInfo.emergencyResponseTime}`
-            : `Urgence plomberie à ${businessInfo.city} ? Appelez directement`
+            : `Urgence plomberie autour de Montpellier ? Appelez directement`
         }
         description={`L'eau coule, les WC débordent ? Appelez le ${businessInfo.phone} : vous parlez directement à l'artisan, qui vous dit quoi faire tout de suite et quand il peut venir. Du lundi au samedi, de 8h à 20h.`}
       />
@@ -75,7 +75,7 @@ export default function UrgencesPage() {
       </Container>
 
       <Container className="py-8 sm:py-12">
-        <SectionHeading eyebrow="Zone couverte" title={`Urgences à ${businessInfo.city} et ses alentours`} />
+        <SectionHeading eyebrow="Zone couverte" title="Urgences de Montpellier à La Grande-Motte" />
         <div className="mt-4 flex flex-wrap gap-2">
           {zones.map((zone) => (
             <span key={zone.name} className="rounded-full border border-line px-3 py-1 text-sm text-muted">

@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { businessInfo } from "@/lib/content/business";
 import { getGooglePlace } from "@/lib/google/place";
 
-export const alt = `${businessInfo.tradeName}, plombier chauffagiste à ${businessInfo.city}`;
+export const alt = `${businessInfo.tradeName}, plombier chauffagiste à Montpellier et alentours`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -25,7 +25,7 @@ export default async function Image() {
         }}
       >
         <div style={{ display: "flex", fontSize: 28, letterSpacing: 4, textTransform: "uppercase", color: "#9cc3ec" }}>
-          Plomberie · Chauffage · {businessInfo.city}
+          Plomberie · Chauffage · Montpellier et alentours
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 84, fontWeight: 700, lineHeight: 1.05 }}>{businessInfo.tradeName}</div>
