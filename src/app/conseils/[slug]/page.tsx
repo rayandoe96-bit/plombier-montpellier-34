@@ -18,7 +18,8 @@ export async function generateMetadata({
   const article = adviceArticles.find((item) => item.slug === slug);
   if (!article) return {};
   return {
-    title: article.title,
+    // Long article titles drop the brand suffix so Google shows them whole (~60 characters).
+    title: `${article.title} | Devarenne`.length > 60 ? { absolute: article.title } : article.title,
     description: article.summary,
     alternates: { canonical: `/conseils/${article.slug}` },
   };
