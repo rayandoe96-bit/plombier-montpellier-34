@@ -39,7 +39,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <a
             href={businessInfo.phoneHref}
-            className="flex h-10 items-center gap-2 whitespace-nowrap rounded-lg bg-copper px-3 text-sm font-bold text-white shadow-[0_6px_16px_-8px_var(--copper)] transition-colors hover:bg-copper-hi sm:px-4"
+            className="flex h-10 items-center gap-2 whitespace-nowrap rounded-lg bg-copper px-3 text-sm font-bold text-white shadow-[0_6px_16px_-8px_var(--copper)] transition-colors hover:bg-copper-dark sm:px-4"
           >
             <PhoneIcon />
             <span className="hidden font-mono sm:inline">{businessInfo.phone}</span>

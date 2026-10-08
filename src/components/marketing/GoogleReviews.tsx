@@ -19,7 +19,7 @@ export function GoogleReviews({ reviews, mapsUrl }: { reviews: GoogleReview[]; m
         <ul className="mt-8 grid gap-4 md:grid-cols-3">
           {shown.map((review) => (
             <li key={`${review.author}-${review.relativeTime}`} className="grid content-start gap-3 rounded-2xl border border-line p-5">
-              <p className="text-star" aria-label={`${review.rating} sur 5`}>
+              <p className="text-star" role="img" aria-label={`${review.rating} sur 5`}>
                 <span aria-hidden="true">{"★".repeat(review.rating)}{"☆".repeat(Math.max(0, 5 - review.rating))}</span>
               </p>
               <blockquote className="line-clamp-6 text-sm text-foreground">{review.text}</blockquote>

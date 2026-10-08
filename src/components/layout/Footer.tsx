@@ -15,11 +15,11 @@ export function Footer() {
             {businessInfo.foundingYear}.
           </p>
           <p className="mt-2 text-sm text-on-deep-muted">{businessInfo.address}</p>
-          <PhoneLink className="mt-4 inline-flex min-h-11 items-center gap-2 whitespace-nowrap rounded-lg bg-copper px-4 font-mono text-sm font-semibold text-white hover:bg-copper-hi" />
+          <PhoneLink className="mt-4 inline-flex min-h-11 items-center gap-2 whitespace-nowrap rounded-lg bg-copper px-4 font-mono text-sm font-semibold text-white hover:bg-copper-dark" />
         </div>
 
         <div>
-          <p className="text-sm font-mono font-medium uppercase tracking-[0.12em] text-on-deep-muted/70">
+          <p className="text-sm font-mono font-medium uppercase tracking-[0.12em] text-on-deep-muted">
             Navigation
           </p>
           <ul className="mt-2">
@@ -34,7 +34,7 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="text-sm font-mono font-medium uppercase tracking-[0.12em] text-on-deep-muted/70">
+          <p className="text-sm font-mono font-medium uppercase tracking-[0.12em] text-on-deep-muted">
             Zone d&apos;intervention
           </p>
           <ul className="mt-3 space-y-2">
@@ -47,7 +47,7 @@ export function Footer() {
         </div>
       </Container>
 
-      <Container className="mt-10 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-on-deep-muted/70 sm:flex-row sm:items-center sm:justify-between">
+      <Container className="mt-10 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-on-deep-muted sm:flex-row sm:items-center sm:justify-between">
         <p>© {new Date().getFullYear()} {businessInfo.tradeName}.</p>
         <ul className="flex gap-4">
           {footerLegalNav.map((item) => (

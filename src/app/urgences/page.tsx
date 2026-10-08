@@ -46,13 +46,13 @@ export default function UrgencesPage() {
       />
 
       <Container className="py-10 sm:py-14">
-        <SectionHeading eyebrow="Quand nous appeler" title="Quand appeler sans attendre" />
+        <SectionHeading title="Quand appeler sans attendre" />
         <ul className="mt-6 grid gap-3 sm:grid-cols-3">
           {urgentSituations.map((situation) => (
             <li key={situation.href} className="rounded-xl border border-line p-4 text-sm text-muted">
               {situation.label}
               <Link href={situation.href} className="mt-2 block font-semibold text-brand-600 underline">
-                {situation.linkLabel} →
+                {situation.linkLabel}
               </Link>
             </li>
           ))}
@@ -88,7 +88,7 @@ export default function UrgencesPage() {
       <Container className="pb-16 pt-4 sm:pb-20">
         <div className="rounded-2xl bg-urgent-500 px-6 py-10 text-center text-white sm:px-10">
           <h2 className="text-2xl font-bold">Situation urgente ?</h2>
-          <p className="mt-2 text-white/90">Chaque minute compte : un appel, et vous savez quoi faire.</p>
+          <p className="mt-2 text-white">Chaque minute compte : un appel, et vous savez quoi faire.</p>
           <CtaGroup className="mt-6 justify-center" variant="dark" callLabel="Appeler en urgence" />
         </div>
       </Container>

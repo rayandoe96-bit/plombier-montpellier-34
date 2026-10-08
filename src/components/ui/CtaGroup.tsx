@@ -23,7 +23,7 @@ export function CtaGroup({
     <div className={`flex flex-col gap-3 sm:flex-row ${className}`}>
       <a
         href={businessInfo.phoneHref}
-        className="flex min-h-12 items-center justify-center gap-2 rounded-lg bg-copper px-6 text-base font-bold text-white shadow-[0_6px_16px_-8px_var(--copper)] transition-colors hover:bg-copper-hi"
+        className="flex min-h-12 items-center justify-center gap-2 rounded-lg bg-copper px-6 text-base font-bold text-white shadow-[0_6px_16px_-8px_var(--copper)] transition-colors hover:bg-copper-dark"
       >
         <PhoneIcon />
         {callLabel}

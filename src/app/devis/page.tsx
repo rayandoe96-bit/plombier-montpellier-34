@@ -32,7 +32,7 @@ export default function DevisPage() {
         <div className="space-y-6">
           <div className="rounded-xl border border-line p-5">
             <p className="text-sm font-semibold text-foreground">Besoin d&apos;une réponse rapide ?</p>
-            <PhoneLink className="mt-2 inline-flex min-h-11 items-center gap-2 rounded-lg bg-copper px-4 py-2 font-mono text-sm font-semibold text-white hover:bg-copper-hi" />
+            <PhoneLink className="mt-2 inline-flex min-h-11 items-center gap-2 rounded-lg bg-copper px-4 py-2 font-mono text-sm font-semibold text-white hover:bg-copper-dark" />
           </div>
 
           <div>

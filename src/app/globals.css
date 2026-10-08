@@ -13,13 +13,14 @@
   --color-brand-500: #1d6a9a;
   --color-brand-600: #185a83;
   --color-brand-700: #134a6b;
-  --color-urgent-500: #c2581f;
+  --color-urgent-500: #b3501b;
   --color-urgent-600: #a3471a;
   --deep: #0d2333;
   --deep-2: #14324a;
   --on-deep: #eaf1f5;
   --on-deep-muted: #9fb6c6;
-  --copper: #c2581f;
+  --copper: #b3501b;
+  --copper-dark: #923f14;
   --copper-hi: #e07a3a;
   --star: #e0a100;
   --ok: #2f9e62;
@@ -44,6 +45,7 @@
   --color-on-deep-muted: var(--on-deep-muted);
   --color-copper: var(--copper);
   --color-copper-hi: var(--copper-hi);
+  --color-copper-dark: var(--copper-dark);
   --color-star: var(--star);
   --color-ok: var(--ok);
   --font-sans: var(--font-public-sans);
@@ -65,7 +67,7 @@ h3 {
 }
 
 :focus-visible {
-  outline: 3px solid var(--copper-hi);
+  outline: 3px solid var(--copper);
   outline-offset: 3px;
   border-radius: 4px;
 }

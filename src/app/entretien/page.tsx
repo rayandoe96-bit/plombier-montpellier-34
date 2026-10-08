@@ -49,7 +49,7 @@ export default function EntretienPage() {
       <ZoneStrip />
 
       <Container className="py-10 sm:py-14">
-        <SectionHeading eyebrow="Nos prestations" title="Ce qu'on vérifie" />
+        <SectionHeading title="Ce qu'on vérifie" />
         <ul className="mt-6 grid gap-3 sm:grid-cols-3">
           {entretienHighlights.map((item) => (
             <li key={item} className="rounded-xl border border-line p-4 text-sm text-muted">

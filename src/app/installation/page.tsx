@@ -36,7 +36,7 @@ export default function InstallationPage() {
       <ZoneStrip />
 
       <Container className="py-10 sm:py-14">
-        <SectionHeading eyebrow="Ce que nous installons" title="Ce qu'on peut installer chez vous" />
+        <SectionHeading title="Ce qu'on peut installer chez vous" />
         <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {installationHighlights.map((item) => (
             <li key={item} className="rounded-xl border border-line p-4 text-sm text-muted">
@@ -54,7 +54,7 @@ export default function InstallationPage() {
       </Container>
 
       <Container className="py-8 sm:py-12">
-        <SectionHeading eyebrow="Tarif" title="Ce qui influence le prix d'une installation" />
+        <SectionHeading title="Ce qui influence le prix d'une installation" />
         <div className="mt-6 max-w-md">
           <PriceFactors
             factors={[

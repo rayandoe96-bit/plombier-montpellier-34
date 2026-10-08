@@ -166,7 +166,7 @@ function RepairCard() {
         ) : null}
         <a
           href={businessInfo.phoneHref}
-          className="flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-copper px-5 font-bold text-white shadow-[0_6px_16px_-8px_var(--copper)] transition-colors hover:bg-copper-hi"
+          className="flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-copper px-5 font-bold text-white shadow-[0_6px_16px_-8px_var(--copper)] transition-colors hover:bg-copper-dark"
         >
           <PhoneIcon />
           Appeler maintenant
@@ -185,7 +185,7 @@ function ProjectTile({ card }: { card: ProblemCard & { image: Illustration } }) 
     >
       <IllustrationImage
         image={card.image}
-        className="aspect-[3/2]"
+        className="hidden aspect-[3/2] sm:block"
         sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
       />
       <div className="flex flex-1 flex-col gap-2 p-5">
@@ -194,7 +194,7 @@ function ProjectTile({ card }: { card: ProblemCard & { image: Illustration } }) 
           {card.title}
         </h3>
         <p className="flex-1 text-sm text-muted">{card.text}</p>
-        <span className="mt-1 text-sm font-semibold text-brand-500 group-hover:underline">En savoir plus →</span>
+        <span className="mt-1 text-sm font-semibold text-brand-500 group-hover:underline">En savoir plus</span>
       </div>
     </Link>
   );
@@ -204,7 +204,7 @@ function ArtisanCard({ ratingValue, ratingCount }: { ratingValue: string; rating
   return (
     <aside
       aria-label="Coordonnées"
-      className="grid gap-4 rounded-2xl border border-white/10 bg-deep-2 p-5 shadow-[0_24px_60px_-30px_rgba(0,0,0,.8)]"
+      className="hidden gap-4 lg:grid rounded-2xl border border-white/10 bg-deep-2 p-5 shadow-[0_24px_60px_-30px_rgba(0,0,0,.8)]"
     >
       <div className="flex items-center gap-3">
         <span
@@ -266,10 +266,10 @@ export default async function Home() {
           <div className="min-w-0">
             <p className="flex items-center gap-2.5 font-mono text-xs uppercase tracking-[0.12em] text-on-deep-muted">
               <span className="h-2 w-2 rounded-full bg-ok shadow-[0_0_0_4px_rgba(47,158,98,.25)]" />
-              Montpellier · Lattes · littoral
+              Dépannage, installation, salle de bains
             </p>
             <h1 className="mt-4 font-display text-[2.7rem] font-black uppercase leading-[0.92] font-condensed sm:text-7xl">
-              Votre plombier chauffagiste à <span className="text-copper-hi">Montpellier</span> et alentours
+              Votre plombier chauffagiste à Montpellier et alentours
             </h1>
             <p className="mt-5 max-w-xl text-lg text-on-deep-muted">
               Fuite, WC bouché, chauffe-eau en panne ou salle de bains à refaire :{" "}
@@ -289,7 +289,7 @@ export default async function Home() {
                 </p>
                 <a
                   href={businessInfo.phoneHref}
-                  className="mt-2 flex min-h-12 items-center justify-center gap-2 rounded-lg bg-copper px-5 font-bold text-white shadow-[0_6px_16px_-8px_var(--copper)] transition-colors hover:bg-copper-hi"
+                  className="mt-2 flex min-h-12 items-center justify-center gap-2 rounded-lg bg-copper px-5 font-bold text-white shadow-[0_6px_16px_-8px_var(--copper)] transition-colors hover:bg-copper-dark"
                 >
                   <PhoneIcon />
                   Appeler maintenant
@@ -366,7 +366,7 @@ export default async function Home() {
             <div className="flex flex-wrap gap-3">
               <a
                 href={businessInfo.phoneHref}
-                className="flex min-h-12 items-center justify-center gap-2 rounded-lg bg-copper px-6 font-bold text-white shadow-[0_6px_16px_-8px_var(--copper)] transition-colors hover:bg-copper-hi"
+                className="flex min-h-12 items-center justify-center gap-2 rounded-lg bg-copper px-6 font-bold text-white shadow-[0_6px_16px_-8px_var(--copper)] transition-colors hover:bg-copper-dark"
               >
                 <PhoneIcon />
                 Appeler maintenant
@@ -427,9 +427,9 @@ export default async function Home() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/devis"
-                className="flex min-h-12 items-center justify-center rounded-lg bg-copper px-6 font-bold text-white shadow-[0_6px_16px_-8px_var(--copper)] transition-colors hover:bg-copper-hi"
+                className="flex min-h-12 items-center justify-center rounded-lg bg-copper px-6 font-bold text-white shadow-[0_6px_16px_-8px_var(--copper)] transition-colors hover:bg-copper-dark"
               >
-                Parler de mon projet
+                Demander un devis
               </Link>
               <Link
                 href="/salle-de-bains"
@@ -445,7 +445,7 @@ export default async function Home() {
       {/* How it works */}
       <section className="border-y border-line bg-surface py-14 sm:py-20">
         <Container>
-          <SectionHeading eyebrow="Étape par étape" title="Comment ça se passe, en 3 étapes" />
+          <SectionHeading title="Comment ça se passe, en 3 étapes" />
           <ol className="relative mt-10 grid gap-6 md:grid-cols-3 md:gap-8">
             <span
               aria-hidden="true"
@@ -483,12 +483,12 @@ export default async function Home() {
                 ))}
               </ul>
               <Link href="/zone-intervention" className="mt-2 inline-flex min-h-10 items-center text-sm font-semibold text-brand-500">
-                Voir le détail par commune →
+                Voir le détail par commune
               </Link>
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative hidden lg:block">
             <IllustrationImage image={illustrations.tools} className="aspect-[4/3] rounded-2xl" />
             <div className="relative -mt-16 ml-4 mr-4 rounded-2xl bg-blueprint p-6 text-on-deep shadow-[0_24px_50px_-24px_rgba(0,0,0,.7)] sm:-mt-24 sm:ml-8 sm:mr-auto sm:max-w-sm">
             <p className="pipe-tag text-copper-hi">Avis Google</p>
@@ -538,7 +538,7 @@ export default async function Home() {
       <section className="border-t border-line bg-surface py-14 sm:py-20">
         <Container className="grid gap-8 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)] lg:gap-14">
           <div>
-            <SectionHeading eyebrow="Questions fréquentes" title="Vos questions avant d'appeler" />
+            <SectionHeading title="Vos questions avant d'appeler" />
             <p className="mt-4 text-muted">
               Une autre question ? Appelez au{" "}
               <a href={businessInfo.phoneHref} className="whitespace-nowrap font-mono font-semibold text-copper">

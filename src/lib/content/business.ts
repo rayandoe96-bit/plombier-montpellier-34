@@ -46,8 +46,12 @@ export const businessInfo = {
   insuranceCoverage: TO_CONFIRM as Confirmable<string>,
   certifications: TO_CONFIRM as Confirmable<string>,
   quotePolicy: TO_CONFIRM as Confirmable<string>,
-  consentNotice: TO_CONFIRM as Confirmable<string>,
-  retentionPeriod: TO_CONFIRM as Confirmable<string>,
+  // Textes RGPD : proposition par défaut (8 octobre 2026), validée sur le principe par le client.
+  // À relire si le prestataire du formulaire ou la durée de conservation changent.
+  consentNotice:
+    "Vos informations servent uniquement à répondre à votre demande. Elles ne sont ni vendues ni utilisées pour de la publicité, et vous pouvez demander à les consulter, les corriger ou les supprimer." as Confirmable<string>,
+  retentionPeriod:
+    "Une demande qui n'aboutit pas à une intervention est conservée 3 ans au plus après le dernier échange. Si une intervention a lieu, le devis et la facture sont conservés 10 ans, comme l'exigent les obligations comptables." as Confirmable<string>,
 };
 
 export const openingHours: OpeningSlot[] = [

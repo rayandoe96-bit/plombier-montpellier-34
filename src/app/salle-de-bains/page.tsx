@@ -69,7 +69,7 @@ export default function SalleDeBainsPage() {
 
       <Container className="grid items-center gap-10 py-8 sm:py-12 lg:grid-cols-2">
         <div>
-          <SectionHeading eyebrow="Déroulé" title="Votre projet, étape par étape" />
+          <SectionHeading title="Votre projet, étape par étape" />
           <div className="mt-6">
             <ProcessSteps steps={projectSteps} />
           </div>
@@ -78,7 +78,7 @@ export default function SalleDeBainsPage() {
       </Container>
 
       <Container className="py-8 sm:py-12">
-        <SectionHeading eyebrow="Tarif" title="Ce qui fait varier le prix" />
+        <SectionHeading title="Ce qui fait varier le prix" />
         <div className="mt-6 max-w-md">
           <PriceFactors
             factors={[
@@ -97,7 +97,7 @@ export default function SalleDeBainsPage() {
           <p className="mt-2 text-sm text-muted">
             Décrivez-le en quelques lignes, ou appelez pour en parler directement avec l&apos;artisan.
           </p>
-          <CtaGroup className="mt-5 justify-center" quoteLabel="Parler de mon projet" />
+          <CtaGroup className="mt-5 justify-center" />
         </div>
       </Container>
     </>
