@@ -45,7 +45,7 @@ export function ServiceDetail({ service }: { service: Service }) {
           <div>
             <SectionHeading eyebrow="Tarif" title="Ce qui fait varier le prix" />
             <div className="mt-6">
-              <PriceFactors factors={service.priceFactors} />
+              <PriceFactors factors={service.priceFactors} showRepairPrice={service.category === "depannage"} />
             </div>
           </div>
         </div>
