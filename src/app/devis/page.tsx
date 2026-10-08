@@ -8,9 +8,9 @@ import { PhoneLink } from "@/components/ui/PhoneLink";
 import { businessInfo } from "@/lib/content/business";
 
 export const metadata: Metadata = {
-  title: "Devis plombier à Lattes",
+  title: "Devis plombier Montpellier et alentours",
   description:
-    "Salle de bains, chauffe-eau, chauffage, sanitaires : décrivez votre projet en quelques lignes, on vous rappelle. Lattes, Montpellier et alentours.",
+    "Salle de bains, chauffe-eau, chauffage, sanitaires : décrivez votre projet en quelques lignes, on vous rappelle. Montpellier, Lattes et alentours.",
   alternates: { canonical: "/devis" },
 };
 
@@ -20,7 +20,7 @@ export default function DevisPage() {
       <SectionHeading
         as="h1"
         eyebrow="Devis"
-        title="Devis plomberie à Lattes : parlez-nous de votre projet"
+        title="Devis plomberie autour de Montpellier : parlez-nous de votre projet"
         description={`Quelques lignes suffisent, on vous rappelle pour en parler. Pressé ? Appelez directement le ${businessInfo.phone}.`}
       />
 
@@ -32,7 +32,7 @@ export default function DevisPage() {
         <div className="space-y-6">
           <div className="rounded-xl border border-line p-5">
             <p className="text-sm font-semibold text-foreground">Besoin d&apos;une réponse rapide ?</p>
-            <PhoneLink className="mt-2 inline-flex min-h-11 items-center gap-2 rounded-lg bg-copper px-4 py-2 font-mono text-sm font-semibold text-white hover:bg-copper-hi" />
+            <PhoneLink className="mt-2 inline-flex min-h-11 items-center gap-2 rounded-lg bg-copper px-4 py-2 font-mono text-sm font-semibold text-white hover:bg-copper-dark" />
           </div>
 
           <div>

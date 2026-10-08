@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { Hero } from "@/components/marketing/Hero";
+import { ZoneStrip } from "@/components/marketing/ZoneStrip";
 import { IllustrationImage } from "@/components/ui/IllustrationImage";
 import { illustrations } from "@/lib/content/illustrations";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -12,9 +13,9 @@ import { bathroomHighlights } from "@/lib/content/services";
 import { businessInfo } from "@/lib/content/business";
 
 export const metadata: Metadata = {
-  title: "Création de salle de bains à Lattes",
+  title: "Création de salle de bains Montpellier, Lattes",
   description:
-    "Créer ou rénover votre salle de bains à Lattes : arrivées d'eau, évacuations, douche, baignoire, WC, posés par un seul artisan. Parlez-nous de votre projet.",
+    "Créer ou rénover votre salle de bains à Montpellier et alentours : arrivées d'eau, évacuations, douche, baignoire, WC, posés par un seul artisan. Demandez un devis.",
   alternates: { canonical: "/salle-de-bains" },
 };
 
@@ -30,8 +31,8 @@ export default function SalleDeBainsPage() {
     <>
       <Hero
         eyebrow="Création de salle de bains"
-        title="Création de salle de bains à Lattes, par un seul artisan"
-        description={`Créer une salle de bains ou refaire l'ancienne : ${businessInfo.ownerName} s'occupe des arrivées d'eau, des évacuations et de la pose de vos équipements, à ${businessInfo.city} et ses alentours.`}
+        title="Création de salle de bains autour de Montpellier, par un seul artisan"
+        description={`Créer une salle de bains ou refaire l'ancienne : ${businessInfo.ownerName} s'occupe des arrivées d'eau, des évacuations et de la pose de vos équipements, de Montpellier à La Grande-Motte.`}
         aside={
           <IllustrationImage
             image={illustrations.bathroom}
@@ -41,6 +42,7 @@ export default function SalleDeBainsPage() {
           />
         }
       />
+      <ZoneStrip />
 
       <Container className="py-10 sm:py-14">
         <SectionHeading
@@ -67,7 +69,7 @@ export default function SalleDeBainsPage() {
 
       <Container className="grid items-center gap-10 py-8 sm:py-12 lg:grid-cols-2">
         <div>
-          <SectionHeading eyebrow="Déroulé" title="Votre projet, étape par étape" />
+          <SectionHeading title="Votre projet, étape par étape" />
           <div className="mt-6">
             <ProcessSteps steps={projectSteps} />
           </div>
@@ -76,7 +78,7 @@ export default function SalleDeBainsPage() {
       </Container>
 
       <Container className="py-8 sm:py-12">
-        <SectionHeading eyebrow="Tarif" title="Ce qui fait varier le prix" />
+        <SectionHeading title="Ce qui fait varier le prix" />
         <div className="mt-6 max-w-md">
           <PriceFactors
             factors={[
@@ -95,7 +97,7 @@ export default function SalleDeBainsPage() {
           <p className="mt-2 text-sm text-muted">
             Décrivez-le en quelques lignes, ou appelez pour en parler directement avec l&apos;artisan.
           </p>
-          <CtaGroup className="mt-5 justify-center" quoteLabel="Parler de mon projet" />
+          <CtaGroup className="mt-5 justify-center" />
         </div>
       </Container>
     </>

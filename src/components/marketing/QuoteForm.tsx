@@ -1,8 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { useState, type FormEvent } from "react";
 import { businessInfo, zones } from "@/lib/content/business";
 import { services } from "@/lib/content/services";
+import { isVisible } from "@/lib/content/confirm";
 
 // Formspree-compatible endpoint (POST JSON). Left unset, the form falls back to "call us".
 const endpoint = process.env.NEXT_PUBLIC_QUOTE_FORM_ENDPOINT;
@@ -145,6 +147,15 @@ export function QuoteForm() {
       >
         {status === "sending" ? "Envoi en cours…" : "Envoyer ma demande"}
       </button>
+
+      {isVisible(businessInfo.consentNotice) ? (
+        <p className="text-xs text-muted">
+          {businessInfo.consentNotice}{" "}
+          <Link href="/confidentialite" className="font-semibold text-brand-600 underline">
+            Vos données et vos droits
+          </Link>
+        </p>
+      ) : null}
     </form>
   );
 }

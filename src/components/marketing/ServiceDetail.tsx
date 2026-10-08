@@ -4,6 +4,7 @@ import { Hero } from "@/components/marketing/Hero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProcessSteps } from "@/components/marketing/ProcessSteps";
 import { PriceFactors } from "@/components/marketing/PriceFactors";
+import { ZoneStrip } from "@/components/marketing/ZoneStrip";
 import { CtaGroup } from "@/components/ui/CtaGroup";
 import type { Service } from "@/lib/content/types";
 import { adviceArticles } from "@/lib/content/advice";
@@ -19,7 +20,7 @@ export function ServiceDetail({ service }: { service: Service }) {
   return (
     <>
       <Hero
-        eyebrow={service.level}
+        eyebrow="Dépannage plomberie"
         title={service.title}
         description={service.need}
         aside={
@@ -33,17 +34,18 @@ export function ServiceDetail({ service }: { service: Service }) {
           ) : undefined
         }
       />
+      <ZoneStrip />
 
       <Container className="py-10 sm:py-14">
         <div className="grid gap-10 sm:grid-cols-2">
           <div>
-            <SectionHeading eyebrow="Déroulé" title="Comment ça se passe, étape par étape" />
+            <SectionHeading title="Comment ça se passe, étape par étape" />
             <div className="mt-6">
               <ProcessSteps steps={service.process} />
             </div>
           </div>
           <div>
-            <SectionHeading eyebrow="Tarif" title="Ce qui fait varier le prix" />
+            <SectionHeading title="Ce qui fait varier le prix" />
             <div className="mt-6">
               <PriceFactors factors={service.priceFactors} showRepairPrice={service.category === "depannage"} />
             </div>

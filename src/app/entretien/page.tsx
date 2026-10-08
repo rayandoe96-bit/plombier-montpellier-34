@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { Hero } from "@/components/marketing/Hero";
+import { ZoneStrip } from "@/components/marketing/ZoneStrip";
 import { IllustrationImage } from "@/components/ui/IllustrationImage";
 import { illustrations } from "@/lib/content/illustrations";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -10,9 +11,9 @@ import { entretienHighlights } from "@/lib/content/services";
 import { adviceArticles } from "@/lib/content/advice";
 
 export const metadata: Metadata = {
-  title: "Entretien plomberie et chauffe-eau à Lattes",
+  title: "Entretien plomberie et chauffe-eau Montpellier",
   description:
-    "Une fuite ou un chauffe-eau en panne prévient rarement. Faites contrôler canalisations, sanitaires et chauffe-eau à Lattes avant le dégât des eaux.",
+    "Une fuite ou un chauffe-eau en panne prévient rarement. Faites contrôler canalisations, sanitaires et chauffe-eau avant le dégât des eaux. Montpellier et alentours.",
   alternates: { canonical: "/entretien" },
 };
 
@@ -34,7 +35,7 @@ export default function EntretienPage() {
     <>
       <Hero
         eyebrow="Entretien"
-        title="Entretien plomberie à Lattes : faites vérifier avant que ça lâche"
+        title="Entretien plomberie : faites vérifier avant que ça lâche"
         description="Une fuite ou un chauffe-eau en panne arrive rarement sans prévenir. Un contrôle régulier repère l'usure à temps, avant le dégât des eaux ou la douche froide."
         aside={
           <IllustrationImage
@@ -45,9 +46,10 @@ export default function EntretienPage() {
           />
         }
       />
+      <ZoneStrip />
 
       <Container className="py-10 sm:py-14">
-        <SectionHeading eyebrow="Nos prestations" title="Ce qu'on vérifie" />
+        <SectionHeading title="Ce qu'on vérifie" />
         <ul className="mt-6 grid gap-3 sm:grid-cols-3">
           {entretienHighlights.map((item) => (
             <li key={item} className="rounded-xl border border-line p-4 text-sm text-muted">

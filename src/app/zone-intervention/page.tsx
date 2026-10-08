@@ -9,7 +9,7 @@ import { businessInfo, zones } from "@/lib/content/business";
 import { getGooglePlace, getMapEmbedUrl } from "@/lib/google/place";
 
 export const metadata: Metadata = {
-  title: "Plombier à Lattes, Pérols, Carnon, Palavas",
+  title: "Plombier Montpellier, Lattes, Pérols, Carnon",
   description:
     "Plombier chauffagiste basé à Lattes : on intervient à Montpellier, Pérols, Carnon, Palavas-les-Flots et La Grande-Motte. Votre commune n'y est pas ? Appelez.",
   alternates: { canonical: "/zone-intervention" },
@@ -29,7 +29,7 @@ export default async function ZoneInterventionPage() {
     <>
       <Hero
         eyebrow="Zone d'intervention"
-        title="Plombier à Lattes et ses alentours : où on intervient"
+        title="Plombier à Montpellier et alentours : où on intervient"
         description="Basé à Lattes, on intervient à Montpellier et sur le littoral proche. Votre commune n'est pas listée ? Appelez, on vous répond tout de suite."
       />
 

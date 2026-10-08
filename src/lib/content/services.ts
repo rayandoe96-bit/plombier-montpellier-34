@@ -5,8 +5,8 @@ export const services: Service[] = [
   {
     slug: "debouchage-canalisation",
     navLabel: "Débouchage de canalisation",
-    title: "Débouchage de canalisation à Lattes : WC, évier, douche",
-    metaTitle: "Débouchage canalisation à Lattes : WC, évier",
+    title: "Débouchage de canalisation : WC, évier, douche",
+    metaTitle: "Débouchage canalisation Montpellier et alentours",
     metaDescription: `Évier, douche ou WC bouché ? On retire le bouchon à la source et on vérifie l'écoulement, sans abîmer vos canalisations. Appelez le ${businessInfo.phone}.`,
     level: "Standard",
     need: "L'eau stagne dans l'évier, la douche se vide au ralenti, les WC débordent ? On trouve le bouchon, on le retire à la source et on vérifie que tout s'écoule normalement, sans abîmer vos canalisations.",
@@ -26,9 +26,9 @@ export const services: Service[] = [
   {
     slug: "haute-pression-hydrocurage",
     navLabel: "Haute Pression / Hydrocurage",
-    title: "Hydrocurage haute pression à Lattes contre les bouchons tenaces",
-    metaTitle: "Hydrocurage haute pression à Lattes",
-    metaDescription: "Le bouchon revient malgré les débouchages ? L'hydrocurage nettoie la canalisation sur toute sa longueur : graisses, tartre, dépôts. Lattes et alentours.",
+    title: "Hydrocurage haute pression contre les bouchons tenaces",
+    metaTitle: "Hydrocurage haute pression Montpellier, Lattes",
+    metaDescription: "Le bouchon revient malgré les débouchages ? L'hydrocurage nettoie la canalisation sur toute sa longueur : graisses, tartre, dépôts. Montpellier et alentours.",
     level: "Haute Pression",
     need: "Le bouchon revient malgré les débouchages ? L'hydrocurage envoie de l'eau à très forte pression dans la canalisation pour décoller graisses, tartre et dépôts sur toute sa longueur, pas seulement au point bouché.",
     process: [
@@ -47,9 +47,9 @@ export const services: Service[] = [
   {
     slug: "curage-inspection-camera",
     navLabel: "Curage & Inspection Caméra",
-    title: "Inspection caméra des canalisations à Lattes",
-    metaTitle: "Inspection caméra de canalisation à Lattes",
-    metaDescription: "Toujours le même problème ? La caméra montre l'intérieur de la canalisation (fissure, racine, dépôt) pour réparer au bon endroit. Lattes et alentours.",
+    title: "Inspection caméra des canalisations",
+    metaTitle: "Inspection caméra canalisation Montpellier",
+    metaDescription: "Toujours le même problème ? La caméra montre l'intérieur de la canalisation (fissure, racine, dépôt) pour réparer au bon endroit. Montpellier et alentours.",
     level: "Caméra",
     need: "Toujours le même problème ? Une caméra passée dans la canalisation montre ce qui se passe vraiment à l'intérieur (fissure, racine, affaissement, dépôt) pour réparer la bonne chose, au bon endroit, avant d'engager de gros travaux.",
     process: [
@@ -68,8 +68,8 @@ export const services: Service[] = [
   {
     slug: "recherche-de-fuite",
     navLabel: "Recherche de fuite",
-    title: "Recherche de fuite d'eau à Lattes, sans casse inutile",
-    metaTitle: "Recherche de fuite d'eau à Lattes",
+    title: "Recherche de fuite d'eau, sans casse inutile",
+    metaTitle: "Recherche de fuite d'eau Montpellier, Lattes",
     metaDescription: "Facture d'eau qui grimpe, mur humide, tache au plafond ? On localise la fuite, même invisible, avant d'ouvrir : on ne casse que là où il faut.",
     level: "Diagnostic",
     need: "Facture d'eau qui grimpe, mur humide, tache au plafond ? On localise l'origine exacte de la fuite, même invisible, avant d'ouvrir quoi que ce soit : on ne casse que là où il faut.",
