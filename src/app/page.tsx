@@ -545,7 +545,7 @@ export default async function Home() {
       <GoogleReviews reviews={place.reviews} mapsUrl={place.mapsUrl} />
 
       {/* Property managers */}
-      <section id="agences-syndics" className="border-t border-line py-14 sm:py-20">
+      <section id="agences-syndics" className="scroll-mt-16 border-t border-line py-14 sm:py-20">
         <Container className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-14">
           <div>
             <SectionHeading
