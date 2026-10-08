@@ -17,8 +17,8 @@ const allGeneralFaq: FaqItem[] = [
   },
   {
     question: "Combien coûte une intervention ?",
-    answer: isConfirmed(businessInfo.priceFrom)
-      ? `Nos interventions démarrent à partir de ${businessInfo.priceFrom} €. Le tarif exact dépend du service concerné et de la situation constatée sur place ; les facteurs qui influencent le prix sont détaillés sur chaque page service.`
+    answer: isConfirmed(businessInfo.repairPriceFrom)
+      ? `Les dépannages et interventions rapides démarrent à partir de ${businessInfo.repairPriceFrom} €. Le prix exact vous est annoncé avant l'intervention.`
       : TO_CONFIRM,
   },
   {
