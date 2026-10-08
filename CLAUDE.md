@@ -20,3 +20,5 @@
 
 \- Avant de coder, proposer l'arborescence, les composants et les données à confirmer.
 
+\- Skills à utiliser : `seo-local` (pages, zone, schema), `frontend-design` (direction visuelle), `copywriting` / `ux-copy` (textes), `accessibility-review` avant toute livraison.
+
