@@ -8,6 +8,7 @@ import { isVisible } from "@/lib/content/confirm";
 export const metadata: Metadata = {
   title: "Confidentialité",
   description: "Comment Devarenne Plomberie Chauffage utilise les informations envoyées via les formulaires de devis et de contact.",
+  alternates: { canonical: "/confidentialite" },
   robots: { index: false, follow: true },
 };
 
