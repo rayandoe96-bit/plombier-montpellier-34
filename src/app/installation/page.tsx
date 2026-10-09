@@ -26,7 +26,7 @@ export default function InstallationPage() {
         description="Un équipement neuf mal posé, c'est une panne qui attend son heure. On choisit avec vous ce qui convient à votre logement, puis on l'installe proprement."
         aside={
           <IllustrationImage
-            image={illustrations.radiatorTubus}
+            image={illustrations.thermostaticValve}
             className="aspect-[4/3] rounded-2xl border border-white/10"
             sizes="(min-width: 1024px) 20rem, 100vw"
             priority

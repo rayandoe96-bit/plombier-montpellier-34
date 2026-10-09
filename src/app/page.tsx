@@ -499,7 +499,7 @@ export default async function Home() {
           </div>
 
           <div className="relative hidden lg:block">
-            <IllustrationImage image={illustrations.radiatorRadox} className="aspect-[4/3] rounded-2xl" />
+            <IllustrationImage image={illustrations.towelRadiator} className="aspect-[4/3] rounded-2xl" />
             <div className="relative -mt-16 ml-4 mr-4 rounded-2xl bg-blueprint p-6 text-on-deep shadow-[0_24px_50px_-24px_rgba(0,0,0,.7)] sm:-mt-24 sm:ml-8 sm:mr-auto sm:max-w-sm">
             <p className="pipe-tag text-copper-hi">Avis Google</p>
             <p className="mt-5 flex items-end gap-4">

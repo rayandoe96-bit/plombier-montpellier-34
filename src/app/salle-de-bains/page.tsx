@@ -74,7 +74,7 @@ export default function SalleDeBainsPage() {
             <ProcessSteps steps={projectSteps} />
           </div>
         </div>
-        <IllustrationImage image={illustrations.showerColumn} className="aspect-[4/3] rounded-2xl" />
+        <IllustrationImage image={illustrations.bathroomTub} className="aspect-[4/3] rounded-2xl" />
       </Container>
 
       <Container className="py-8 sm:py-12">

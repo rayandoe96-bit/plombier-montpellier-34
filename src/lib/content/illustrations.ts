@@ -1,4 +1,5 @@
-// Site photos. Generic pictures are no longer labelled "Photo d'illustration" (client request, 2026-10-09).
+// Site photos: free-licence stock (CC0 rawpixel, Unsplash licence) until the client provides real job photos.
+// No "Photo d'illustration" badge any more (client request, 2026-10-09).
 export interface Illustration {
   src: string;
   width: number;
@@ -11,52 +12,53 @@ export interface Illustration {
 
 export const illustrations = {
   waterHeater: {
-    src: "/images/chauffe-eau-ariston.webp",
-    width: 736,
-    height: 981,
-    alt: "Chauffe-eau électrique mural avec ses raccordements",
-    source: "Client folder ImgSiteDevarenne (2026-10-09)",
-    position: "center 60%",
+    src: "/images/chauffe-eau-manometre.webp",
+    width: 1024,
+    height: 683,
+    alt: "Manomètre en laiton sur une cuve d'eau chaude en cuivre",
+    source: "https://www.rawpixel.com/image/6040961/brewery-boiler-free-public-domain-cc0-photo",
   },
   radiator: {
-    src: "/images/radiateur-anthracite.webp",
-    width: 675,
-    height: 1200,
-    alt: "Radiateur vertical anthracite près d'une fenêtre",
-    source: "Client folder ImgSiteDevarenne (2026-10-09)",
-    position: "75% 45%",
+    src: "/images/radiateur-panneau.webp",
+    width: 1024,
+    height: 680,
+    alt: "Radiateur à panneaux avec robinet thermostatique",
+    source: "https://www.rawpixel.com/image/5919893/photo-image-public-domain-technology-free",
   },
-  radiatorTubus: {
-    src: "/images/radiateur-tubus.webp",
-    width: 623,
-    height: 1200,
-    alt: "Radiateur vertical noir à colonnes dans un séjour",
-    source: "Client folder ImgSiteDevarenne (2026-10-09)",
-    position: "center 45%",
+  thermostaticValve: {
+    src: "/images/robinet-thermostatique.webp",
+    width: 1024,
+    height: 678,
+    alt: "Tête thermostatique de radiateur, graduée de 1 à 5",
+    source: "https://www.rawpixel.com/image/6030754/photo-image-public-domain-free",
   },
-  radiatorRadox: {
-    src: "/images/radiateur-radox.webp",
-    width: 736,
-    height: 1472,
-    alt: "Radiateur vertical à colonnes dans un salon lumineux",
-    source: "Client folder ImgSiteDevarenne (2026-10-09)",
-    position: "center 50%",
+  towelRadiator: {
+    src: "/images/seche-serviettes.webp",
+    width: 1024,
+    height: 680,
+    alt: "Salle de bains claire avec sèche-serviettes chromé, lavabo et baignoire",
+    source: "https://www.rawpixel.com/image/5921891/photo-image-light-public-domain-shadow",
   },
   showerColumn: {
-    src: "/images/colonne-douche-noire.webp",
-    width: 567,
-    height: 850,
-    alt: "Colonne de douche noire mate avec douchette et pommeau",
-    source: "Client folder ImgSiteDevarenne (2026-10-09)",
-    position: "center 30%",
+    src: "/images/douchette-chromee.webp",
+    width: 1024,
+    height: 683,
+    alt: "Douchette chromée sur barre de douche, carrelage blanc",
+    source: "https://www.rawpixel.com/image/5925137/photo-image-public-domain-house-home",
   },
   bathroom: {
-    src: "/images/salle-de-bains-marbre.webp",
-    width: 736,
-    height: 1308,
-    alt: "Salle de bains effet marbre avec douche à l'italienne et meuble vasque",
-    source: "Client folder ImgSiteDevarenne (2026-10-09)",
-    position: "center 45%",
+    src: "/images/salle-de-bains-ilot.webp",
+    width: 1024,
+    height: 681,
+    alt: "Salle de bains avec baignoire îlot et douche vitrée",
+    source: "https://www.rawpixel.com/image/5922230/photo-image-public-domain-minimal-house",
+  },
+  bathroomTub: {
+    src: "/images/salle-de-bains-baignoire.webp",
+    width: 1024,
+    height: 932,
+    alt: "Salle de bains moderne avec baignoire îlot, douche à l'italienne et carrelage gris",
+    source: "https://www.rawpixel.com/image/6042774/photo-image-public-domain-house-home",
   },
   pipeNetwork: {
     src: "/images/tuyauteries-cuivre.webp",
