@@ -24,7 +24,7 @@ export default function DepannagePage() {
         description="Un évier bouché ne se traite pas comme une fuite encastrée. Du simple débouchage à l'inspection caméra, on choisit la méthode qui règle vraiment votre problème."
         aside={
           <IllustrationImage
-            image={illustrations.dripTap}
+            image={illustrations.pipeOutflow}
             className="aspect-[4/3] rounded-2xl border border-white/10"
             sizes="(min-width: 1024px) 20rem, 100vw"
             priority

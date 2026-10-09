@@ -39,7 +39,7 @@ export default function EntretienPage() {
         description="Une fuite ou un chauffe-eau en panne arrive rarement sans prévenir. Un contrôle régulier repère l'usure à temps, avant le dégât des eaux ou la douche froide."
         aside={
           <IllustrationImage
-            image={illustrations.workbench}
+            image={illustrations.plantRoom}
             className="aspect-[4/3] rounded-2xl border border-white/10"
             sizes="(min-width: 1024px) 20rem, 100vw"
             priority
