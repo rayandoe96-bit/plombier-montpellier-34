@@ -65,7 +65,7 @@ const projects: (ProblemCard & { image: Illustration })[] = [
     href: "/installation",
     icon: icons.heater,
     title: "Chauffe-eau",
-    image: illustrations.waterSupply,
+    image: illustrations.waterHeater,
     text: "Plus d'eau chaude ou ballon en fin de vie : pose et remplacement de chauffe-eau.",
   },
   {
@@ -79,14 +79,14 @@ const projects: (ProblemCard & { image: Illustration })[] = [
     href: "/installation",
     icon: icons.shower,
     title: "Sanitaires et robinetterie",
-    image: illustrations.bathMixer,
+    image: illustrations.showerColumn,
     text: "WC, lavabo, douche, robinets : pose et remplacement.",
   },
   {
     href: "/entretien",
     icon: icons.wrench,
     title: "Entretien",
-    image: illustrations.workbench,
+    image: illustrations.pipeNetwork,
     text: "Canalisations, sanitaires, chauffe-eau : faire vérifier avant que ça lâche.",
   },
 ];
@@ -354,7 +354,7 @@ export default async function Home() {
       {/* Leaks: first section after the hero */}
       <section className="bg-blueprint py-14 text-on-deep sm:py-20">
         <Container className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
-          <IllustrationImage image={illustrations.pipeLeak} className="aspect-[4/3] rounded-2xl border border-white/10" />
+          <IllustrationImage image={illustrations.pipeOutflow} className="aspect-[4/3] rounded-2xl border border-white/10" />
           <div className="grid gap-6">
             <SectionHeading
               tone="dark"
@@ -499,7 +499,7 @@ export default async function Home() {
           </div>
 
           <div className="relative hidden lg:block">
-            <IllustrationImage image={illustrations.tools} className="aspect-[4/3] rounded-2xl" />
+            <IllustrationImage image={illustrations.radiatorRadox} className="aspect-[4/3] rounded-2xl" />
             <div className="relative -mt-16 ml-4 mr-4 rounded-2xl bg-blueprint p-6 text-on-deep shadow-[0_24px_50px_-24px_rgba(0,0,0,.7)] sm:-mt-24 sm:ml-8 sm:mr-auto sm:max-w-sm">
             <p className="pipe-tag text-copper-hi">Avis Google</p>
             <p className="mt-5 flex items-end gap-4">

@@ -1,62 +1,83 @@
-// Generic stock photos (CC0, rawpixel) used until the client provides real job photos.
-// They are always labelled "Photo d'illustration" so they are never mistaken for the artisan's own work.
+// Site photos. Generic pictures are no longer labelled "Photo d'illustration" (client request, 2026-10-09).
 export interface Illustration {
   src: string;
   width: number;
   height: number;
   alt: string;
   source: string;
+  /** CSS object-position, to keep the subject in frame when a portrait photo is cropped to landscape. */
+  position?: string;
 }
 
 export const illustrations = {
-  tools: {
-    src: "/images/outils-plomberie.webp",
-    width: 1024,
-    height: 683,
-    alt: "Clés à molette et coupe-tube posés sur un carrelage",
-    source: "https://www.rawpixel.com/image/5904346/photo-image-public-domain-kitchen-free",
+  waterHeater: {
+    src: "/images/chauffe-eau-ariston.webp",
+    width: 736,
+    height: 981,
+    alt: "Chauffe-eau électrique mural avec ses raccordements",
+    source: "Client folder ImgSiteDevarenne (2026-10-09)",
+    position: "center 60%",
   },
   radiator: {
-    src: "/images/radiateur.webp",
-    width: 1024,
-    height: 680,
-    alt: "Radiateur à panneaux avec robinet thermostatique",
-    source: "https://www.rawpixel.com/image/5919893/photo-image-public-domain-technology-free",
+    src: "/images/radiateur-anthracite.webp",
+    width: 675,
+    height: 1200,
+    alt: "Radiateur vertical anthracite près d'une fenêtre",
+    source: "Client folder ImgSiteDevarenne (2026-10-09)",
+    position: "75% 45%",
   },
-  bathMixer: {
-    src: "/images/mitigeur-baignoire.webp",
-    width: 1024,
-    height: 576,
-    alt: "Mitigeur thermostatique chromé au-dessus d'une baignoire",
-    source: "https://www.rawpixel.com/image/5911850/image-public-domain-house-home",
+  radiatorTubus: {
+    src: "/images/radiateur-tubus.webp",
+    width: 623,
+    height: 1200,
+    alt: "Radiateur vertical noir à colonnes dans un séjour",
+    source: "Client folder ImgSiteDevarenne (2026-10-09)",
+    position: "center 45%",
   },
-  waterSupply: {
-    src: "/images/arrivees-eau.webp",
-    width: 1024,
-    height: 685,
-    alt: "Arrivées d'eau apparentes sur un mur carrelé blanc",
-    source: "https://www.rawpixel.com/image/3305350/free-photo-image-plumbing-faucet-brick",
+  radiatorRadox: {
+    src: "/images/radiateur-radox.webp",
+    width: 736,
+    height: 1472,
+    alt: "Radiateur vertical à colonnes dans un salon lumineux",
+    source: "Client folder ImgSiteDevarenne (2026-10-09)",
+    position: "center 50%",
   },
-  workbench: {
-    src: "/images/etabli-entretien.webp",
-    width: 1024,
-    height: 680,
-    alt: "Établi avec outillage et pièces de plomberie",
-    source: "https://www.rawpixel.com/image/3337213/free-photo-image-toolkit-allan-key-brazil",
+  showerColumn: {
+    src: "/images/colonne-douche-noire.webp",
+    width: 567,
+    height: 850,
+    alt: "Colonne de douche noire mate avec douchette et pommeau",
+    source: "Client folder ImgSiteDevarenne (2026-10-09)",
+    position: "center 30%",
   },
-  copperFittings: {
-    src: "/images/raccords-cuivre.webp",
-    width: 1024,
-    height: 683,
-    alt: "Raccords coudés en cuivre",
-    source: "https://www.rawpixel.com/image/5947474/free-public-domain-cc0-photo",
+  bathroom: {
+    src: "/images/salle-de-bains-marbre.webp",
+    width: 736,
+    height: 1308,
+    alt: "Salle de bains effet marbre avec douche à l'italienne et meuble vasque",
+    source: "Client folder ImgSiteDevarenne (2026-10-09)",
+    position: "center 45%",
   },
-  dripTap: {
-    src: "/images/robinet-goutte.webp",
-    width: 1024,
-    height: 683,
-    alt: "Goutte d'eau tombant d'un robinet extérieur",
-    source: "https://www.rawpixel.com/image/3297121/free-photo-image-water-pipe-dripping-tap",
+  pipeNetwork: {
+    src: "/images/tuyauteries-cuivre.webp",
+    width: 1600,
+    height: 1067,
+    alt: "Réseau de tuyauteries en cuivre et en inox",
+    source: "https://unsplash.com/photos/P8CGvIQB1uo",
+  },
+  plantRoom: {
+    src: "/images/chaufferie.webp",
+    width: 1600,
+    height: 999,
+    alt: "Canalisations calorifugées dans une chaufferie",
+    source: "https://unsplash.com/photos/WB9HyqF8lKA",
+  },
+  pipeOutflow: {
+    src: "/images/tuyau-ecoulement.webp",
+    width: 1600,
+    height: 1067,
+    alt: "Eau s'écoulant d'un tuyau d'évacuation",
+    source: "https://unsplash.com/photos/4QF8yL5KsNM",
   },
   sinkDrain: {
     src: "/images/bonde-evier.webp",
@@ -85,20 +106,6 @@ export const illustrations = {
     height: 683,
     alt: "Eau s'échappant d'un raccord de tuyau",
     source: "https://www.rawpixel.com/image/5943308/free-public-domain-cc0-photo",
-  },
-  bathroom: {
-    src: "/images/salle-de-bains.webp",
-    width: 1024,
-    height: 681,
-    alt: "Salle de bains moderne avec baignoire îlot et douche vitrée",
-    source: "https://www.rawpixel.com/image/5922230/photo-image-public-domain-minimal-house",
-  },
-  tiledShower: {
-    src: "/images/douche-carrelee.webp",
-    width: 1024,
-    height: 683,
-    alt: "Douche carrelée avec mitigeur et douchette",
-    source: "https://www.rawpixel.com/image/6019082/photo-image-public-domain-house-room",
   },
 } satisfies Record<string, Illustration>;
 

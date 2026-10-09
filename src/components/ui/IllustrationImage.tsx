@@ -21,10 +21,8 @@ export function IllustrationImage({
         sizes={sizes}
         priority={priority}
         className="object-cover"
+        style={image.position ? { objectPosition: image.position } : undefined}
       />
-      <span className="absolute right-2 top-2 rounded bg-deep/70 px-1.5 py-0.5 font-mono text-[10px] uppercase tracking-[0.08em] text-on-deep">
-        Photo d&apos;illustration
-      </span>
     </div>
   );
 }
